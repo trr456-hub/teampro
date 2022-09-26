@@ -1,0 +1,17 @@
+﻿function check(n)
+{
+for(i=0;i<3;i++) //인덱스를주고 ONCLICK로 구분 길이는 FOR문으로 처리
+   document.getElementsByClassName("depth2")[i].style.display="none";
+
+
+0       
+
+
+1
+
+
+2
+
+document.getElementsByClassName("depth2")[n].style.display="";
+
+}

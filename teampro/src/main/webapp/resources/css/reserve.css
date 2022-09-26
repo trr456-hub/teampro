@@ -1,0 +1,575 @@
+@charset "UTF-8";
+
+section {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+#reserve_main {
+	padding-top:70px;
+	padding-bottom:70px;
+	background:#444;
+	width:100%;
+}
+#reserve_main .reserve-outline {
+	position:relative;
+	overflow:hidden;
+	width:1202px;
+	margin:0 auto;
+	height:870px; 
+	background:#fff
+}
+.reserve-outline .reserve-start {
+	display:block;
+	overflow:inherit;
+	position:relative;
+	width:1280;
+	height:100%;
+}
+/* 지역선택*/
+.reserve-start .reserve-area {
+	width:351px;
+	border-bottom:1px solid #DDD;
+	position:relative;
+	float:left;
+	height:100%;
+	box-sizing:border-box;
+	bacground:#fff;
+}
+.reserve-area .group-top {
+	overflow:hidden;
+	position:relative;
+	height:55px;
+	line-height:55px;
+	border-right:1px solid #222;
+	text-align:center;
+	background:#000;
+}
+.reserve-area .group-top .tit{
+	font-size:18px;
+	color:#fff;
+}
+.reserve-area .inner {
+	overflow:hidden;
+	height:815px;
+	border-right:1px solid #ddd;
+}
+.reserve-area .inner .outer{
+	position:relative;
+	padding-top:61px;	
+}
+.inner .outer .active{
+	display: list-item;
+}
+.reserve-area .active .tap_tit {
+	height:61px;
+	border-bottom:2px solid #111;
+	color:#000;
+	font-size:20px;
+	/* border:none; */
+	position:absolute;
+	top:0;
+	cursor:default;
+}
+.active .tap_tit sapn {
+	vertical-align:top;
+	white-space:nowrap;
+}
+.active .tap_con {
+	overflow:inherit;
+	position:relative;
+	width:auto;
+	height:auto;
+}
+.active .tap_con .tap_con2 {
+	background-color: #F5F5F5;
+	position:relative;
+	height:100%;
+}
+.tap_con .tap_con2 ul {
+	height:753px;
+	min-height:90px;
+}
+.tap_con .tap_con2 ul li {
+	padding:2px;
+	border-bottom:none;
+}
+.depth1-active a{
+	background:#fff url(../img/check.png) no-repeat 150px 2px;
+}
+.depth2 .depth2-active {
+	background:#fff url(../img/check.png) no-repeat 150px 2px;
+}
+li .depth1 > a {
+	display: block;
+    position: relative;
+    width: 175px;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    font-size: 16px;
+    color:#000; 
+}
+.depth1 > a > em {
+	font-size:10px;
+	color:#666;
+}
+.depth1 .depth2 { 
+	position: absolute;
+    left: 175px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color:#fff;
+}
+.depth2 > ul > li {
+	padding: 2px;
+    border-bottom: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    position: relative;
+}
+.depth2 > ul > li > a {
+	display:table-cell;
+	overflow:hidden;
+	padding:10px 16px;
+	font-size:16px;
+	vertical-align: middle;
+	color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* 지역선택종료 */
+/* 영화선택 */
+.reserve-start .movie_select {
+	width:351px;
+	background-color: #F8F8F8;
+	position:relative;
+	float:left;
+	height:100%;
+	box-sizing:border-box;
+}
+.movie_select .grop_top {
+	overflow:hidden;
+	position:relative;
+	height:55px;
+	line-height:55px;
+	border-right:1px solid #222;
+	text-align:center;
+	background-color:#000;
+}
+.movie_select .grop_top .movie_name{
+	font-size:18px;
+	color:#fff;
+}
+.movie_select .inner {
+	overflow:hidden;
+	height:815px;
+	border-right:1px solid #DDD;
+}
+.movie_select .inner .list_filter{
+	overflow:hidden;
+	position:relative;
+	height:60px;
+	padding:0 20px;
+	border-bottom:1px solid #DDD;
+	text-align:center;
+}
+.inner .list_filter .list_font {
+	font-size:20px;
+	color:#000; 
+	padding:18px 20px;
+}
+.inner .movie_select .movie_select2{
+	position:relative;
+	overflow:visible;
+	height:754px;
+}
+.movie_select .movie_select2 .movie_select3 {
+	max-height:none;
+	position:relative;
+	overflow:hidden;
+	height:100%;
+	max-width:100%;
+	outline:none;
+	direction:ltr;
+}
+.movie_select2 .movie_select3 .movie_select4 {
+	position:relative;
+	top:0;
+	left:0;
+	padding-bottom:30px;
+	overflow:hidden;
+	width:auto;
+	height:auto;
+}
+
+.movie_select4 ul li {
+	box-sizing:border-box;
+	border:2px solid transparent;
+}
+.movie_select4 .movie-active {
+	background:#fff;
+}
+.movie-active a {
+	background:url(../img/check.png) no-repeat 320px 15px;
+}
+
+.movie_select4 ul li > a {
+	padding:15px 20px;
+	position:relative;
+	display:block;
+	box-sizing:border-box;
+	color: #000;
+    text-decoration: none
+} 
+.movie_select4 .group_infor {
+	float:left;
+}
+.age_in {
+	display:inline-block;
+	width:22px;
+	height:22px;
+	line-height:22px;
+	border-radius:50%;
+	font-size:14;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:bold;
+}
+.age_all {
+ 	background-color: #5BC77E;
+}
+.age_12 {
+	background-color: #4DD6FF;
+}
+.age_15 {
+	background-color: #FFC134;
+}
+.age_19 {
+	background-color: #ED4C6B;
+}
+.bx_tit .age_in { 
+	position:absolute;
+	left:20px;
+	top:12px;
+	margin-right:5px;
+}
+.bx_tit .tit {
+	display:block;
+	overflow:hidden;
+	width:250px;
+	padding-left:30px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	font-size:15px;
+	vertical-align:middle;
+	font-weight:bold;
+}
+/* 영화선택 종료 */
+/* 날짜 및 시간선택 */
+.reserve-start .tiktok-main {
+	width:500px;
+	position:relative;
+	float:left;
+	height:100%;
+	box-sizing:border-box;
+	background-color: #fff;
+}
+.reserve-start .grop_top {
+	overflow:hidden;
+	position:relative;
+	height:55px;
+	line-height:55px;
+	border-right:1px solid #222;
+	text-align:center;
+	background-color: #000;
+}
+.reserve-start .grop_top .tit{
+	font-size:18px;
+	color:#fff;
+}
+.tiktok-main .inner {
+	overflow:hidden;
+	height:815px;
+}
+.tiktok-main .inner .calendar_slt {
+	height:75px;
+	margin:22px 20px 10px;
+}
+.tiktok-main .inner .calendar_slt_inner {
+	padding:0 20px;
+	position:relative;
+}
+.inner .calendar_slt_inner .stage_outer {
+	display:block;
+	position:relative;
+	width:auto;
+	margin:0 auto;
+	padding:0;
+	list-style:none;
+	z-index:1;
+}
+.inner .stage_outer .owl-stage-outer {
+	position:relative;
+	overflow:hidden;
+	/* border:none; */
+}
+.inner .stage_outer .owl-nav {
+	position:static;
+	right:auto;
+	top:50%;
+	height:15px;
+	margin:-10px;
+	left:0;
+	text-align:center;
+}
+.inner .time_view {
+	width:500px;
+	padding-top:80px;
+	position:relative;
+}
+.inner .time_view .active{
+	display:list-item;
+}
+.inner .time_view .tap_tit{
+	width:100%;
+	font-size:13px;
+	border-bottom:2px solid #DDD;
+	color:#000;
+	height:50px;
+	line-height:50px;
+	position:absolute;
+	top:0;
+	background-color:#fff;
+}
+.time_view .tap_tit span {
+	vertical-align:top;
+	white-space:nowrap;
+	position:relative;
+	font-size:17px;
+	color:#000;
+	line-height:50px;
+}
+.time_view .active .list_view {
+	overflow: inherit;
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-top: -30px
+}
+.time_view .active .list_view2 {
+	position:relative;
+	overflow:visible;
+	height:658px;
+	padding:0 20px;
+}
+.time_view .active .list_view3 {
+	max-height:none;
+	position:relative;
+	overflow:hidden;
+	height:100%;
+	max-width:100%;
+	outline:none;
+	direction: ltr;
+}
+.time_view .active .list_view4 {
+	position:relative;
+	top:0;
+	left:0;
+	padding-bottom:30px;
+	margin-right:0;
+	overflow:hidden;
+	width:auto;
+	height:auto;
+}
+.active .list_view5 {
+	margin-top:30px;
+	direction:ltr;
+}
+
+.active .list_view5 strong {
+	font-weight:bold;
+	font-size:15px;
+	color:#000;
+}
+
+.list_view5 .time-selector {
+	margin-top:20px;
+}
+
+.time-selector .list_hall {
+	margin-left:10px;
+}
+
+.time-selector .list_time {
+	margin-top:13px;
+	display:inline-block;
+	/* overflow:hidden; */
+}
+
+.movie-times {
+	border:1px solid #000;
+	border-radius: 4px;
+}
+
+.time-selector .list_time li {
+	margin-left:0;
+	float:left;
+	width:22.5%;
+	margin:0 0 11px 2%;
+	/* border: 1px solid #ddd; */
+}
+
+.time-selector .list_time a {
+	display: block;
+    position: relative;
+    height: 40px;
+    padding: 8px 14px 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.list_time a .time {
+	margin-bottom: 5px;
+    font-family: 'Roboto';
+    font-size: 11px;
+}
+
+.list_time .time strong {
+	display: block;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.list_time a .seat {
+	font-family: 'Roboto';
+    font-size: 11px;
+    color: #666;
+}
+
+.list_time .seat strong {
+	font-size:13px;
+}
+
+.list_time a .hall {
+	position: absolute;
+    right: 14px;
+    bottom: 8px;
+    font-size: 11px;
+}
+
+
+.time_view .active .list_view5 p {
+	line-height:1.5;
+	font-size:15px;
+	margin:0;
+	padding:0;
+}
+
+.inner .stage_outer .owl-stage {
+	transform:translate3d(0px,0px,0px);
+	transition:all 0.4s ease 0s;
+	width:2200px;
+	position:relative;
+}
+.owl-stage-outer .owl-stage .movie-date-wrapper {
+	width:52.5px;
+	position: relative;
+    float: left;
+    display: block;
+    min-height: 1px;
+    padding-top:20px;
+    outline: none;
+}
+.owl-stage .movie-date-wrapper-active .movie-day{
+	fomt-weight:bold;
+	color:#fff;
+	background:#000 
+}
+.owl-stage .movie-date-wrapper .movie-day {
+	display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    border-radius: 50%;
+    font-family: 'Roboto';
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+.owl-stage .movie-date-wrapper .movie-week-of-day {
+	display: block;
+    margin-top: 3px;
+    font-size: 12px;
+    text-align: center;
+}
+.owl-stage .movie-date-wrapper .saturday {
+	color: #233CA3;
+}
+.owl-stage .movie-date-wrapper .sunday {
+	color: #F24A6A;
+}
+.owl-stage .movie-date-wrapper:first-child >.month-top {
+	display:block;
+}
+.owl-stage .movie-date-wrapper .month-top {
+	font-weight:bold;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	text-align:center;
+	font-size:10px;
+	color:#000;
+	display:none; 
+}
+.owl-stage .movie-date-wrapper:first-child >.nextMonth-top {
+		display:block;
+	}
+.owl-stage .movie-date-wrapper .nextMonth-top {
+	font-weight:bold;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	text-align:center;
+	font-size:10px;
+	color:#000;
+	display:none; 
+	}
+.owl-nav .owl-prev {
+	opacity: .6;
+    position: absolute;
+    right: 400px;
+    top: 50%;
+    width: 37px;
+    height: 39px;
+    margin-top: -20px;
+    background: url(../img/arrowL.png) no-repeat center center;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+}
+.owl-nav .owl-next {
+	opacity: .8;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    width: 37px;
+    height: 39px;
+    margin-top: -20px;
+    background: url(../img/arrowR.png) no-repeat center center;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+}
+/* 날짜 및 시간선택 종료 */

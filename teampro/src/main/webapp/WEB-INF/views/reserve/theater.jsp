@@ -1,0 +1,699 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<head>
+<style>
+section {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+.theater {
+	padding-top:50px;
+	padding-bottom:50px;
+	width:100%;
+	background:#444;
+}
+.theater .theater-outline {
+	position:relative;
+	overflow:hidden;
+	width:996px;
+	margin:0 auto; 
+	background:#fff
+}
+.theater .theater-outline .steps {
+	position:relative;
+	width:996px;
+	background:#F2F0E4;
+}
+.steps .step {
+	position:relative;
+}
+.steps .step2 {
+	background-color:#d4d3c9;
+	min-height:530px;
+}
+.step2 .seat-section {
+	float:none;
+	width:992px;
+	min-height:528px;
+	position:relative;
+	height:100%;
+	margin-left:2px;
+	background-color:#f2f0e5;
+	overflow:hidden;
+}
+.step2 .seat-section .col-head {
+	background-image:url(../resources/img/titles.png);
+	background-repeat:no-repeat;
+	background-position:50% -124px;
+	position:relative;
+	height:33px;
+	line-height:33px;
+	text-align:center;
+	background-color:#333333;
+}
+.step2 .seat-section .col-body {
+	height:auto;
+	width:100%;
+	position:relative;
+	overflow:hidden;
+}
+.step2 .seat-section .person-screen {
+	position:relative;
+	border-bottom:2px solid #d4d3c9;
+	display:inline-block;
+	padding:17px 0 3px 0;
+	width:100%;
+}
+.step2 .seat-section .person-screen-son {
+	float:left;
+	width:460px;
+	height:100%;
+	position:relative;
+	margin-left:2px;
+	background-color:#f2f0e5;
+	overflow:hidden;
+}
+.step2 .person-screen-son .col-bodyy {
+	width:100%;
+	position:relative;
+	overflow:hidden;
+}
+.step2 .person-screen-son .human {
+	min-width:426px;
+	margin-left:15px;
+	padding-right:18px;
+	border-right:1px solid #d4d3c9;
+	display:inline-block;
+}
+.step2 .human .max-human {
+	padding-bottom:5px;
+	text-align:right;
+	font-size:11px !important;
+	color:red;
+}
+.step2 .human .group {
+	float:left;
+	margin-bottom:8px;
+	display:block;
+}
+.human .group .title {
+	float:left;
+	width:55px;
+	height:22px;
+	line-height:22px;
+	color:#666;
+	letter-spacing:-0.1em;
+}
+.human .group ul {
+	float: left;
+    width: auto;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+}
+.group ul li {
+	width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #d6d3ce;
+    background-color: #f2f0e5;
+    float:left;
+    list-style:none;
+    margin-right:6px;
+}
+.group ul li a {
+	display: block;
+    height: 100%;
+    color: #333;
+    font-family: Verdana;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.sreader {
+	display: block;
+    position: absolute;
+    left: -10000px;
+}
+.person-screen .movie-info {
+	float:left;
+	display:block;
+	width:500px;
+	height:100%;
+	overflow:visible;
+	background:transparent;
+	margin-top:1px;
+	position:relative;
+	margin-left:2px;
+}
+.person-screen .select-info > div {
+	position: relative;
+    height: 100%;
+    letter-spacing: -1px;
+}
+.person-screen .select-info {
+	width: auto;
+    margin: 0 0 0 20px;
+    position: relative;
+    height: 100%;
+    letter-spacing: -1px;
+}
+.select-info .theater-info span {
+	font-size: 1.1em;
+    padding: 0 11px 0 10px;
+    border-right: 1px solid #ccc;
+    max-width: 200px;
+    height: 17px;
+    display: inline-block;
+    /* overflow: hidden; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.select-info .theater-info span:first-child {
+	padding-left:0;
+	max-width:150px;
+}
+.select-info .theater-info span:last-child {
+	border:none;
+	padding-right:0;
+}
+.theater-info .seatNum .restNum {
+	color:#CA4D10;
+}
+.select-info .totalBuy {
+	border:1px solid #666;
+	font-weight: bold;
+    font-size: medium;
+    border-radius: 50%;
+    background: #666;
+    padding: 8px;
+    color: #eee;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+.movie-info .YMD-info {
+	display: inline-block;
+    line-height: 1.2em;
+    margin-top: 12px;
+    color: #5a5a5a;
+    font-size:30px;
+}
+.movie-info .YMD-info b {
+	display: block;
+    float: left;
+    line-height: 20px;
+}
+.col-body .theater-map {
+	position:relative;
+	width:auto;
+	padding:20px;
+}
+.col-body .theater-map .theater-map-min {
+	margin-left:20px;
+	width:826px;
+	height:365px;
+	position:relative;
+}
+.theater-map .theater-map-min .theater-content {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	left:0;
+	/* overflow:scroll; */
+}
+.theater-map .theater-content .theater-screen {
+	height:25px;
+	margin:0 auto;
+	line-height:25px;
+	text-align:center;
+	background:url(../resources/img/screen_bg.png) repeat-x left;
+}
+.theater-content .theater-screen .theater-screen-text {
+	width:57px;
+	height:25px;
+	display:inline-block;
+	zoom:1;
+	background:url(../resources/img/screen_text.png)no-repeat;
+}
+
+.theater-content .seats {
+	position:relative;
+	margin:56px auto; 40px; auto;
+	height:auto;
+}
+.theater-content .seats .seat {
+	width:20px;
+	height:20px;
+}
+.clicked {
+	background:#5E17EB;
+	color:white;
+}
+.theater-map-min .legend {
+	position:absolute;
+	top:55px;
+	right:0px;
+	height:50%; 
+}
+.theater-map-min .legend .legend-icon {
+	margin-left:5px;
+	line-height:15px;
+}
+.icon {
+	margin-top:0;
+	background-position:0 0;
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	width:15px;
+	height:16px;
+	padding:0;
+	background:url(../resources/img/icon.JPG);
+}
+.icon2 {
+	margin-top:0;
+	background-position:0 0;
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	width:15px;
+	height:16px;
+	padding:0;
+	background:url(../resources/img/icon2.jpg);
+}
+.legend .legend-icon .icon-select{
+	position:relative;
+	display:block;
+	margin-top:8px;
+	padding-left:19px;
+	height:15px;
+	color:#666;
+	font-size:12px;
+}
+.legend .legend-icon .icon-reserved{
+	position: relative;
+    display: block;
+    margin-top: 8px;
+    padding-left: 19px;
+    height: 15px;
+    color: #666;
+    font-size: 12px;
+    line-height:15px;
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+</head>
+<body>
+	<section>
+	<form name="theater" method="get" action="theaterBuy">
+		<div class="theater">
+			<div class="theater-outline">
+				<div class="steps">
+					<div class="step step2" style="display:block;">
+						<div class="seat-section">
+							<div class="col-head"></div>
+							<div class="col-body">
+								<div class="person-screen">
+									<div class="person-screen-son">
+										<div class="col-bodyy">
+											<div class="human">
+												<div class="max-human">* 최대 8명 선택 가능</div>
+												<div class="group adult">
+													<span class="title">일반</span>
+													<ul>
+														<%-- <c:forEach var="i" begin="0" end="8">
+														<li onclick="adultClick(${i}, this)">
+															<a href="#none">
+																<span class="sreader mod">일반</span>
+																${i}
+																<span class="sreader">명</span>
+															</a>
+														</li>
+														</c:forEach> --%>
+														<li onclick="adultClick(0, this); adultCheck(this); disableFal();">
+															<a href="#none">0</a>
+														</li>
+														<li onclick="adultClick(1, this); adultCheck(this); disableFal();">
+															<a href="#none">1</a>
+														</li>
+														<li onclick="adultClick(2, this); adultCheck(this); disableFal();">
+															<a href="#none">2</a>
+														</li>
+														<li onclick="adultClick(3, this); adultCheck(this); disableFal();">
+															<a href="#none">3</a>
+														</li>
+														<li onclick="adultClick(4, this); adultCheck(this); disableFal();">
+															<a href="#none">4</a>
+														</li>
+														<li onclick="adultClick(5, this); adultCheck(this); disableFal();">
+															<a href="#none">5</a>
+														</li>
+														<li onclick="adultClick(6, this); adultCheck(this); disableFal();">
+															<a href="#none">6</a>
+														</li>
+														<li onclick="adultClick(7, this); adultCheck(this); disableFal();">
+															<a href="#none">7</a>
+														</li>
+														<li onclick="adultClick(8, this); adultCheck(this); disableFal();">
+															<a href="#none">8</a>
+														</li>
+													</ul>
+												</div>
+												<div class="group child">
+													<span class="title">청소년</span>
+													<ul>
+														<li onclick="childClick(0, this); childCheck(this); disableFal();">
+															<a href="#none">0</a>
+														</li>
+														<li onclick="childClick(1, this); childCheck(this); disableFal();">
+															<a href="#none">1</a>
+														</li>
+														<li onclick="childClick(2, this); childCheck(this); disableFal();">
+															<a href="#none">2</a>
+														</li>
+														<li onclick="childClick(3, this); childCheck(this); disableFal();">
+															<a href="#none">3</a>
+														</li>
+														<li onclick="childClick(4, this); childCheck(this); disableFal();">
+															<a href="#none">4</a>
+														</li>
+														<li onclick="childClick(5, this); childCheck(this); disableFal();">
+															<a href="#none">5</a>
+														</li>
+														<li onclick="childClick(6, this); childCheck(this); disableFal();">
+															<a href="#none">6</a>
+														</li>
+														<li onclick="childClick(7, this); childCheck(this); disableFal();">
+															<a href="#none">7</a>
+														</li>
+														<li onclick="childClick(8, this); childCheck(this); disableFal();">
+															<a href="#none">8</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="movie-info">
+										<div class="select-info">
+											<p class="theater-info">
+												<span class="site">지역이 들어갈 공간</span>
+												<span class="screen">몇관이들어갈지</span>
+												<span class="seatNum">
+													남은좌석
+													<b class="restNum">56</b>
+													/
+													<b>90</b>
+												</span>
+											</p>
+											<p class="YMD-info">
+												<b>yyyy-mm-dd</b>
+												<b>(day)</b>
+												<b>ss:ss</b>
+												<!-- <button id="check_module" type="button"><img src="../resources/img/kakaopay.jpg" width="100px" height="30px"/></button> -->
+												<input type="submit" value="결제하기" class="totalBuy">
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="theater-map">
+									<div class=theater-map-min>
+										<div class="theater-content" style="right:-17px; bottom:-17px;">
+											<div class="theater-screen" style="width:652px;">
+												<span class="theater-screen-text"></span>
+											</div>
+											<div class="seats" style="width:180px;height:200px;">
+												<div class="seat-wrapper" onload="disableSeat()"></div>
+											</div>
+										</div>
+										<div class="legend" style="width:125px;">
+											<div class="legend-icon">
+												<span class="icon-select">
+													<span class="icon"></span>
+													선택
+												</span>
+												<span class="icon-reserved">
+													<span class="icon2"></span>
+													예매완료
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" name="adult" value="0">
+		<input type="hidden" name="child" value="0">
+		<input type="hidden" name="seatPass" value="">
+		<input type="hidden" name="code" value="${code}">
+		<input type="hidden" name="jcode" value="${jcode}">
+		<input type="hidden" name="mcode" value="${mcode}">
+		<input type="hidden" name="monthday" value="${monthday}">
+		<input type="hidden" name="tcode" value="${tcode}">
+		</form>
+	</section>
+<script>
+	/* 좌석 2중for문 처리 */
+	let test = [];
+	let selectedSeats = new Array();
+	let selectedSeatsMap = [];
+	const seatWrapper = document.querySelector(".seat-wrapper");
+	let clicked="";
+	let div = "";
+	
+	var num = 0;	// 선택된 좌석 갯수를 저장하는 변수
+	
+	for(let i=0; i<10; i++) {
+		div = document.createElement("div");
+		seatWrapper.append(div);
+		for(let j=0; j<9; j++) {
+			const input = document.createElement("input");
+			input.type="button";
+			input.name="seats";
+			input.classList="seat";
+			// 3중for문 XXXX
+			mapping(input, i, j);
+			div.append(input);
+			input.addEventListener('click',function(e) {
+				/* console.log(e.target.value); */
+				//중복방지
+				//selectedSeats = selectedSeats.filter((element, index) => selectedSeats.indexOf(element) != index);
+				
+				//toggle click클래스가 존재할때
+				
+				if(input.classList.contains("clicked")) {
+					input.classList.remove("clicked");
+					clicked = document.querySelector(".clicked");
+					selectedSeats.splice(selectedSeats.indexOf(e.target.value), 1);	// 클릭한 좌석 선택 취소 (배열에서 삭제)
+                    num--;
+				//toggle click클래스가 존재 안할때
+				} else {
+					
+					// 선택한 인원수보다 큰지 비교
+					var inwon = getInwon();
+					
+					// 선택한 인원수와 선택한 좌석수 비교 (인원수 : inwon, 좌석수:num)
+					if( num < inwon ) {
+	                    selectedSeats = selectedSeats.filter((element, index) => selectedSeats.indexOf(element) != index);
+						input.classList.add("clicked");
+						clicked = document.querySelectorAll(".clicked");
+						clicked.forEach((data) => {
+							selectedSeats.push(data.value);
+						})
+						num++;
+					} else {
+						/* console.log("꽉참"); */
+					}
+				}
+				console.log(selectedSeats);
+				document.theater.seatPass.value=selectedSeats;
+				/* document.theater.seatPass.value=URLEncoder.encode(selectedSeats)+"%2C"; */
+			})
+		}
+	}
+	/* 좌석에 알파벳 분류 if처리 */
+	function mapping(input, i, j) {
+		if(i === 0) {
+			input.value="A" + j;
+		} else if(i === 1) {
+			input.value="B" + j;
+		} else if(i === 2) {
+			input.value="C" + j;
+		} else if(i === 3) {
+			input.value="D" + j;
+		} else if(i === 4) {
+			input.value="E" + j;
+		} else if(i === 5) {
+			input.value="F" + j;
+		} else if(i === 6) {
+			input.value="G" + j;
+		} else if(i === 7) {
+			input.value="H" + j;
+		} else if(i === 8) {
+			input.value="I" + j;
+		} else if(i === 9) {
+			input.value="J" + j;
+		}
+		
+	}
+	/* 좌석에 알파벳 분류 if처리 종료*/
+	/* 좌석 2중for문 처리 종료*/
+	/* 좌석 인원선택 */
+	function adultClick(n, my) { //어른인원
+		const inin = document.querySelectorAll(".adult > ul > li");
+		const inina = document.querySelectorAll(".adult > ul > li > a");
+
+		//console.log(my.querySelector("a"));
+		const myA = my.querySelector("a");
+		
+		for(i=0; i<inin.length; i++) {			
+			inin[i].style.background="#f2f0e5";
+			inina[i].style.color="#333";
+		}
+		my.style.background="#333";
+		myA.style.color="white";
+	}
+
+	let adult = document.querySelectorAll(".adult > ul > li");
+	let adultA = document.querySelectorAll(".adult > ul > li > a");
+	let child = document.querySelectorAll(".child > ul > li");
+	let childA = document.querySelectorAll(".child > ul > li > a");
+	/* console.log(adult); */
+	
+	/* onload부분 */
+	let addn = parseInt(document.getElementsByName("adult")[0].value);
+	let chhn = parseInt(document.getElementsByName("child")[0].value);
+	
+	let addchh = addn+chhn;
+	let disableSeat = document.querySelectorAll(".seat"); // 좌석에 대한 전역변수
+	/* console.log(disableSeat); */
+	window.onload = () => {
+		adult[0].style.background="#333";
+		adultA[0].style.color="white";
+		child[0].style.background="#333";
+		childA[0].style.color="white";
+		
+		for(i=0;i<90;i++) {
+			disableSeat[i].setAttribute('disabled',true);
+		}
+	}
+	/* onload부분 종료*/
+	function childClick(nu, you) { //청소년인원
+		const childIn = document.querySelectorAll(".child > ul > li");
+		const childInA = document.querySelectorAll(".child > ul > li > a");
+		
+		const childMyA = you.querySelector("a");
+		
+		for(j=0;j<childIn.length;j++) {
+			childIn[j].style.background="#f2f0e5";
+			childInA[j].style.color="#333";
+		}
+		you.style.background="#333";
+		childMyA.style.color="white";
+	}
+	
+	/* value넘기기 */
+	function adultCheck(n) {
+		/* console.log(n.querySelector("a").innerText); */
+		let adultVal = n.querySelector("a").innerText;
+		document.theater.adult.value=adultVal;
+		/* console.log(document.getElementsByName("adult")[0].value); */
+		operatorTest();
+	}
+	function childCheck(n) {
+		let childVal = n.querySelector("a").innerText;
+		document.theater.child.value=childVal;
+		/* console.log(document.getElementsByName("child")[0].value) */
+		operatorTest();
+	}
+	
+	function operatorTest() {		
+		let ad = parseInt(document.getElementsByName("adult")[0].value);
+		let ch = parseInt(document.getElementsByName("child")[0].value);
+		
+		let adch = ad+ch;
+		
+		/* console.log(adch); */
+		if(adch > 8) {
+			alert("8명이 넘습니다");
+			location.reload();
+		}
+
+		// 선택한 인원수(성인+청소년)의 합을 선택할 좌석의 배열의 크기로 전달
+		//console.log("adch:" + adch);
+		//selectedSeats.length = adch;
+		//console.log("selectedSeats 길이" + selectedSeats.length);		
+	}
+	// 인원수 반환 함수
+	function getInwon() {
+		let adultCnt = parseInt(document.getElementsByName("adult")[0].value);
+		let childCnt = parseInt(document.getElementsByName("child")[0].value);
+		
+		let totalCnt = adultCnt + childCnt;
+		return totalCnt;
+	}
+	/* value넘기기 종료 */
+	/* 좌석 인원선택 종료*/
+	/* 좌석 인원에맞게 체크 */
+	function disableFal() {
+		for(i=0;i<90;i++) {
+			disableSeat[i].removeAttribute('disabled');
+		}
+	}
+	/* 좌석 인원에맞게 체크 종료*/
+</script>
+<!-- 카카오페이 데모 결제 -->
+<!-- <script>
+	$("#check_module").click(function () {
+		var IMP = window.IMP; // 생략가능
+		IMP.init('imp35452464'); 
+		// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+		// ''안에 띄어쓰기 없이 가맹점 식별코드를 붙여넣어주세요. 안그러면 결제창이 안뜹니다.
+		IMP.request_pay({
+			pg: 'kakaopay',
+			pay_method: 'card',
+			merchant_uid: 'merchant_' + new Date().getTime(),
+			/* 
+			 *  merchant_uid에 경우 
+			 *  https://docs.iamport.kr/implementation/payment
+			 *  위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
+			 */
+			name: '주문명 : 영화관람권',
+			// 결제창에서 보여질 이름
+			// name: '주문명 : ${auction.a_title}',
+			// 위와같이 model에 담은 정보를 넣어 쓸수도 있습니다.
+			amount: 2000,
+			// amount: ${bid.b_bid},
+			// 가격 
+			buyer_name: '이름',
+			// 구매자 이름, 구매자 정보도 model값으로 바꿀 수 있습니다.
+			// 구매자 정보에 여러가지도 있으므로, 자세한 내용은 맨 위 링크를 참고해주세요.
+			buyer_postcode: '123-456',
+			}, function (rsp) {
+				console.log(rsp);
+			if (rsp.success) {
+				var msg = '결제가 완료되었습니다.';
+				msg += '결제 금액 : ' + rsp.paid_amount;
+				// success.submit();
+				// 결제 성공 시 정보를 넘겨줘야한다면 body에 form을 만든 뒤 위의 코드를 사용하는 방법이 있습니다.
+				// 자세한 설명은 구글링으로 보시는게 좋습니다.
+			} else {
+				var msg = '결제에 실패하였습니다.';
+				msg += '에러내용 : ' + rsp.error_msg;
+			}
+			alert(msg);
+		});
+	});
+</script> -->
+<!-- 카카오페이 데모 결제 종료-->
+</body>

@@ -1,0 +1,584 @@
+@charset "UTF-8";
+
+.head {
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+}
+
+#contents {
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+}
+/* top광고부분 */
+#cgvwrap .ad_top {
+	position: relative;
+	width: 980px;
+	height: 80px;
+	margin: 0 auto;
+}
+
+.ad_top .btn_ad_close {
+	position: relative;
+	bottom: 70px;
+	margin-left: 950px;
+	cursor: pointer;
+}
+/* top광고부분 종료 */
+/* 로고 로그인 회원가입 고객센터 나의정보 */
+#cgvwrap {
+	position: relative;
+	width: 100%;
+	min-width: 1040px;
+	background: black;
+}
+
+.header {
+	position: relative;
+	z-index: 101
+}
+
+.header .contents {
+	width: 980px;
+	margin: 0 auto
+}
+
+.header_content {
+	margin-bottom: 50px;
+	background-color: #fff;
+	border-bottom: 1px solid #eee
+}
+
+.header_content .contents {
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 6px 25px 5px;
+	background-color: #fff
+}
+
+.header_content .contents h1 {
+	display: inline-flex;
+	align-items: flex-end;
+	height: 53px
+}
+
+.header_content .contents h1 a {
+	display: block;
+	float: left;
+	height: 100%
+}
+
+.header_content .contents h1 a img {
+	display: block;
+	width: auto;
+	height: 100%;
+	object-fit: contain
+}
+
+.header_content .contents h1 span {
+	font-weight: 300;
+	font-size: 16px;
+	color: #222;
+	letter-spacing: 0.313em;
+	line-height: 1.500em;
+	margin-left: 10px;
+}
+
+.header_content .contents .memberInfo {
+	display: flex;
+	align-items: center
+}
+
+.header_content .contents .memberInfo li {
+	margin-left: 44px;
+	margin-top: 2px
+}
+
+.header_content .contents .memberInfo li:first-child {
+	margin-left: 0
+}
+
+.header_content .contents .memberInfo li a {
+	display: block;
+	position: relative;
+	padding-bottom: 19px
+}
+
+.header_content .contents .memberInfo li a img {
+	width: 36px;
+	height: 36px
+}
+
+.header_content .contents .memberInfo li a span {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	font-size: 13px;
+	color: #666;
+	line-height: 1.462em;
+	white-space: nowrap;
+	transform: translate(-50%, 0)
+}
+/* 로고 로그인 회원가입 고객센터 나의정보	종료 */
+/* 카테고리 */
+.nav {
+	position: absolute;
+	left: 0;
+	top: 113px;
+	width: 100%;
+	padding: 5px 0;
+	background-color: #fff;
+	border-bottom: 3px solid #5E17EB;
+}
+
+.nav .contents {
+	position: relative
+}
+
+.nav .contents h1 {
+	display: none
+}
+
+.nav_menu {
+	display: inline-flex
+}
+
+.nav_menu>li {
+	width: 162px;
+	padding: 20px 0
+}
+
+.nav_menu>li:first-child {
+	width: 137px;
+}
+
+.nav_menu>li:first-child .nav_overMenu {
+	padding-left: 0
+}
+
+.nav_menu>li:last-child {
+	width: 195px
+}
+
+.nav_menu>li:nth-child(2)>h2 {
+	left: 80px
+}
+
+.nav_menu>li:nth-child(3)>h2 {
+	left: 160px
+}
+
+.nav_menu>li:nth-child(4)>h2 {
+	left: 240px
+}
+
+.nav_menu>li:nth-child(5)>h2 {
+	left: 335px
+}
+
+.nav_menu>li:last-child>h2 {
+	left: 430px
+}
+
+.nav_menu>li>h2 {
+	position: absolute;
+	top: 7px
+}
+
+.nav_menu>li>h2>a {
+	font-weight: 500;
+	font-size: 16px;
+	color: #222;
+	line-height: 1.500em;
+	cursor:default;
+}
+
+.nav_menu>li>h2>a strong {
+	font-weight: 700;
+	color: #fb4357
+}
+
+.nav_overMenu {
+	display: none;
+	position: relative;
+	margin-bottom: 8px;
+	padding: 25px 0 0 25px;
+	/* border-right:1px solid lightgray; */
+}
+
+.nav_overMenu h3 {
+	height: auto;
+	margin: 0;
+	line-height: 1em;
+	text-align: left;
+	background-image: none
+}
+
+.nav_overMenu a:hover {
+	text-decoration: underline
+}
+
+.nav_overMenu dt {
+	padding-top: 18px
+}
+
+.nav_overMenu dt a {
+	font-weight: 700;
+	font-size: 14px;
+	color: #222;
+	line-height: 1.429em
+}
+
+.nav_overMenu dt+dd {
+	margin-top: 8px
+}
+
+.nav_overMenu dd a {
+	font-weight: 400;
+	font-size: 14px;
+	color: #666;
+	line-height: 2.143em
+}
+
+/* 카테고리 종료 */
+/* 검색 부분 */
+.totalSearch_wrap {
+	display: inline-flex;
+	position: absolute;
+	right: 0;
+	top: 7px;
+	padding: 0 36px 0 10px;
+	border-left: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+}
+
+.totalSearch_wrap label {
+	display: block
+}
+
+.totalSearch_wrap label input[type="text"] {
+	width: 180px;
+	height: auto;
+	padding: 0 0 0 7px;
+	font-size: 16px;
+	color: #222;
+	line-height: 1.500em;
+	border: none
+}
+
+.totalSearch_wrap .btn_totalSearch {
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: -1px;;
+	width: 26px;
+	height: 26px;
+	font-size: 0;
+	line-height: 0;
+	background: transparent url('../img/search.png') center center/26px
+		scroll no-repeat
+}
+/* 검색부분 종료 */
+/* 메인광고 시작 */
+#background-img {
+	width: 1200px;
+	heght: 700px;
+	margin: 0 auto;
+}
+
+#background-img #out-line {
+	width: 1200px;
+	height: 700px;
+}
+
+#background-img #in-line {
+	width: 1200px;
+	heght: 700px;
+	margin: auto;
+	position: relative;
+}
+
+#in-line strong {
+	position: relative;
+	bottom: 375px;
+	left: 50px;
+	font-weight: 700;
+	font-size: 40px;
+	color: #fff;
+	line-height: 23px;
+	text-shadow: 2px 2px 4px rgb(0 0 0/ 72%);
+	pointer-events: none;
+}
+
+#in-line #spant1 {
+	position: relative;
+	bottom: 330px;
+	left: -335px;
+	font-weight: 700;
+	font-size: 20px;
+	color: #fff;
+	line-height: 23px;
+	pointer-events: none;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	pointer-events: none;
+}
+
+#in-line #spant2 {
+	position: relative;
+	bottom: 290px;
+	left: -603px;
+	font-weight: 700;
+	font-size: 20px;
+	color: #fff;
+	line-height: 23px;
+	pointer-events: none;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	pointer-events: none;
+}
+/* 메인광고 종료 */
+/* 영화순위 슬라이드 */
+#background_slide {
+	float: none;
+	clear: none;
+	border-top: 3px solid #5E17EB;
+	background: #F7F7F7;
+}
+
+#background_slide #out-line {
+	margin: 0 auto;
+	width: 980px;
+	height: 100%;
+	padding: 50px 30px 60px;
+	overflow: hidden;
+}
+
+#background_slide .movieChartFont {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+
+#background_slide .movieChartFont2 {
+	display: inline-flex;
+}
+
+#background_slide .movieChartFont2 h3 {
+	height: auto;
+	margin: 0;
+	line-height: 16px;
+	background-img: none;
+	font-size: 26px;
+}
+
+#background_slide #in-element {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	box-sizing: content-box;
+	overflow: visible;
+}
+
+#background_slide .movieChart {
+	width: 170px;
+	margin-right: 32px;
+	height: 100%;
+	position: relative;
+}
+
+#background_slide .movieChart .movieImg {
+	position: relative;
+	width: 170px;
+	height: 234px;
+}
+
+.movieImg>img {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 20px;
+}
+
+.movieImg>.movie_rank {
+	font-style: italic;
+	position: relative;
+	font-size: 45px;
+	color: #fff;
+	top: 180px;
+	border-radius: 20px;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.09) 35%, rgba(0, 0, 0, 0.85));
+}
+
+.movieChart .movieFont {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.movieChart .movieFont .movieName {
+	display: block;
+	flex-basis: 100%;
+	margin-top: 14px;
+	overflow: hidden;
+	font-size: 18px;
+	color: #222;
+	line-height: 21px;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/* 영화순위 슬라이드 종료*/
+/* 무비차트 다음,이전 버튼 */
+#out-line .button-next {
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	left: 960px;
+	bottom: 130px;
+	margin-top: -40px;
+	width: 40px;
+	height: 40px;
+	font-size: 0;
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 50%;
+	box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#out-line .button-prev {
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	right: 23px;
+	bottom: 130px;
+	margin-top: -40px;
+	width: 40px;
+	height: 40px;
+	font-size: 0;
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 50%;
+	box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+/* 무비차트 다음,이전 버튼 종료 */
+/* 기프트콘 관람권 */
+.giftcon_wrap .contents {
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.giftcon_wrap {
+	padding: 60px 0 60px ;
+	background:white;
+}
+
+.giftcon_list_wrap {
+	display: flex;
+}
+
+.giftcon_list_wrap>li { 
+	width: 270px;
+	padding: 20px 19px 30px;
+	border: 1px solid #e4e4e4;
+	border-radius: 10px
+}
+
+.giftcon_list_wrap>li ~ li {
+	margin-left: 25px
+}
+
+.giftcon_list dt {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 500;
+	font-size: 20px;
+	color: #222;
+	line-height: 23px
+}
+
+.giftcon_list dt+dd {
+	margin-top: 27px
+}
+
+.giftcon_list dd {
+	margin-top: 20px;
+}
+
+.giftcon_list dd a {
+	display: flex;
+	justify-content: left;
+	align-items: center
+}
+
+.giftcon_list dd a .img_wrap {
+	position: relative;
+	width: 75px;
+	height: 76px;
+	border-radius: 5px
+}
+
+.giftcon_list dd a .giftcon_info_wrap {
+	display: inline-flex;
+	flex-direction: column;
+	padding-left: 15px
+}
+
+.giftcon_list dd a .giftcon_info_wrap span {
+	font-weight: 500;
+	font-size: 14px;
+	color: #222;
+	line-height: 23px
+}
+
+.giftcon_list dd a .giftcon_info_wrap strong {
+	font-weight: 700;
+	font-size: 16px;
+	color: #222;
+	letter-spacing: -0.020em;
+	line-height: 23px
+}
+
+.img_wrap {
+	position: relative;
+	overflow: hidden
+}
+
+.img_wrap>img {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: translate(0, -50%)
+}
+/* 기프트콘 관람권 종료*/
+/* 엔드컨텐츠 */
+.end_content {
+	padding:20px 70px 40px;
+	background: #F7F7F7;
+}
+.end_content .end_outline {
+	width:1000px;
+	height:100%;
+	margin:0 auto;
+}
+.end_content .end_outline div img {
+	float:right;
+	width:150px;
+	margin-top:10px; 
+}
+/* 엔드컨텐츠 종료 */

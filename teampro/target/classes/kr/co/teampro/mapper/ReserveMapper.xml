@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybats-3-mapper.dtd">
+<mapper namespace="kr.co.teampro.mapper.ReserveMapper">
+	<select id="reservepage" resultType="kr.co.teampro.vo.ReserveVO">
+		select * from cmovie order by id desc;
+	</select>
+	<select id="daearea" resultType="kr.co.teampro.vo.DaeareaVO">
+		select * from daearea order by code asc;
+	</select>
+	<select id="jungarea" resultType="kr.co.teampro.vo.JungareaVO">
+		select * from jungarea order by daecode asc;
+	</select>
+	<select id="seetime" resultType="kr.co.teampro.vo.SeetimeVO">
+		select * from seetime order by id asc;
+	</select>
+</mapper>
