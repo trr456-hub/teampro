@@ -63,8 +63,8 @@
    section input[type=submit] {
      width:200px;
      height:35px;
-     border:1px solid #D941C5;
-     background:#CA4D10;
+     border:1px solid #ccc;
+     background:#5E17EB;
      color:white;
      font-size:16px; 
    }
