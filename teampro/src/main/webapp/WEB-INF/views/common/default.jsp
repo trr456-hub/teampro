@@ -75,13 +75,13 @@
 					</h1>
 					<ul class="memberInfo">
 						<!-- 로그인 -->
-						<li><a href="#"> <img alt=""
+						<li><a href="../login/login"> <img alt=""
 								src="../resources/img/loginPassword.png"> <span>로그인</span>
 						</a></li>
-						<li><a href="#"> <img alt=""
+						<li><a href="../member/memberinput"> <img alt=""
 								src="../resources/img/loginJoin.png"> <span>회원가입</span>
 						</a></li>
-						<li><a href="#"> <img alt=""
+						<li><a href="../mypage/myinfo"> <img alt=""
 								src="../resources/img/loginMember.png"> <span>MY CCA</span>
 						</a></li>
 						<li><a href="#"> <img alt=""
@@ -106,12 +106,12 @@
 								</dt>
 								<dd>
 									<h3>
-										<a href="#">무비차트</a>
+										<a href="../cmovie/cmovie_list">무비차트</a>
 									</h3>
 								</dd>
 								<dd>
 									<h3>
-										<a href="#">무비포스트</a>
+										<a href="../review/review_list">무비포스트</a>
 									</h3>
 								</dd>
 							</dl>
@@ -204,7 +204,7 @@
 								</dd>
 								<dd>
 									<h3>
-										<a href="#">공지사항</a>
+										<a href="../gongji/list">공지사항</a>
 									</h3>
 								</dd>
 							</dl>
