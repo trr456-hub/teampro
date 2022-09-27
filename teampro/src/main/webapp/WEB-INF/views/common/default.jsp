@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -75,15 +76,29 @@
 					</h1>
 					<ul class="memberInfo">
 						<!-- 로그인 -->
+						<c:if test="${userid == null }">
 						<li><a href="../login/login"> <img alt=""
 								src="../resources/img/loginPassword.png"> <span>로그인</span>
 						</a></li>
 						<li><a href="../member/memberinput"> <img alt=""
 								src="../resources/img/loginJoin.png"> <span>회원가입</span>
 						</a></li>
+						</c:if>
+						<c:if test="${userid != null }">
+						<li><a href="../login/logout"> <img alt=""
+								src="../resources/img/loginPassword.png"> <span>로그아웃</span>
+						</a></li>
+						</c:if>
+						<c:if test="${userid == null}">
+						<li><a href="../login/login"> <img alt=""
+								src="../resources/img/loginMember.png"> <span>MY CCA</span>
+						</a></li>
+						</c:if>
+						<c:if test="${userid != null }">
 						<li><a href="../mypage/myinfo"> <img alt=""
 								src="../resources/img/loginMember.png"> <span>MY CCA</span>
 						</a></li>
+						</c:if>
 						<li><a href="#"> <img alt=""
 								src="../resources/img/loginCustomer.png"> <span>고객센터</span>
 						</a></li>
