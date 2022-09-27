@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
 <style>
 section {
@@ -238,7 +240,6 @@ section {
 	zoom:1;
 	background:url(../resources/img/screen_text.png)no-repeat;
 }
-
 .theater-content .seats {
 	position:relative;
 	margin:56px auto; 40px; auto;
@@ -403,8 +404,37 @@ section {
 									<div class="movie-info">
 										<div class="select-info">
 											<p class="theater-info">
-												<span class="site">지역이 들어갈 공간</span>
-												<span class="screen">몇관이들어갈지</span>
+												<c:if test="${jcode == 01}">
+													<span class="site">고양 화정점</span>
+												</c:if>
+												<c:if test="${jcode == 02}">
+													<span class="site">고양 행신점</span>
+												</c:if>
+												<c:if test="${jcode == 03}">
+													<span class="site">고양 스타필드</span>
+												</c:if>
+												<c:if test="${jcode == 04}">
+													<span class="site">백석 벨라시타</span>
+												</c:if>
+												<c:if test="${jcode == 05}">
+													<span class="site">백석 롯데아울렛</span>
+												</c:if>
+												<c:if test="${jcode == 06}">
+													<span class="site">일산 웨스턴돔</span>
+												</c:if>
+												<c:if test="${jcode == 07}">
+													<span class="site">일산 라페스타</span>
+												</c:if>
+												<c:if test="${jcode == 08}">
+													<span class="site">일산 킨텍스</span>
+												</c:if>
+												<c:if test="${jcode == 09}">
+													<span class="site">일산 주엽점</span>
+												</c:if>
+												<c:if test="${jcode == 10}">
+													<span class="site">일산 덕이점</span>
+												</c:if>
+												<span class="screen">${fn:substring(tcode,1,2)}관</span>
 												<span class="seatNum">
 													남은좌석
 													<b class="restNum">56</b>
@@ -413,9 +443,7 @@ section {
 												</span>
 											</p>
 											<p class="YMD-info">
-												<b>yyyy-mm-dd</b>
-												<b>(day)</b>
-												<b>ss:ss</b>
+												<b>${fn:substring(monthday,0,4)} - ${fn:substring(monthday,4,5)} - ${fn:substring(monthday,5,7)}</b>
 												<!-- <button id="check_module" type="button"><img src="../resources/img/kakaopay.jpg" width="100px" height="30px"/></button> -->
 												<input type="submit" value="결제하기" class="totalBuy">
 											</p>
@@ -552,7 +580,6 @@ section {
 	function adultClick(n, my) { //어른인원
 		const inin = document.querySelectorAll(".adult > ul > li");
 		const inina = document.querySelectorAll(".adult > ul > li > a");
-
 		//console.log(my.querySelector("a"));
 		const myA = my.querySelector("a");
 		
@@ -563,7 +590,6 @@ section {
 		my.style.background="#333";
 		myA.style.color="white";
 	}
-
 	let adult = document.querySelectorAll(".adult > ul > li");
 	let adultA = document.querySelectorAll(".adult > ul > li > a");
 	let child = document.querySelectorAll(".child > ul > li");
@@ -628,7 +654,6 @@ section {
 			alert("8명이 넘습니다");
 			location.reload();
 		}
-
 		// 선택한 인원수(성인+청소년)의 합을 선택할 좌석의 배열의 크기로 전달
 		//console.log("adch:" + adch);
 		//selectedSeats.length = adch;

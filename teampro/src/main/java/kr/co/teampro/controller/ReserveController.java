@@ -38,7 +38,25 @@ public class ReserveController {
 		return "/reserve/theater";
 	}
 	@RequestMapping("/reserve/theaterBuy")
-	public String theaterBuy() {
+	public String theaterBuy(HttpServletRequest request,Model model) {
+		int adult = Integer.parseInt(request.getParameter("adult"));
+		int child = Integer.parseInt(request.getParameter("child"));
+		String seatPass = request.getParameter("seatPass");
+		String code = request.getParameter("code");
+		String jcode = request.getParameter("jcode");
+		String mcode = request.getParameter("mcode");
+		String monthday = request.getParameter("monthday");
+		String tcode = request.getParameter("tcode");
+		
+		model.addAttribute("adult",adult);
+		model.addAttribute("child",child);
+		model.addAttribute("seatPass",seatPass);
+		model.addAttribute("code",code);
+		model.addAttribute("jcode",jcode);
+		model.addAttribute("mcode",mcode);
+		model.addAttribute("monthday",monthday);
+		model.addAttribute("tcode",tcode);
+		
 		return "/reserve/theaterBuy";
 	}
 }

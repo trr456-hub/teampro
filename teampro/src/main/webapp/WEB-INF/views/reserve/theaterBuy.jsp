@@ -11,14 +11,14 @@
 		padding-top:50px;
 		padding-bottom:100px;
 		width:100%;
-		background:#FFFFF6;
+		background:#F2F0E4;
 	}
 	.ccaWrap .ccaInner {
 		position:relative;
 		overflow:hidden;
 		width:1000px;
 		margin:0 auto; 
-		background:#FFFFF6
+		background:#F2F0E4
 	}
 	.ccaWrap .ccaInner .cap {
 		text-align:center;
@@ -45,17 +45,6 @@
    section caption {
      text-align:left;
    }
-   section #bae_table .bb {
-     font-size:12px;
-     font-weight:100;
-     display:inline-block;
-     width:80px;
-     height:20px;
-     border:1px solid blue;
-     padding-top:2px;
-     text-align:center;
-     cursor:pointer;
-   }
    section .submit {
      text-align:center;
      margin-top:40px;
@@ -78,18 +67,16 @@
 					<table align="center" class="ccaTopTable">
 						<h2 class="cap">영 화 예 매</h2>
 						<tr>
-							<th>상품</th>
-							<th>상품명</th>
-							<th>구매수량</th>
-							<th>적립금</th>
+							<th>예매번호</th>
+							<th>인원수</th>
 							<th>총 결제금액</th>
+							<th>좌석</th>
 						</tr>
-						<tr align="center">
-							<td></td>	<!-- 상품그림 -->
-							<td></td>	<!-- 상품명 -->
-							<td></td>	<!-- 수량 -->
-							<td></td>	<!-- 적립금 -->
+						<tr>
+							<td>P${code}-${jcode}${mcode}-${monthday}-${tcode}</td>	<!-- 예매번호 -->
+							<td>${adult + child}</td>	<!-- 인원수 -->
 							<td></td>	<!-- 총결제금액 -->
+							<td>${seatPass}</td>	<!-- 좌석 -->
 						</tr>
 					</table>
 			        <!-- 결제금액 -->

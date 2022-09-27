@@ -777,18 +777,7 @@ li .depth1 > a {
 												<div class="list_view4">
 													<div class="list_view5">
 														<div class="movie-name">
-															<c:if test="document.querySelector('.movie-name > .age_in').innerText == 'all'">
-																<span class="age_in age_all"></span>
-															</c:if>
-															<c:if test="document.querySelector('.movie-name > .age_in').innerText == '12'">
-																<span class="age_in age_12"></span>
-															</c:if>
-															<c:if test="document.querySelector('.movie-name > .age_in').innerText == '15'">
-																<span class="age_in age_15"></span>
-															</c:if>
-															<c:if test="document.querySelector('.movie-name > .age_in').innerText == '19'">
-																<span class="age_in age_19"></span>
-															</c:if>
+															<span class="age_in"></span>
 															<strong>영화를 선택하세요</strong>
 														</div>
 														<div class="time-selector">
@@ -1062,10 +1051,21 @@ li .depth1 > a {
         
         function movieChange(m) {
         	let mname = m.querySelector(".tit").innerText;
+        	let ageBck = document.querySelector(".movie-name > .age_in");
         	let mage = m.querySelector(".age_in").innerText;
         	document.querySelector(".movie-name > strong").innerText=mname;
         	document.querySelector(".movie_name").innerText=mname;
         	document.querySelector(".movie-name > span").innerText=mage;
+        	console.log(ageBck);
+        	 if(mage == "all") {
+        		ageBck.classList.add("age_all");
+        	} else if(mage == "12") {
+        		ageBck.classList.add("age_12");
+        	} else if(mage == "15") {
+        		ageBck.classList.add("age_15");
+        	} else if (mage == "19") {
+        		ageBck.classList.add("age_19");
+        	} 
         }
         
         /* 영화선택 종료*/
