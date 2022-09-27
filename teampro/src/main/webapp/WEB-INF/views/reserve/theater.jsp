@@ -479,7 +479,7 @@ section {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>						김규호
 		<input type="hidden" name="adult" value="0">
 		<input type="hidden" name="child" value="0">
 		<input type="hidden" name="seatPass" value="">
