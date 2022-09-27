@@ -49,7 +49,7 @@
      text-align:center;
      margin-top:40px;
    }
-   section input[type=submit] {
+   section button {
      width:200px;
      height:35px;
      border:1px solid #ccc;
@@ -67,16 +67,20 @@
 					<table align="center" class="ccaTopTable">
 						<h2 class="cap">영 화 예 매</h2>
 						<tr>
-							<th>예매번호</th>
+							<th style="width: 360px;">예매번호</th>
 							<th>인원수</th>
+							<th>성인</th>
+							<th>청소년</th>
 							<th>총 결제금액</th>
 							<th>좌석</th>
 						</tr>
 						<tr>
-							<td>P${code}-${jcode}${mcode}-${monthday}-${tcode}</td>	<!-- 예매번호 -->
-							<td>${adult + child}</td>	<!-- 인원수 -->
-							<td></td>	<!-- 총결제금액 -->
-							<td>${seatPass}</td>	<!-- 좌석 -->
+							<td style="text-align:center;">${code}-${jcode}${mcode}-${monthday}-${tcode}</td>	<!-- 예매번호 -->
+							<td style="text-align:center;">${adult + child}</td>	<!-- 인원수 -->
+							<td style="text-align:center;"></td>	<!-- 성인가격 -->
+							<td style="text-align:center;"></td>	<!-- 청소년가격 -->
+							<td style="text-align:center;"></td>	<!-- 총결제금액 -->
+							<td style="text-align:center;">${seatPass}</td>	<!-- 좌석 -->
 						</tr>
 					</table>
 			        <!-- 결제금액 -->
@@ -112,21 +116,51 @@
 							<td></td>
 						</tr>
 						<tr>
-							<th>적립금 : </th>
-							<td></td>
-						</tr>
-						<tr>
 							<th>결제정보 : </th>
 							<td align="left">
-								<input type="radio" name="sudan" value="0" checked onclick="change_sub(0)">계좌이체
-								<input type="radio" name="sudan" value="1" onclick="change_sub(1)">신용/체크카드
-								<input type="radio" name="sudan" value="2" onclick="change_sub(2)">휴대폰
+								<input type="radio" name="sudan" value="0" onclick="change_sub(0)">신용/체크카드
+								<input type="radio" name="sudan" value="1" onclick="change_sub(1)">카카오페이
 							</td>
 						</tr>
 					</table>
-					<div class="submit"><input type="submit" value="구매하기"></div>
+					<div class="submit"><button id="check_module" type="button">결제하기</button></div>
 				</form>
 			</div>
 		</div>
 	</section>
+<!-- 카카오페이 데모 결제 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script>
+	$("#check_module").click(function () {
+		var IMP = window.IMP; // 생략가능
+		IMP.init('imp35452464'); 
+		IMP.request_pay({
+			pg: 'kakaopay',
+			pay_method: 'card',
+			merchant_uid: 'merchant_' + new Date().getTime(),
+			
+			name: '주문명 : 영화관람권',
+			// 결제창에서 보여질 이름
+			amount: 2000,
+			// 가격 
+			buyer_name: '이름',
+			// 구매자 이름, 구매자 정보도 model값으로 바꿀 수 있다.
+			buyer_postcode: '123-456',
+			}, function (rsp) {
+				console.log(rsp);
+			if (rsp.success) {
+				var msg = '결제가 완료되었습니다.';
+				msg += '결제 금액 : ' + rsp.paid_amount;
+				// success.submit();
+				// 결제 성공 시 정보는 form으로 전달
+			} else {
+				var msg = '결제에 실패하였습니다.';
+				msg += '에러내용 : ' + rsp.error_msg;
+			}
+			alert(msg);
+		});
+	});
+</script>
+<!-- 카카오페이 데모 결제 종료-->
 </body>
