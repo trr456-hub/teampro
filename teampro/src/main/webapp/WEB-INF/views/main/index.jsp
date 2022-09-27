@@ -234,7 +234,7 @@
 									</div>
 								</a>
 							</dd>
-							<dd>
+							<dd>	김석근
 								<a href=''>
 									<div class='img_wrap'>
 										<img src='' alt='스몰세트'>
