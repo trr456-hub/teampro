@@ -63,7 +63,7 @@ public class YemeVO {
 	}
 	public void setTcode(String tcode) {
 		this.tcode = tcode;
-	}
+	}   
 	public String getSeatpass() {
 		return seatpass;
 	}
