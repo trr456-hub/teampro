@@ -13,4 +13,5 @@ public interface MypageMapper {
 	public void change_pwd(String pwd,String userid);
 	public ArrayList<ReviewVO> myreview(String userid);
 	public ArrayList<GumaeVO> myjumun(String id);
+	public ArrayList<YemeVO> myreserve(String id);
 }
