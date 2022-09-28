@@ -18,7 +18,7 @@
 	#content {
 		margin:auto;
 		width:1500px;
-		height:2200px;
+		height:1100px;
 	}
 	#category_content {
 		margin:auto;
@@ -76,6 +76,9 @@
 		margin-top:0px;
 		border-top:2px solid #cccccc;
 	}
+	#ticket {
+		font-size:25px;
+	}
 
 	
 </style>
@@ -112,7 +115,10 @@
 			</div>
 		</div>
 		<div class="category_t_t">
-			영화관람권
+			<span>영화관람권</span>
+			<span id="ticket">
+				영화, 모두에게 즐거운 경험
+			</span>
 		</div>
 		<ul class="menu_list">
 	<c:forEach items="${plist}" var="pvo">
@@ -128,47 +134,7 @@
 			</li>
 		</c:if>
 	</c:forEach>
-			<div id="end"></div>
 		</ul>
-		
-		<div class="category_t_t">
-			팝콘
-		</div>
-		<ul class="menu_list">
-	<c:forEach items="${plist}" var="pvo">
-		<c:if test="${pvo.gubun == 2 }">
-			<li onclick="content_view('${pvo.pcode}')">
-				<span>
-					<img src="../resources/store/${pvo.pimg}" width="270" height="270">
-				</span> <br>
-				<span class="menu_list_con">
-					${pvo.title} <br>
-					<fmt:formatNumber value="${pvo.price}" pattern="#,###"/>원
-				</span>
-			</li>
-		</c:if>
-	</c:forEach>
-		</ul>
-		
-		<div class="category_t_t">
-			콤보
-		</div>
-		<ul class="menu_list">
-	<c:forEach items="${plist}" var="pvo">
-		<c:if test="${pvo.gubun == 3 }">
-			<li onclick="content_view('${pvo.pcode}')">
-				<span>
-					<img src="../resources/store/${pvo.pimg}" width="270" height="270">
-				</span> <br>
-				<span class="menu_list_con">
-					${pvo.title} <br>
-					<fmt:formatNumber value="${pvo.price}" pattern="#,###"/>원
-				</span>
-			</li>
-		</c:if>
-	</c:forEach>
-		</ul>
-		
 	</div>
 </div>
 

@@ -18,12 +18,12 @@
 	#content {
 		margin:auto;
 		width:1500px;
-		height:2200px;
+		height:780px;
 	}
 	#category_content {
 		margin:auto;
 		width:1000px;
-		height:1100px;
+		height:780px;
 	}
 	.menu_list {
 		width:1000px;
@@ -76,6 +76,9 @@
 		margin-top:0px;
 		border-top:2px solid #cccccc;
 	}
+	#combo {
+		font-size:25px;
+	}
 
 	
 </style>
@@ -112,46 +115,10 @@
 			</div>
 		</div>
 		<div class="category_t_t">
-			영화관람권
-		</div>
-		<ul class="menu_list">
-	<c:forEach items="${plist}" var="pvo">
-		<c:if test="${pvo.gubun == 1 }">
-			<li onclick="content_view('${pvo.pcode}')">
-				<span>
-					<img src="../resources/store/${pvo.pimg}" width="270" height="270">
-				</span> <br>
-				<span class="menu_list_con">
-					${pvo.title} <br>
-					<fmt:formatNumber value="${pvo.price}" pattern="#,###"/>원
-				</span>
-			</li>
-		</c:if>
-	</c:forEach>
-			<div id="end"></div>
-		</ul>
-		
-		<div class="category_t_t">
-			팝콘
-		</div>
-		<ul class="menu_list">
-	<c:forEach items="${plist}" var="pvo">
-		<c:if test="${pvo.gubun == 2 }">
-			<li onclick="content_view('${pvo.pcode}')">
-				<span>
-					<img src="../resources/store/${pvo.pimg}" width="270" height="270">
-				</span> <br>
-				<span class="menu_list_con">
-					${pvo.title} <br>
-					<fmt:formatNumber value="${pvo.price}" pattern="#,###"/>원
-				</span>
-			</li>
-		</c:if>
-	</c:forEach>
-		</ul>
-		
-		<div class="category_t_t">
-			콤보
+			<span>콤보</span>
+			<span id="combo">
+				맛있으면 0칼로리, 아는 맛이 제일 맛있어요
+			</span>
 		</div>
 		<ul class="menu_list">
 	<c:forEach items="${plist}" var="pvo">

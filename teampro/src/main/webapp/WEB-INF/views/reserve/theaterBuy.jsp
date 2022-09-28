@@ -67,6 +67,14 @@
 		<div class="ccaWrap">
 			<div class="ccaInner">
 				<form method="post" action="theaterBuy_ok">
+					<input type="hidden" name="adult" value="${adult}">
+					<input type="hidden" name="child" value="${child}">
+					<input type="hidden" name="seatPass" value="${seatPass}">
+					<input type="hidden" name="code" value="${code}">
+					<input type="hidden" name="jcode" value="${jcode}">
+					<input type="hidden" name="mcode" value="${mcode}">
+					<input type="hidden" name="monthday" value="${monthday}">
+					<input type="hidden" name="tcode" value="${tcode}">
 					<table align="center" class="ccaTopTable">
 						<h2 class="cap">영 화 예 매</h2>
 						<tr>

@@ -16,6 +16,18 @@
 		select * from product where pcode=#{param1}
 	</select>
 	
+	<select id="pro_ticket" resultType="kr.co.teampro.vo.ProductVO">
+		select * from product
+	</select>
+	
+	<select id="pro_pop" resultType="kr.co.teampro.vo.ProductVO">
+		select * from product
+	</select>
+	
+	<select id="pro_com" resultType="kr.co.teampro.vo.ProductVO">
+		select * from product
+	</select>
+	
 	<select id="getmember" resultType="kr.co.teampro.vo.MemberVO">
 	  select * from member where userid=#{param1}
   	</select>
