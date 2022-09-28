@@ -14,6 +14,7 @@ import kr.co.teampro.mapper.MypageMapper;
 import kr.co.teampro.vo.GumaeVO;
 import kr.co.teampro.vo.MemberVO;
 import kr.co.teampro.vo.ReviewVO;
+import kr.co.teampro.vo.YemeVO;
 
 @Service
 @Qualifier("ms2")
@@ -87,7 +88,7 @@ public class MypageServiceImpl implements MypageService{
 	@Override
 	public String myreserve(HttpSession session, Model model) {
 		String userid=session.getAttribute("userid").toString();
-		ArrayList<YemeVO> rlist=mapper.myreserve(userid);
+		ArrayList<YemeVO> ylist=mapper.myreserve(userid);
 		
 		model.addAttribute("ylist",ylist);
 
