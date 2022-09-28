@@ -656,6 +656,7 @@ li .depth1 > a {
 		<input type="hidden" name="mcode" value="">
 		<input type="hidden" name="monthday" value="">
 		<input type="hidden" name="tcode" value="">
+		<input type="hidden" name="title" value="">
 	
 		<div id="reserve_main">
 			<div class="reserve-outline">
@@ -1056,7 +1057,8 @@ li .depth1 > a {
         	document.querySelector(".movie-name > strong").innerText=mname;
         	document.querySelector(".movie_name").innerText=mname;
         	document.querySelector(".movie-name > span").innerText=mage;
-        	console.log(ageBck);
+        	document.reserve1.title.value=mname;
+        	/* console.log(mname); */
         	 if(mage == "all") {
         		ageBck.classList.add("age_all");
         	} else if(mage == "12") {
