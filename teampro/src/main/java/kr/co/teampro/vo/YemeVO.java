@@ -2,14 +2,14 @@ package kr.co.teampro.vo;
 
 public class YemeVO {
 	private int id,adult,child,state,sudan,chong;
-	private String code,jcode,mcode,monthday,tcode,seatpass,userid,writeday,yemecode;
+	private String code,jcode,mcode,monthday,tcode,seatpass,userid,writeday,yemecode,ytitle;
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public int getChild() {
 		return child;
 	}
@@ -93,6 +93,12 @@ public class YemeVO {
 	}
 	public void setAdult(int adult) {
 		this.adult = adult;
+	}
+	public String getYtitle() {
+		return ytitle;
+	}
+	public void setYtitle(String ytitle) {
+		this.ytitle = ytitle;
 	}
 	
 }

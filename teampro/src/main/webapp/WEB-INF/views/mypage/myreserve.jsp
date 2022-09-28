@@ -43,16 +43,18 @@
 			 <th> 이름 </th>
 			 <th> 좌석 </th>
 			 <th> 가격 </th>
+			 <th> 예매날짜 </th>
 			 <th> 결제일 </th>
 			</tr>
 			<c:forEach items="${ylist}" var="yvo">
 			<tr align="center" height="50">
-			 <td> ${yvo.yemecode } 예매번호넣기 </td>
-			 <td> <%-- ${yvo.ytitle } --%> 영화제목넣기 </td>
-			 <td> ${name } </td>
-			 <td> ${yvo.seatpass } 좌석넣기 </td>
-			 <td> ${yvo.chong }</td>
-			 <td> ${yvo.writeday } </td>	
+			 <td> ${yvo.code}-${yvo.jcode}${yvo.mcode}-${yvo.yemecode}</td>
+			 <td> ${yvo.ytitle} </td>
+			 <td> ${name} </td>
+			 <td> ${yvo.seatpass}</td>
+			 <td> ${yvo.chong}</td>
+			 <td> ${yvo.monthday} </td>
+			 <td> ${yvo.writeday} </td>	
 			</tr>
 			</c:forEach>
 		</table>

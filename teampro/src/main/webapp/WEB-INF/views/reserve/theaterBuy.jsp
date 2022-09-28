@@ -77,6 +77,8 @@
 					<input type="hidden" name="monthday" value="${monthday}">
 					<input type="hidden" name="tcode" value="${tcode}">
 					<input type="hidden" name="chong" value="${(6000*adult)+(4000*child)}">
+					<input type="hidden" name="seatpass" value="${seatPass}">
+					<input type="hidden" name="ytitle" value="${title}">
 					
 					<table align="center" class="ccaTopTable">
 						<h2 class="cap">영 화 예 매</h2>

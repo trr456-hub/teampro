@@ -18,4 +18,5 @@ public interface ReserveMapper {
 	public ArrayList<SeetimeVO> seetime();
 	
 	public void theaterBuy_ok(YemeVO yvo);
+	public int getyeme(String userid);
 }

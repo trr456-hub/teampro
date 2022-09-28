@@ -45,6 +45,21 @@ public class ReserveServiceImpl implements ReserveService {
 		String userid=session.getAttribute("userid").toString();
 		yvo.setUserid(userid);
 		
+		Integer number=mapper.getyeme(userid);
+		number++;
+		
+		String num=number.toString();
+		if(num.length()==1) {
+			num="000"+num;
+		} else if(num.length()==2) {
+			num="00"+num;
+		} else if(num.length()==3) {
+			num="0"+num;
+		}
+		String yemecode=userid+num;
+		/*System.out.println(yemecode);*/
+		yvo.setYemecode(yemecode);
+		/*System.out.println(yvo.getYemecode());*/
 		mapper.theaterBuy_ok(yvo);
 		
 		return "redirect:/mypage/myreserve";
