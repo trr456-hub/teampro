@@ -158,7 +158,7 @@
 		<c:if test="${pvo.gubun == 3 }">
 			<li onclick="content_view('${pvo.pcode}')">
 				<span>
-					<img src="../resources/store/${pvo.pimg}" width="270" height="270">
+					<img src="../resources/store/${pvo.pimg}" width="270" height="270">   
 				</span> <br>
 				<span class="menu_list_con">
 					${pvo.title} <br>

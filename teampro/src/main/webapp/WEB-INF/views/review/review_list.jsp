@@ -34,7 +34,7 @@
 	    min-height: 500px;
 	    display:flex;
 	    flex-wrap:wrap;
-	    padding-bottom: 100px;
+	    padding-bottom: 50px;
  	}
  	.pers div {
  		width:700px;
@@ -50,6 +50,22 @@
 	    border: 1px solid #ebebeb;
 	    border-radius: 10px;
  	}
+   .link span{
+     padding-top:20px;
+   }
+   .link a {
+     text-decoration:none;
+     color:black;
+     margin:auto;
+     display:inline-block;
+     width:25px;
+     height:17px;
+     border:1px solid #cccccc;
+   }
+   .link a:hover {
+     background:#cccccc;
+     color:white;
+   }
  </style>
 </head>
 <body>
@@ -102,7 +118,7 @@
          </c:forEach>    
        </div>
        <div class="link">
-      <span colspan="4" align="center">
+      <span align="center">
       <!-- 페이지 이동, 현재페이지 링크의 색을 다르게 -->
        <!-- 10페이지 단위 이전 이동 시작-->
          <c:if test="${pstart != 1}">
@@ -122,7 +138,7 @@
       
         <c:forEach begin="${pstart}" end="${pend}" var="i">
          <c:if test="${page == i}">
-           <a href="review_list?page=${i}" style="border-color:red;"> ${i} </a>
+           <a href="review_list?page=${i}" style="border:3px solid #cccccc"> ${i} </a>
          </c:if>
          <c:if test="${page != i}">  
            <a href="review_list?page=${i}"> ${i} </a>
