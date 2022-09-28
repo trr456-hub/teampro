@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import kr.co.teampro.vo.GumaeVO;
 import kr.co.teampro.vo.MemberVO;
 import kr.co.teampro.vo.ReviewVO;
+import kr.co.teampro.vo.YemeVO;
 
 public interface MypageMapper {
 	public MemberVO myinfo(String userid);
