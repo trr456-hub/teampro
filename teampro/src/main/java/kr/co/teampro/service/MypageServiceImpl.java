@@ -92,6 +92,6 @@ public class MypageServiceImpl implements MypageService{
 		
 		model.addAttribute("ylist",ylist);
 
-		return "/mypage/myreview";
+		return "/mypage/myreserve";
 	}
 }
