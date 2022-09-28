@@ -14,4 +14,5 @@ public interface MypageService {
 	public String change_pwd(HttpSession session,HttpServletRequest request);
 	public String myreview(HttpSession session,Model model);
 	public String myjumun(HttpSession session,Model model);
+	public String myreserve(HttpSession session,Model model);
 }

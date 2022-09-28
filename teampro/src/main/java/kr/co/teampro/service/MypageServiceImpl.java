@@ -83,4 +83,14 @@ public class MypageServiceImpl implements MypageService{
 		
 		return "/mypage/myjumun";
 	}
+	
+	@Override
+	public String myreserve(HttpSession session, Model model) {
+		String userid=session.getAttribute("userid").toString();
+		ArrayList<YemeVO> rlist=mapper.myreserve(userid);
+		
+		model.addAttribute("ylist",ylist);
+
+		return "/mypage/myreview";
+	}
 }
