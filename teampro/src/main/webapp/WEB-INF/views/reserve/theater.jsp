@@ -402,6 +402,9 @@ section {
 									<div class="movie-info">
 										<div class="select-info">
 											<p class="theater-info">
+												<span>
+													<input name="title" value="${title}" style="border: none; background: transparent; padding-bottom:6px;">
+												</span>
 												<c:if test="${jcode == 01}">
 													<span class="site">고양 화정점</span>
 												</c:if>

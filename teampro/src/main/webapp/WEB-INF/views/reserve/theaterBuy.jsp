@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
 	<style>
 	section {
@@ -67,7 +70,7 @@
 					<table align="center" class="ccaTopTable">
 						<h2 class="cap">영 화 예 매</h2>
 						<tr>
-							<th style="width: 360px;">예매번호</th>
+							<th style="width: 230px;">영화이름</th>
 							<th>인원수</th>
 							<th>성인</th>
 							<th>청소년</th>
@@ -75,11 +78,11 @@
 							<th>좌석</th>
 						</tr>
 						<tr>
-							<td style="text-align:center;">${code}-${jcode}${mcode}-${monthday}-${tcode}</td>	<!-- 예매번호 -->
+							<td style="text-align:center;">${title}</td>	<!-- 영화이름 -->
 							<td style="text-align:center;">${adult + child}</td>	<!-- 인원수 -->
-							<td style="text-align:center;"></td>	<!-- 성인가격 -->
-							<td style="text-align:center;"></td>	<!-- 청소년가격 -->
-							<td style="text-align:center;"></td>	<!-- 총결제금액 -->
+							<td style="text-align:center;"><fmt:formatNumber value="${6000*adult}" pattern="#,###"/>원</td>	<!-- 성인가격 -->
+							<td style="text-align:center;"><fmt:formatNumber value="${4000*child}" pattern="#,###"/>원</td>	<!-- 청소년가격 -->
+							<td style="text-align:center;"><fmt:formatNumber value="${(6000*adult)+(4000*child)}" pattern="#,###"/>원</td>	<!-- 총결제금액 -->
 							<td style="text-align:center;">${seatPass}</td>	<!-- 좌석 -->
 						</tr>
 					</table>
@@ -89,15 +92,15 @@
 						<caption><h3>구매자 정보</h3></caption>
 						<tr>
 							<th width="150">이름 : </th>
-							<td></td>
+							<td>${name}</td>
 						</tr>
 						<tr>
 							<th>이메일 : </th>
-							<td></td>
+							<td>${email }</td>
 						</tr>
 						<tr>
 							<th>전화번호 : </th>
-							<td></td>
+							<td>${fn:substring(phone,0,3)}-${fn:substring(phone,3,7)}-${fn:substring(phone,7,11)}</td>
 						</tr>
 					</table>
 					<!-- 결제관련 -->
@@ -105,15 +108,15 @@
 						<caption><h3>결제 정보</h3></caption>
 						<tr>
 							<th width="150">상품금액 : </th>
-							<td></td>
+							<td><fmt:formatNumber value="${(6000*adult)+(4000*child)}" pattern="#,###"/>원</td>
 						</tr>
 						<tr>
 							<th>할인금액 : </th>
-							<td></td>
+							<td>0원</td>
 						</tr>
 						<tr>
 							<th>총 결제금액 : </th>
-							<td></td>
+							<td><fmt:formatNumber value="${(6000*adult)+(4000*child)}" pattern="#,###"/>원</td>
 						</tr>
 						<tr>
 							<th>결제정보 : </th>
@@ -140,9 +143,9 @@
 			pay_method: 'card',
 			merchant_uid: 'merchant_' + new Date().getTime(),
 			
-			name: '주문명 : 영화관람권',
+			name: 'CCA영화관람권',
 			// 결제창에서 보여질 이름
-			amount: 2000,
+			amount: ${(6000*adult)+(4000*child)},
 			// 가격 
 			buyer_name: '이름',
 			// 구매자 이름, 구매자 정보도 model값으로 바꿀 수 있다.
