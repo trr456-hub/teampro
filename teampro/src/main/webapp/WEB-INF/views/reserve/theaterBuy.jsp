@@ -126,7 +126,7 @@
 						<tr>
 							<th>할인금액 : </th>
 							<td>0원</td>
-						</tr>
+						</tr>   
 						<tr>
 							<th>총 결제금액 : </th>
 							<td><fmt:formatNumber value="${(6000*adult)+(4000*child)}" pattern="#,###"/>원</td>

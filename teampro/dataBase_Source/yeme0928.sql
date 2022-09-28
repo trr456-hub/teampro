@@ -38,8 +38,9 @@ CREATE TABLE `yeme` (
   `state` int(11) DEFAULT NULL,
   `sudan` int(11) DEFAULT NULL,
   `chong` int(11) DEFAULT NULL,
+  `ytitle` char(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,6 +49,7 @@ CREATE TABLE `yeme` (
 
 LOCK TABLES `yeme` WRITE;
 /*!40000 ALTER TABLE `yeme` DISABLE KEYS */;
+INSERT INTO `yeme` VALUES (8,'0041','05','11','2022101','06',0,3,'E0,E1,E5','rtt789','2022-09-28','rtt7890001',1,1,12000,'매트릭스');
 /*!40000 ALTER TABLE `yeme` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-28 12:22:47
+-- Dump completed on 2022-09-28 17:31:48
