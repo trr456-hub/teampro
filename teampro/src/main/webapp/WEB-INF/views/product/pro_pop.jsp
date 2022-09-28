@@ -18,7 +18,7 @@
 	#content {
 		margin:auto;
 		width:1500px;
-		height:2200px;
+		height:1100px;
 	}
 	#category_content {
 		margin:auto;
@@ -76,7 +76,10 @@
 		margin-top:0px;
 		border-top:2px solid #cccccc;
 	}
-
+	#popcorn {
+		font-size:25px;
+	}
+	
 	
 </style>
 
@@ -112,27 +115,10 @@
 			</div>
 		</div>
 		<div class="category_t_t">
-			영화관람권
-		</div>
-		<ul class="menu_list">
-	<c:forEach items="${plist}" var="pvo">
-		<c:if test="${pvo.gubun == 1 }">
-			<li onclick="content_view('${pvo.pcode}')">
-				<span>
-					<img src="../resources/store/${pvo.pimg}" width="270" height="270">
-				</span> <br>
-				<span class="menu_list_con">
-					${pvo.title} <br>
-					<fmt:formatNumber value="${pvo.price}" pattern="#,###"/>원
-				</span>
-			</li>
-		</c:if>
-	</c:forEach>
-			<div id="end"></div>
-		</ul>
-		
-		<div class="category_t_t">
-			팝콘
+			<span>팝콘</span>
+			<span id="popcorn">
+				고소, 달콤부터 고메팝콘까지, 안먹으면 서운해요
+			</span>
 		</div>
 		<ul class="menu_list">
 	<c:forEach items="${plist}" var="pvo">
@@ -149,26 +135,6 @@
 		</c:if>
 	</c:forEach>
 		</ul>
-		
-		<div class="category_t_t">
-			콤보
-		</div>
-		<ul class="menu_list">
-	<c:forEach items="${plist}" var="pvo">
-		<c:if test="${pvo.gubun == 3 }">
-			<li onclick="content_view('${pvo.pcode}')">
-				<span>
-					<img src="../resources/store/${pvo.pimg}" width="270" height="270">
-				</span> <br>
-				<span class="menu_list_con">
-					${pvo.title} <br>
-					<fmt:formatNumber value="${pvo.price}" pattern="#,###"/>원
-				</span>
-			</li>
-		</c:if>
-	</c:forEach>
-		</ul>
-		
 	</div>
 </div>
 
