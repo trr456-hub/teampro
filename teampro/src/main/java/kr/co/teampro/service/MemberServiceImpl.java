@@ -20,7 +20,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public String memberinput_ok(MemberVO mvo) {
 		mapper.memberinput_ok(mvo);
-		return "/login/login";
+		return "redirect:/login/login";
 	}
 
 	@Override
