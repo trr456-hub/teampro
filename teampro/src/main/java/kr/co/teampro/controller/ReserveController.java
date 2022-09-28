@@ -26,6 +26,7 @@ public class ReserveController {
 		String code = request.getParameter("code");
 		String jcode = request.getParameter("jcode");
 		String mcode = request.getParameter("mcode");
+		String title = request.getParameter("title");
 		String monthday = request.getParameter("monthday");
 		String tcode = request.getParameter("tcode");
 		
@@ -34,6 +35,7 @@ public class ReserveController {
 		model.addAttribute("mcode",mcode);
 		model.addAttribute("monthday",monthday);
 		model.addAttribute("tcode",tcode);
+		model.addAttribute("title",title);
 		
 		return "/reserve/theater";
 	}
@@ -47,6 +49,7 @@ public class ReserveController {
 		String mcode = request.getParameter("mcode");
 		String monthday = request.getParameter("monthday");
 		String tcode = request.getParameter("tcode");
+		String title = request.getParameter("title");
 		
 		model.addAttribute("adult",adult);
 		model.addAttribute("child",child);
@@ -56,6 +59,7 @@ public class ReserveController {
 		model.addAttribute("mcode",mcode);
 		model.addAttribute("monthday",monthday);
 		model.addAttribute("tcode",tcode);
+		model.addAttribute("title",title);
 		
 		return "/reserve/theaterBuy";
 	}
