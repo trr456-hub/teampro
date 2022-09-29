@@ -127,8 +127,6 @@
 		<div class="category_t_t">
 			${pvo.title}
 		</div>
-		<strong>
-		</strong>
 		<div id="category_content">
 			<div id="pro_img">
 				<ul>
