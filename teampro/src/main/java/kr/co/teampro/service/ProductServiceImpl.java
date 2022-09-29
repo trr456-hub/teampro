@@ -28,8 +28,9 @@ public class ProductServiceImpl implements ProductService {
 	private ProductMapper mapper;
 	
 	@Override
-	public String product_ok(HttpServletRequest request) {		
-		String path=request.getRealPath("resources/ticket");
+	public String product_ok(HttpServletRequest request) {
+		
+		String path=request.getRealPath("resources/store");
 		int size=1024*1024*20;
 		ProductVO pvo=new ProductVO();
 		try {
@@ -40,6 +41,10 @@ public class ProductServiceImpl implements ProductService {
 			pvo.setPrice(Integer.parseInt(multi.getParameter("price")));
 			pvo.setSu(Integer.parseInt(multi.getParameter("su")));
 			pvo.setPcode(multi.getParameter("pcode"));
+			pvo.setGubun(multi.getParameter("gubun"));
+			pvo.setGusung(multi.getParameter("gusung"));
+			pvo.setGigan(multi.getParameter("gigan"));
+			pvo.setMade(multi.getParameter("made"));
 		} catch(Exception e) {
 			
 		}
@@ -68,6 +73,37 @@ public class ProductServiceImpl implements ProductService {
 		
 		return "/product/pro_content";
 	}
+	
+	@Override
+	public String pro_ticket(Model model) {
+		
+		ArrayList<ProductVO> plist = mapper.pro_list();
+		model.addAttribute("plist",plist);
+		
+		
+		return "/product/pro_ticket";
+	}
+
+	@Override
+	public String pro_pop(Model model) {
+		
+		ArrayList<ProductVO> plist = mapper.pro_pop();
+		model.addAttribute("plist",plist);
+		
+		
+		return "/product/pro_pop";
+	}
+
+	@Override
+	public String pro_com(Model model) {
+		
+		ArrayList<ProductVO> plist = mapper.pro_pop();
+		model.addAttribute("plist",plist);
+		
+		
+		return "/product/pro_com";
+	}
+	
 	
 	@Override
 	public String pro_gumae(HttpServletRequest request, Model model, HttpSession session) {

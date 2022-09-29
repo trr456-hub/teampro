@@ -14,6 +14,7 @@ import kr.co.teampro.mapper.MypageMapper;
 import kr.co.teampro.vo.GumaeVO;
 import kr.co.teampro.vo.MemberVO;
 import kr.co.teampro.vo.ReviewVO;
+import kr.co.teampro.vo.YemeVO;
 
 @Service
 @Qualifier("ms2")
@@ -67,20 +68,86 @@ public class MypageServiceImpl implements MypageService{
 	}
 
 	@Override
-	public String myreview(HttpSession session, Model model) {
+	public String myreview(HttpSession session, Model model,HttpServletRequest request) {
 		String userid=session.getAttribute("userid").toString();
-		ArrayList<ReviewVO> rlist=mapper.myreview(userid);
+		
+		int page; 
+		if(request.getParameter("page")==null) {
+			page=1;
+		}
+		else {	
+			page=Integer.parseInt(request.getParameter("page"));		
+		}
+		
+		int index=(page-1)*10;
+		
+		int pstart,pend,chong;
+		
+		pstart=page/10;
+		if(page%10 == 0)
+			pstart=pstart-1;
+		
+		pstart=pstart*10+1;
+		pend=pstart+9;
+		
+		chong=mapper.getChong(userid);
+		
+		if(pend > chong)
+			pend=chong;
+		ArrayList<ReviewVO> rlist=mapper.myreview(userid,index);
 		model.addAttribute("rlist",rlist);
+		model.addAttribute("pstart",pstart);
+		model.addAttribute("pend",pend);
+		model.addAttribute("chong",chong);
+		model.addAttribute("page",page);
 
 		return "/mypage/myreview";
 	}
 
 	@Override
-	public String myjumun(HttpSession session, Model model	) {
+	public String myjumun(HttpSession session, Model model,HttpServletRequest request) {
 		String userid=session.getAttribute("userid").toString();
-		ArrayList<GumaeVO> list=mapper.myjumun(userid);
+		
+		int page; 
+		if(request.getParameter("page")==null) {
+			page=1;
+		}
+		else {	
+			page=Integer.parseInt(request.getParameter("page"));		
+		}
+		
+		int index=(page-1)*10;
+		
+		int pstart,pend,chong;
+		
+		pstart=page/10;
+		if(page%10 == 0)
+			pstart=pstart-1;
+		
+		pstart=pstart*10+1;
+		pend=pstart+9;
+		
+		chong=mapper.jumunChong(userid);
+		if(pend > chong)
+			pend=chong;
+		
+		ArrayList<GumaeVO> list=mapper.myjumun(userid,index);
 		model.addAttribute("list",list);
+		model.addAttribute("pstart",pstart);
+		model.addAttribute("pend",pend);
+		model.addAttribute("chong",chong);
+		model.addAttribute("page",page);
 		
 		return "/mypage/myjumun";
+	}
+	
+	@Override
+	public String myreserve(HttpSession session, Model model) {
+		String userid=session.getAttribute("userid").toString();
+		ArrayList<YemeVO> ylist=mapper.myreserve(userid);
+		
+		model.addAttribute("ylist",ylist);
+
+		return "/mypage/myreserve";
 	}
 }

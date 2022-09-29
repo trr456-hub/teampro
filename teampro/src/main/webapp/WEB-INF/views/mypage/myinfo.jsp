@@ -28,7 +28,7 @@
 		    padding-top: 30px;
 		}
 		section #tle{
-			padding: 16px 17px 50px 26px;
+			padding: 16px 17px 50px 40px;
 			margin:auto;
 			width:700px;
 		    border-radius: 12px;
@@ -127,6 +127,7 @@
 	<div align="center" style="padding-bottom:100px;"> <input type="button" value="정보수정" onclick="location='myinfo_edit'">
 	<input type="button" value="주문내역" onclick="location='myjumun'">
 	<input type="button" value="리뷰관리" onclick="location='myreview'">
+	<input type="button" value="예매내역" onclick="location='myreserve'">
 	<!--
 	<input type="button" value="회원탈퇴" onclick="location='member_out'"> -->
 	</div>

@@ -32,7 +32,6 @@ public class ReviewServiceImpl implements ReviewService {
 	public String review_ok(ReviewVO rvo, HttpSession session) {
 		rvo.setUserid(session.getAttribute("userid").toString());
 		mapper.review_ok(rvo);
-
 		return "redirect:/cmovie/cmovie_list";
 	}
 
@@ -48,7 +47,6 @@ public class ReviewServiceImpl implements ReviewService {
 		
 		int index=(page-1)*10;
 		
-		// 2. ����ڿ��� ������ ��ũ�� ó���ϱ� ���� �� ���ϱ� => pstart, pend, chong
 		int pstart,pend,chong;
 		
 		pstart=page/10;
@@ -58,13 +56,8 @@ public class ReviewServiceImpl implements ReviewService {
 		pstart=pstart*10+1;
 		pend=pstart+9;
 		
-		// �˻��� �ʵ�� �˻��ܾ ������ �Ѱ��ֱ�
-		// null���� ���� ���
-		
-		// �� �������� ���ϱ�
 		chong=mapper.getChong();
 		
-		// pend�� ������������ ũ�ٸ�
 		if(pend > chong)
 			pend=chong;
 

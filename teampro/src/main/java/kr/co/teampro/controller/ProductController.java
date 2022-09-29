@@ -47,6 +47,24 @@ public class ProductController {
 		return service.pro_content(request,model);
 	}
 	
+	@RequestMapping("/product/pro_ticket")
+	public String pro_ticket(Model model) {
+		
+		return service.pro_ticket(model);
+	}
+	
+	@RequestMapping("/product/pro_pop")
+	public String pro_pop(Model model) {
+		
+		return service.pro_pop(model);
+	}
+	
+	@RequestMapping("/product/pro_com")
+	public String pro_com(Model model) {
+		
+		return service.pro_com(model);
+	}
+	
 	@RequestMapping("/product/pro_gumae_ok")
 	public String pro_gumae_ok(GumaeVO gvo,HttpSession session) {
 		return service.pro_gumae_ok(gvo,session);

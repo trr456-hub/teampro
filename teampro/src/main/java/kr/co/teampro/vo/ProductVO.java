@@ -1,8 +1,10 @@
 package kr.co.teampro.vo;
 
 public class ProductVO {
-	private int id,price,su;
-	private String pimg,title,writeday,pcode;
+	private int id, price, su;
+	private String pimg, title, writeday, pcode, gubun, gusung, gigan, made;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -45,6 +47,28 @@ public class ProductVO {
 	public void setPcode(String pcode) {
 		this.pcode = pcode;
 	}
-	
-	
+	public String getGusung() {
+		return gusung;
+	}
+	public void setGusung(String gusung) {
+		this.gusung = gusung;
+	}
+	public String getGigan() {
+		return gigan;
+	}
+	public void setGigan(String gigan) {
+		this.gigan = gigan;
+	}
+	public String getMade() {
+		return made;
+	}
+	public void setMade(String made) {
+		this.made = made;
+	}
+	public String getGubun() {
+		return gubun;
+	}
+	public void setGubun(String gubun) {
+		this.gubun = gubun;
+	}
 }

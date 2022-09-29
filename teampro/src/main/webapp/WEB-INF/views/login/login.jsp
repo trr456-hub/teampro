@@ -4,11 +4,12 @@
 <head>
  <style>
     section {
-       width:800px;
-       height:500px;
+       width:100%;
+       height:700px;
        margin:auto; 
        text-align:center;
        background:white;
+       padding-top:100px;
     }
     body {
     	width:1200px;
@@ -136,8 +137,8 @@
 <body>
   <section>
     <form method="post">
-    <div id="left"> <img src="../resources/bimg/양초.jpg" width="400" height="400"> </div>
-    	<h2> <span id="cg">CCA</span> <!-- CGV 글자 대신 img src로고 크기조절해서 넣으면 됩니다 --> 
+    <div id="left"> <img src="../resources/bimg/양초.jpg" width="400" height="400" style="padding-left:250px;border-radius:5px;"> </div>
+    	<h2> <span id="cg"><img src="../resources/img/CCA4.png" width="90" height="40"></span> <!-- CGV 글자 대신 img src로고 크기조절해서 넣으면 됩니다 --> 
     	로그인 </h2>
     	<div> <input type="text" name="userid" id="logId" placeholder="아이디"></div>
     	<div> <input type="password" name="pwd" placeholder="비밀번호"> </div>

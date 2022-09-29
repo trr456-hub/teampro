@@ -1,6 +1,7 @@
 package kr.co.teampro.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.teampro.service.ReserveService;
+import kr.co.teampro.vo.YemeVO;
 
 @Controller
 public class ReserveController {
@@ -26,6 +28,7 @@ public class ReserveController {
 		String code = request.getParameter("code");
 		String jcode = request.getParameter("jcode");
 		String mcode = request.getParameter("mcode");
+		String title = request.getParameter("title");
 		String monthday = request.getParameter("monthday");
 		String tcode = request.getParameter("tcode");
 		
@@ -34,6 +37,7 @@ public class ReserveController {
 		model.addAttribute("mcode",mcode);
 		model.addAttribute("monthday",monthday);
 		model.addAttribute("tcode",tcode);
+		model.addAttribute("title",title);
 		
 		return "/reserve/theater";
 	}
@@ -47,6 +51,7 @@ public class ReserveController {
 		String mcode = request.getParameter("mcode");
 		String monthday = request.getParameter("monthday");
 		String tcode = request.getParameter("tcode");
+		String title = request.getParameter("title");
 		
 		model.addAttribute("adult",adult);
 		model.addAttribute("child",child);
@@ -56,7 +61,13 @@ public class ReserveController {
 		model.addAttribute("mcode",mcode);
 		model.addAttribute("monthday",monthday);
 		model.addAttribute("tcode",tcode);
+		model.addAttribute("title",title);
 		
 		return "/reserve/theaterBuy";
+	}
+	
+	@RequestMapping("/reserve/theaterBuy_ok")
+	public String theaterBuy_ok(YemeVO yvo,HttpSession session) {
+		return service.theaterBuy_ok(yvo, session);
 	}
 }

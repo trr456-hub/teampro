@@ -2,6 +2,8 @@ package kr.co.teampro.service;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -9,9 +11,11 @@ import org.springframework.ui.Model;
 
 import kr.co.teampro.mapper.ReserveMapper;
 import kr.co.teampro.vo.DaeareaVO;
+import kr.co.teampro.vo.GumaeVO;
 import kr.co.teampro.vo.JungareaVO;
 import kr.co.teampro.vo.ReserveVO;
 import kr.co.teampro.vo.SeetimeVO;
+import kr.co.teampro.vo.YemeVO;
 
 @Service
 @Qualifier("rs")
@@ -34,5 +38,31 @@ public class ReserveServiceImpl implements ReserveService {
 		model.addAttribute("slist",slist);
 		
 		return "/reserve/reservepage";
+	}
+	
+	@Override
+	public String theaterBuy_ok(YemeVO yvo,HttpSession session) {
+		String userid=session.getAttribute("userid").toString();
+		yvo.setUserid(userid);
+		
+		Integer number=mapper.getyeme(userid);
+		number++;
+		
+		String num=number.toString();
+		if(num.length()==1) {
+			num="000"+num;
+		} else if(num.length()==2) {
+			num="00"+num;
+		} else if(num.length()==3) {
+			num="0"+num;
+		}
+		String yemecode=userid+num;
+		/*System.out.println(yemecode);*/
+		yvo.setYemecode(yemecode);
+		/*System.out.println(yvo.getYemecode());*/
+		mapper.theaterBuy_ok(yvo);
+		
+		return "redirect:/mypage/myreserve";
+		
 	}
 }

@@ -134,11 +134,6 @@ section {
     font-weight: bold;
     text-align: center;
 }
-.sreader {
-	display: block;
-    position: absolute;
-    left: -10000px;
-}
 .person-screen .movie-info {
 	float:left;
 	display:block;
@@ -310,7 +305,7 @@ section {
 </head>
 <body>
 	<section>
-	<form name="theater" method="get" action="theaterBuy">
+	<form id="theater" name="theater" method="get" action="theaterBuy">
 		<div class="theater">
 			<div class="theater-outline">
 				<div class="steps">
@@ -326,74 +321,21 @@ section {
 												<div class="group adult">
 													<span class="title">일반</span>
 													<ul>
-														<%-- <c:forEach var="i" begin="0" end="8">
-														<li onclick="adultClick(${i}, this)">
-															<a href="#none">
-																<span class="sreader mod">일반</span>
-																${i}
-																<span class="sreader">명</span>
-															</a>
-														</li>
-														</c:forEach> --%>
-														<li onclick="adultClick(0, this); adultCheck(this); disableFal();">
-															<a href="#none">0</a>
-														</li>
-														<li onclick="adultClick(1, this); adultCheck(this); disableFal();">
-															<a href="#none">1</a>
-														</li>
-														<li onclick="adultClick(2, this); adultCheck(this); disableFal();">
-															<a href="#none">2</a>
-														</li>
-														<li onclick="adultClick(3, this); adultCheck(this); disableFal();">
-															<a href="#none">3</a>
-														</li>
-														<li onclick="adultClick(4, this); adultCheck(this); disableFal();">
-															<a href="#none">4</a>
-														</li>
-														<li onclick="adultClick(5, this); adultCheck(this); disableFal();">
-															<a href="#none">5</a>
-														</li>
-														<li onclick="adultClick(6, this); adultCheck(this); disableFal();">
-															<a href="#none">6</a>
-														</li>
-														<li onclick="adultClick(7, this); adultCheck(this); disableFal();">
-															<a href="#none">7</a>
-														</li>
-														<li onclick="adultClick(8, this); adultCheck(this); disableFal();">
-															<a href="#none">8</a>
-														</li>
+														<c:forEach var="i" begin="0" end="8">
+															<li onclick="adultClick(${i}, this); adultCheck(this); disableFal();">
+																<a href="#none">${i}</a>
+															</li>
+														</c:forEach>
 													</ul>
 												</div>
 												<div class="group child">
 													<span class="title">청소년</span>
 													<ul>
-														<li onclick="childClick(0, this); childCheck(this); disableFal();">
-															<a href="#none">0</a>
-														</li>
-														<li onclick="childClick(1, this); childCheck(this); disableFal();">
-															<a href="#none">1</a>
-														</li>
-														<li onclick="childClick(2, this); childCheck(this); disableFal();">
-															<a href="#none">2</a>
-														</li>
-														<li onclick="childClick(3, this); childCheck(this); disableFal();">
-															<a href="#none">3</a>
-														</li>
-														<li onclick="childClick(4, this); childCheck(this); disableFal();">
-															<a href="#none">4</a>
-														</li>
-														<li onclick="childClick(5, this); childCheck(this); disableFal();">
-															<a href="#none">5</a>
-														</li>
-														<li onclick="childClick(6, this); childCheck(this); disableFal();">
-															<a href="#none">6</a>
-														</li>
-														<li onclick="childClick(7, this); childCheck(this); disableFal();">
-															<a href="#none">7</a>
-														</li>
-														<li onclick="childClick(8, this); childCheck(this); disableFal();">
-															<a href="#none">8</a>
-														</li>
+														<c:forEach var="i" begin="0" end="8">
+															<li onclick="childClick(${i}, this); childCheck(this); disableFal();">
+																<a href="#none">${i}</a>
+															</li>
+														</c:forEach>
 													</ul>
 												</div>
 											</div>
@@ -402,6 +344,9 @@ section {
 									<div class="movie-info">
 										<div class="select-info">
 											<p class="theater-info">
+												<span>
+													<input name="title" value="${title}" readonly style="overflow: hidden; text-overflow: ellipsis; border: none; background: transparent; padding-bottom:6px;">
+												</span>
 												<c:if test="${jcode == 01}">
 													<span class="site">고양 화정점</span>
 												</c:if>
@@ -441,8 +386,8 @@ section {
 												</span>
 											</p>
 											<p class="YMD-info">
-												<b>${fn:substring(monthday,0,4)} - ${fn:substring(monthday,4,5)} - ${fn:substring(monthday,5,7)}</b>
-												<input type="submit" value="결제하기" class="totalBuy">
+												<b>${fn:substring(monthday,0,4)} - ${fn:substring(monthday,4,6)} - ${fn:substring(monthday,6,8)}</b>
+												<input type="button" value="결제하기" class="totalBuy" onclick="totalCheck()">
 											</p>
 										</div>
 									</div>
@@ -477,9 +422,9 @@ section {
 				</div>
 			</div>
 		</div>
-		<input type="hidden" name="adult" value="0">
-		<input type="hidden" name="child" value="0">
-		<input type="hidden" name="seatPass" value="">
+		<input id="adult" type="hidden" name="adult" value="0">
+		<input id="child" type="hidden" name="child" value="0">
+		<input id="seat" type="hidden" name="seatPass" value="">
 		<input type="hidden" name="code" value="${code}">
 		<input type="hidden" name="jcode" value="${jcode}">
 		<input type="hidden" name="mcode" value="${mcode}">
@@ -504,8 +449,13 @@ section {
 		for(let j=0; j<9; j++) {
 			const input = document.createElement("input");
 			input.type="button";
-			input.name="seats";
+			input.name="seats";    
 			input.classList="seat";
+			// 예매된 좌석 처리
+			/* if( (i == 알파벳) && (j == 숫자) ) {
+				input.readOnly = true;
+				input.style.backgourd = "red";
+			} */
 			// 3중for문 XXXX
 			mapping(input, i, j);
 			div.append(input);
@@ -542,7 +492,6 @@ section {
 				}
 				console.log(selectedSeats);
 				document.theater.seatPass.value=selectedSeats;
-				/* document.theater.seatPass.value=URLEncoder.encode(selectedSeats)+"%2C"; */
 			})
 		}
 	}
@@ -673,5 +622,28 @@ section {
 		}
 	}
 	/* 좌석 인원에맞게 체크 종료*/
+	/* submit 통합체크 */
+	function totalCheck() {
+		let adult = parseInt(document.querySelector("#adult").value);
+		let child = parseInt(document.querySelector("#child").value);
+		let seat = document.querySelector("#seat").value;
+		let inwon = adult+child;
+		
+		/* console.log(selectedSeats.length); */
+		
+		if(inwon == 0) {
+			alert("인원을 선택해 주세요");
+		} else if(seat == "") {
+			alert("좌석을 선택해 주세요");
+ 		} else if(inwon != selectedSeats.length) {
+			 alert("좌석의 갯수가 틀립니다.")
+		} else {
+			if(confirm("결제페이지로 넘어가시겟습니까?"))
+				document.querySelector("#theater").submit();
+			else
+				return false;
+		}
+	}
+	/* submit 통합체크 종료*/
 </script>
 </body>

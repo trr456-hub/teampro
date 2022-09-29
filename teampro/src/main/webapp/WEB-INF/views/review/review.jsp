@@ -10,7 +10,7 @@
       width:100%;
       height:500px;
       margin:auto;
-      margin-top:60px;
+      padding-top:100px;
       background:white;
     }
     section input[type=text] {
@@ -22,15 +22,27 @@
       height:200px;
     }
     section input[type=submit] {
-      width:200px;
-      height:30px;
-      border:1px solid #D941C5;
-      background:white;
-      color:#D941C5;
+      width:150px;
+      height:40px;
+      border-radius:6px;
+      border:1px solid #7878E1;
+      background:#7878E1;
+      color:white;
     }
     section table {
       border-spacing:17px;
     }
+      section h3 {
+     text-align:center;
+     margin:auto;
+     font-weight:bold;
+     padding-top:30px;
+     padding-bottom:15px;
+   }
+   section table caption {
+    font-size:20px;
+	line-height:30px;
+   }
   </style>
 </head>
 <body>
@@ -38,14 +50,12 @@
    <form name="review" method="post" action="review_ok"> 
     <input type="hidden" name="mcode" value="${mcode}">
     <table width="700" align="center" >
-     <caption> <h3> 영화리뷰 </h3></caption>
+     <caption> <h3> 영화 리뷰 </h3></caption>
      <tr> 
-       <td> 제목 </td>
-       <td> <input type="text" name="title"> </td>
+       <td> <input type="text" name="title" placeholder="제목을 입력해주세요"> </td>
      </tr>
      <tr>
-       <td> 상세리뷰 </td>
-       <td> <textarea name="content" cols="30" rows="4"></textarea> </td>
+       <td> <textarea name="content" cols="30" rows="4" placeholder="내용을 입력해주세요"></textarea> </td>
      </tr>
      <tr>
        <td colspan="2" align="center"> <input type="submit" value="리뷰쓰기"> </td>

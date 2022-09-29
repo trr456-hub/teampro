@@ -43,6 +43,22 @@
 			<td> <input type="file" name="pimg"> </td>
 		</tr>
 		<tr>
+			<td>상품 구분</td>
+			<td> <input type="text" name="gubun"> </td>
+		</tr>
+		<tr>
+			<td>상품 구성</td>
+			<td> <input type="text" name="gusung"> </td>
+		</tr>
+		<tr>
+			<td>유효 기간</td>
+			<td> <input type="text" name="gigan"> </td>
+		</tr>
+		<tr>
+			<td>원산지</td>
+			<td> <input type="text" name="made"> </td>
+		</tr>
+		<tr>
 			<td colspan="2" align="center">
 				<input type="submit" value="등록">
 			</td>
