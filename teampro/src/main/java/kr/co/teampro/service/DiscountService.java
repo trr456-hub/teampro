@@ -8,5 +8,6 @@ public interface DiscountService {
 	
 	public String discount_ok(HttpServletRequest request);
 	public String discount_list(Model model);
+	public String discount_phone(Model model);
 	public String discount_content(HttpServletRequest request, Model model);
 }

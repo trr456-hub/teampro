@@ -89,32 +89,9 @@
 		font-size:15px;
 		padding-left:5px;
 	}
-	#btn {
-		width:980px;
-		height:58px;
-		border:1px solid #cccccc;
-		margin-top:50px;
-		background:white;
-	}
 
 	
 </style>
-
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script>
-	$(function() {
-		$("#btn").click(function() {
-			$("#main").animate({
-				"height":"2300px", "padding-bottom" : "160px"
-			},10,function() {
-				$("#main").stop();
-				$("#btn").hide();
-			});
-		});
-	});
-</script>
 
 <script>
 	function content_view(dcode) {
@@ -157,6 +134,7 @@
 		</div>
 		<ul class="sale_content">
 	<c:forEach items="${dlist}" var="dvo">
+	<c:if test="${dvo.gubun == 1 }">
 			<li onclick="content_view('${dvo.dcode}')">
 				<div>
 					<div>
@@ -168,9 +146,9 @@
 					</div>
 				</div>
 			</li>
+	</c:if>
 	</c:forEach>
 		</ul>
-			<button id="btn">더보기</button>
 	</div>
 </div>
 

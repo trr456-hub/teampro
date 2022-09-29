@@ -64,6 +64,15 @@ public class DiscountServiceImpl implements DiscountService {
 		
 		return "/discount/discount_content";
 	}
+
+	@Override
+	public String discount_phone(Model model) {
+		
+		ArrayList<DiscountVO> dlist = mapper.discount_phone();
+		model.addAttribute("dlist",dlist);
+		
+		return "/discount/discount_phone";
+	}
 	
 
 }
