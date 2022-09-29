@@ -34,6 +34,12 @@ public class DiscountController {
 		return service.discount_list(model);
 	}
 	
+	@RequestMapping("/discount/discount_phone")
+	public String discount_phone(Model model) {
+		
+		return service.discount_phone(model);
+	}
+	
 	@RequestMapping("/discount/discount_content")
 	public String discount_content(HttpServletRequest request, Model model) {
 		
