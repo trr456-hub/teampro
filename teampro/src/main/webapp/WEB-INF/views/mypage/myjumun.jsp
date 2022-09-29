@@ -16,7 +16,7 @@
      background:white;
    }
    section table {
-    padding-bottom:100px;
+    	
    	width:800px;
    	margin:auto;
    }
@@ -43,10 +43,32 @@
     font-size:20px;
 	line-height:30px;
    }
+    .link span{
+   	  display:block;
+      padding-top:20px;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+      padding-bottom:100px;
+   }
+   .link a {
+   		 width: 28px;
+   		 height: 28px;
+   		 line-height: 28px;
+   		 padding:7px;
+   }
+   .link a:hover {
+     width: 28px;
+     height: 28px;
+     font-weight: bold;
+     color: #4b7fd8;
+     border: 1px solid #f0f0f0;
+   }
  </style>
 </head>
 <body>
   <section>
+  <input type="hidden" name="page" value="1">
     <table width="980" align="center" cellspacing="0">
       <caption> <h3> 주 문 내 역</h3> </caption>
       <tr align="center" style="background: #fcfcfc;">
@@ -60,13 +82,53 @@
      <c:forEach items="${list}" var="gvo">
       <tr align="center">
         <td> ${gvo.writeday} </td>
-        <td> <img src="../resources/img/${gvo.pimg}" width="70" height="70"> </td>
+        <td> <img src="../resources/store/${gvo.pimg}" width="70" height="70"> </td>
         <td> ${gvo.title} </td>
         <td> ${gvo.su}개 </td>
         <td> <fmt:formatNumber value="${gvo.chong}" pattern="#,###"/>원 </td>
       </tr>
      </c:forEach> 
     </table>
+    <div class="link">
+    	 <span align="center">
+         <c:if test="${pstart != 1}">
+          <a href="myjumun?page=${pstart-1}"> << </a>
+         </c:if>
+         <c:if test="${pstart == 1}">
+         </c:if>
+
+         <c:if test="${page != 1}">
+          <a href="myjumun?page=${page-1}"> < </a>
+         </c:if>
+         <c:if test="${page == 1}">
+         </c:if>
+
+        <c:forEach begin="${pstart}" end="${pend}" var="i">
+         <c:if test="${page == i}">
+           <a href="myjumun?page=${i}" style="width: 28px;
+										      height: 28px;
+										      font-weight: bold;
+										      color: #4b7fd8;
+										      border: 1px solid #f0f0f0;cursor:pointer;"> ${i} </a>
+         </c:if>
+         <c:if test="${page != i}">  
+           <a href="myjumun?page=${i}"> ${i} </a>
+         </c:if>
+        </c:forEach>
+
+         <c:if test="${page != chong}">
+          <a href="myjumun?page=${page+1}"> > </a>
+         </c:if>
+         <c:if test="${page == chong}">
+         </c:if>
+
+         <c:if test="${pend != chong}">
+          <a href="myjumun?page=${pend+1}"> >> </a>
+         </c:if>
+         <c:if test="${pend == chong}">
+         </c:if>
+      </span>
+    </div> 
   </section>
 </body>
 </html>

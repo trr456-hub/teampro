@@ -117,7 +117,7 @@
      <c:set var="cchong" value=""/>
     <c:forEach items="${list}" var="pvo">
      <tr height="110" align="center">
-       <td> <img src="../resources/img/${pvo.pimg}" width="70" height="70" style="padding-top:10px;"></td> <!-- 상품그림 -->
+       <td> <img src="../resources/store/${pvo.pimg}" width="70" height="70" style="padding-top:10px;"></td> <!-- 상품그림 -->
        <td style="text-align:left;"> ${pvo.title} </td> <!-- 상품명 -->
        <td> <fmt:formatNumber value="${pvo.price}"/>원 </td> <!-- 단 가  -->
        <td> ${pvo.su} </td> <!-- 수 량 -->

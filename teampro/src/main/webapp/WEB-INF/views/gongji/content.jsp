@@ -7,14 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
- section {
+	 section {
 		width:100%;
 		background:white;
 		padding-top:100px;
 		padding-bottom:100px;
 	}
 	section table {
-		width:400px;
+		width:800px;
 		height:70%;
 		margin:auto;
 	}
@@ -24,6 +24,15 @@
         background:#FAFAFA;
      }
      #aa{
+     	width:120px;
+     	height:50px;
+    	background:#dcdcdc;
+        font-weight:bold;
+        text-align:center;
+     }
+     #ct{
+     	width:120px;
+     	height:230px;
     	background:#dcdcdc;
         font-weight:bold;
         text-align:center;
@@ -32,7 +41,7 @@
 </head>
 <body>
 	<section>
-   <div id="section">
+   <div style="border:1px;">
 	<table width="400" align="center" border="1">
 		<caption> <h2> 공 지 사 항 </h2> </caption>
 		<tr>
@@ -46,16 +55,16 @@
 		  <td width="90"> ${gvo.readnum} </td>
 		</tr>
 		<tr height="130">
-		  <td id="aa"> 내용 </td>
+		  <td id="ct"> 내용 </td>
 		  <td colspan="3"> ${gvo.content} </td>
 		</tr>
 		<tr>
 		<td colspan="4" align="center">
 		<a href="list"> 목록 </a>
-		<%-- <c:if test="${userid=='admin'}"> --%>
+		<c:if test="${userid=='admin'}">
 		<a href="update?id=${gvo.id}"> 수정 </a>
 		<a href="delete?id=${gvo.id}"> 삭제 </a>
-		<%-- </c:if> --%>
+		</c:if>
 		</td>
 		</tr>
 	</table>
