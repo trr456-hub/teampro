@@ -53,6 +53,33 @@ public class DiscountServiceImpl implements DiscountService {
 		
 		return "/discount/discount_list";
 	}
+
+	@Override
+	public String discount_content(HttpServletRequest request, Model model) {
+		
+		String dcode = request.getParameter("dcode");
+		DiscountVO dvo = mapper.discount_content(dcode);
+		
+		model.addAttribute("dvo",dvo);
+		
+		return "/discount/discount_content";
+	}
 	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@
 
 <style>
 	section {
-		width:1000;
+		width:100%;
 		height:100%;
 		margin:auto;
 		background:white;
@@ -18,32 +18,29 @@
 	#main {
 		margin:auto;
 		width:1500px;
-		height:2200px;
+		height:1380px;
+		overflow:hidden;
 	}
 	#sale {
 		margin:auto;
 		width:1000px;
-		height:1100px;
+		height:1300px;
 	}
 	.sale_content {
 		width:1000px;
-		height:720px;
+		height:1100px;
 		display:flex;
 		flex-wrap:wrap;
 	}
 	.sale_content li {
-		height:308px;
-		padding:10px;
+		margin:auto;
+		width:285px;
+		height:350px;
+		padding-left:5px;
+		margin-left:10px;
+		padding-top:5px;
+		margin-top:20px;
 		border:1px solid #cccccc;
-		margin-left:20px;
-		margin-top:5px;
-	}
-	.menu_list li {
-		text-align:center;
-		height:330px;
-		padding-left:30px;
-		margin-left:5px;
-		padding-top:30px;
 	}
 	#sale_title {
 		width:500px;
@@ -59,8 +56,9 @@
 		padding-bottom:20px;
 	}
 	#sale_t_t {
+		width:960px;
 		height:60px;
-		margin-left:55px;
+		margin-left:10px;
 		padding-top:30px;
 		font-size:40px;
 		border-bottom:1px solid black;
@@ -75,8 +73,9 @@
 		margin-left:40px;
 	}
 	.sale_content div .content_txt {
+		text-align:center;
 		display:block;
-		height:48px;
+		height:20px;
 		padding:0px;
 		padding-left:10px;
 		font-size:19px;
@@ -84,23 +83,46 @@
 		margin-bottom:5px;
 		color:black;
 		padding-bottom:5px;
-
 	}
-	.end {
-		width:800px;
-		height:100px;
-		margin-top:0px;
-		border-top:2px solid #cccccc;
+	#content_gigan {
+		padding-top:20px;
+		font-size:15px;
+		padding-left:5px;
+	}
+	#btn {
+		width:980px;
+		height:58px;
+		border:1px solid #cccccc;
+		margin-top:50px;
+		background:white;
 	}
 
 	
 </style>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script>
+	$(function() {
+		$("#btn").click(function() {
+			$("#main").animate({
+				"height":"2300px", "padding-bottom" : "160px"
+			},10,function() {
+				$("#main").stop();
+				$("#btn").hide();
+			});
+		});
+	});
+</script>
 
 <script>
 	function content_view(dcode) {
 		location="../discount/discount_content?dcode="+dcode
 	}
 </script>
+
+
 
 </head>
 <body>
@@ -141,13 +163,14 @@
 						<img src="../resources/discount/${dvo.dimg}" width="280" height="270">
 					</div>
 					<strong class="content_txt">${dvo.title}</strong>
-					<span>${dvo.gigan}</span>
+					<div id="content_gigan">
+						<span>${dvo.gigan}</span>
+					</div>
 				</div>
 			</li>
 	</c:forEach>
-			<div id="end"></div>
 		</ul>
-			
+			<button id="btn">더보기</button>
 	</div>
 </div>
 
