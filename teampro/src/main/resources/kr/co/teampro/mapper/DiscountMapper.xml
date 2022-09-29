@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybats-3-mapper.dtd">
+  
+<mapper namespace="kr.co.teampro.mapper.DiscountMapper">
+
+	<insert id="discount_ok" parameterType="kr.co.teampro.vo.DiscountVO">
+		insert into discount(dimg, dcimg, title, gubun, gigan, dcode)
+		values(#{dimg}, #{dcimg}, #{title}, #{gubun}, #{gigan}, #{dcode})
+	</insert>
+	
+	<select id="discount_list" resultType="kr.co.teampro.vo.DiscountVO">
+		select * from discount
+	</select>
+</mapper>

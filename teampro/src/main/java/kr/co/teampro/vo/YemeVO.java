@@ -1,19 +1,14 @@
 package kr.co.teampro.vo;
 
 public class YemeVO {
-	private int id,audlt,child,state,sudan,chong;
-	private String code,jcode,mcode,monthday,tcode,seatpass,userid,writeday,yemecode;
+	private int id,adult,child,state,sudan,chong;
+	private String code,jcode,mcode,monthday,tcode,seatpass,userid,writeday,yemecode,ytitle;
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public int getAudlt() {
-		return audlt;
-	}
-	public void setAudlt(int audlt) {
-		this.audlt = audlt;
 	}
 	public int getChild() {
 		return child;
@@ -68,7 +63,7 @@ public class YemeVO {
 	}
 	public void setTcode(String tcode) {
 		this.tcode = tcode;
-	}
+	}   
 	public String getSeatpass() {
 		return seatpass;
 	}
@@ -92,6 +87,18 @@ public class YemeVO {
 	}
 	public void setYemecode(String yemecode) {
 		this.yemecode = yemecode;
+	}
+	public int getAdult() {
+		return adult;
+	}
+	public void setAdult(int adult) {
+		this.adult = adult;
+	}
+	public String getYtitle() {
+		return ytitle;
+	}
+	public void setYtitle(String ytitle) {
+		this.ytitle = ytitle;
 	}
 	
 }

@@ -15,4 +15,15 @@
 	<select id="seetime" resultType="kr.co.teampro.vo.SeetimeVO">
 		select * from seetime order by id asc;
 	</select>
+	
+	<insert id="theaterBuy_ok">
+		insert into yeme(code,jcode,mcode,monthday,tcode,adult,
+		child,seatpass,userid,writeday,state,sudan,chong,ytitle,yemecode)
+		values (#{code},#{jcode},#{mcode},#{monthday},#{tcode},#{adult},
+		#{child},#{seatpass},#{userid},now(),1,#{sudan},#{chong},#{ytitle},#{yemecode})
+	</insert>
+	<select id="getyeme" resultType="Integer">
+		select
+		ifnull(max(right(yemecode,4)),0) from yeme where userid=#{param1}
+	</select>
 </mapper>

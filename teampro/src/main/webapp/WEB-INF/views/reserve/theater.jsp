@@ -444,7 +444,7 @@ section {
 												</span>
 											</p>
 											<p class="YMD-info">
-												<b>${fn:substring(monthday,0,4)} - ${fn:substring(monthday,4,5)} - ${fn:substring(monthday,5,7)}</b>
+												<b>${fn:substring(monthday,0,4)} - ${fn:substring(monthday,4,6)} - ${fn:substring(monthday,6,8)}</b>
 												<input type="submit" value="결제하기" class="totalBuy">
 											</p>
 										</div>

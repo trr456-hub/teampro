@@ -38,15 +38,23 @@
 		<table width="900" align="center">
 			<caption> <h3> 리 뷰  </h3></caption>
 			<tr height="60">
-			 <th> 영화이름 </th>
-			 <th> 제 목 </th>
-			 <th> 리뷰내용 </th>
-			 <th> 작성일 </th>
+			 <th> 예매번호 </th>
+			 <th> 영화제목 </th>
+			 <th> 이름 </th>
+			 <th> 좌석 </th>
+			 <th> 가격 </th>
+			 <th> 예매날짜 </th>
+			 <th> 결제일 </th>
 			</tr>
 			<c:forEach items="${ylist}" var="yvo">
 			<tr align="center" height="50">
-			 <td> ${yvo.mcode } </td>
-			 <td> ${yvo.writeday } </td>	
+			 <td> ${yvo.code}-${yvo.jcode}${yvo.mcode}-${yvo.yemecode}</td>
+			 <td> ${yvo.ytitle} </td>
+			 <td> ${name} </td>
+			 <td> ${yvo.seatpass}</td>
+			 <td> ${yvo.chong}</td>
+			 <td> ${yvo.monthday} </td>
+			 <td> ${yvo.writeday} </td>	
 			</tr>
 			</c:forEach>
 		</table>

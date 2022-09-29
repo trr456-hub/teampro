@@ -833,9 +833,9 @@ li .depth1 > a {
 		
         const weekOfDay = ["일", "월", "화", "수", "목", "금", "토"]
         const year = date.getFullYear();
-        const month = date.getMonth()+1;
+        const month = ('0' + (date.getMonth() + 1)).slice(-2);
         const nextMonth = date.getMonth()+2;
-        const day = date.getDate();
+        const day = ('0' + date.getDate()).slice(-2);
         
         /* 현재날짜부터 현재 월 에 for문 처리 */
         for (i = day; i <= lastDay.getDate(); i++) {
@@ -879,7 +879,7 @@ li .depth1 > a {
             
             reserveDate.append(button);
             
-           	//console.log(lastDay);
+           	console.log(month);
             dayClickEvent(button);
         }
         /* 이벤트 value값 전달 온클릭 추가 */
