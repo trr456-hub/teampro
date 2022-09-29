@@ -651,11 +651,11 @@ li .depth1 > a {
 <body>
 	<section>
 	<form id="useSubmit" method="get" action="theater" name="reserve1">
-		<input type="hidden" name="code" value="">
-		<input type="hidden" name="jcode" value="">
-		<input type="hidden" name="mcode" value="">
-		<input type="hidden" name="monthday" value="">
-		<input type="hidden" name="tcode" value="">
+		<input id="code" type="hidden" name="code" value="">
+		<input id="jcode" type="hidden" name="jcode" value="">
+		<input id="mcode" type="hidden" name="mcode" value="">
+		<input id="monthday" type="hidden" name="monthday" value="">
+		<input id="tcode" type="hidden" name="tcode" value="">
 		<input type="hidden" name="title" value="">
 	
 		<div id="reserve_main">
@@ -726,7 +726,18 @@ li .depth1 > a {
 													<a href="#none" style="height:48px;" onclick="moviecheck(${w}); movieChange(this);">
 														<div class="group_infor">
 															<div class="bx_tit">
-																<span class="age_in age_12">${rvo.age}</span>
+																<c:if test="${rvo.age == 'all' }">
+																	<span class="age_in age_all">${rvo.age}</span>
+																</c:if>
+																<c:if test="${rvo.age == '12' }">
+																	<span class="age_in age_12">${rvo.age}</span>
+																</c:if>
+																<c:if test="${rvo.age == '15' }">
+																	<span class="age_in age_15">${rvo.age}</span>
+																</c:if>
+																<c:if test="${rvo.age == '19' }">
+																	<span class="age_in age_19">${rvo.age}</span>
+																</c:if>
 																<strong class="tit">${rvo.title}</strong>
 															</div>
 														</div>
@@ -789,7 +800,7 @@ li .depth1 > a {
 															<c:set var="t" value="1"/>
 															<c:forEach items="${slist }" var="svo">
 																<li>
-																	<a role="button" href="#none" onclick="colorChange(this); timePass(${t}); submitTime()">
+																	<a role="button" href="#none" onclick="colorChange(this); timePass(${t}); submitCheck()">
 																		<dl>
 																			<dd class="time">
 																				<strong>${svo.title}</strong>
@@ -879,7 +890,7 @@ li .depth1 > a {
             
             reserveDate.append(button);
             
-           	console.log(month);
+           	/* console.log(month); */
             dayClickEvent(button);
         }
         /* 이벤트 value값 전달 온클릭 추가 */
@@ -1061,12 +1072,24 @@ li .depth1 > a {
         	/* console.log(mname); */
         	 if(mage == "all") {
         		ageBck.classList.add("age_all");
+        		ageBck.classList.remove("age_12");
+        		ageBck.classList.remove("age_15");
+        		ageBck.classList.remove("age_19");
         	} else if(mage == "12") {
         		ageBck.classList.add("age_12");
+        		ageBck.classList.remove("age_all");
+        		ageBck.classList.remove("age_15");
+        		ageBck.classList.remove("age_19");
         	} else if(mage == "15") {
         		ageBck.classList.add("age_15");
+        		ageBck.classList.remove("age_12");
+        		ageBck.classList.remove("age_19");
+        		ageBck.classList.remove("age_all");
         	} else if (mage == "19") {
         		ageBck.classList.add("age_19");
+        		ageBck.classList.remove("age_12");
+        		ageBck.classList.remove("age_15");
+        		ageBck.classList.remove("age_all");
         	} 
         }
         
@@ -1084,11 +1107,34 @@ li .depth1 > a {
         function timePass(t) {
         	document.reserve1.tcode.value="0"+t;
         }
-        function submitTime() {
-        	if(confirm("좌석 선택으로 이동합니다.")) {
-        	document.querySelector("#useSubmit").submit();
+        function submitCheck() {
+        	const jcode = document.querySelector("#jcode").value;	// 극장값
+        	const mcode = document.querySelector("#mcode").value;	// 영화값
+        	const monthday = document.querySelector("#monthday").value;	// 날짜값
+        	
+        	/* console.log(code); */
+        	
+        	// 극장값+영화값+날짜값 선택됐는지 확인
+        	if(${userid != null}) {
+	        	if(jcode == "") {
+	        		alert("영화관을 선택해 주세요");
+	        		return false;
+	        	} else if(mcode == "") {
+	        		alert("영화를 선택해 주세요");
+	        		return false;
+	        	} else if(monthday == "") {
+	        		alert("날짜를 선택해 주세요");
+	        		return false;
+	        	} else if(!confirm("좌석 선택으로 이동합니다.")) {
+	        		return false;
+	        	} else {
+	        		document.querySelector("#useSubmit").submit();        		
+	        	}	
         	} else {
-        		return false;	
+    			if(confirm("로그인 창으로 넘어가시겟습니까?"))
+    				location.href = "../login/login";
+    			else
+    				return false;
         	}
         }
         /* 시간선택 종료 */
