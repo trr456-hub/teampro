@@ -45,7 +45,7 @@
        color:black;
        text-decoration:none;
      }
-     #wr:link, #wr:visited {
+    #wr:link, #wr:visited {
      background-color:#5A78AF;
      color:white;
      padding: 5px 7px;
