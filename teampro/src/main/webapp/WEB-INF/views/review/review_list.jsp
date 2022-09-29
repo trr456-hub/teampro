@@ -23,7 +23,7 @@
  	#review {
  	  width:1300px;
  	  margin:auto;
-      width:500px;
+      width:600px;
  	}
  	div img {
  		border-radius: 10px;
@@ -61,7 +61,7 @@
    		 width: 28px;
    		 height: 28px;
    		 line-height: 28px;
-   		 padding:5px;
+   		 padding:7px;
    }
    .link a:hover {
      width: 28px;
@@ -70,11 +70,22 @@
      color: #4b7fd8;
      border: 1px solid #f0f0f0;
    }
+     section h3 {
+     text-align:center;
+     font-weight:bold;
+     font-size:30px;
+     padding-top:60px;
+     padding-bottom:25px;  
+   }
+   section table caption {
+    font-size:50px;
+	line-height:30px;
+   }
  </style>
 </head>
 <body>
 	<section>
-	<h2 style="margin-top:30px;margin-bottom:40px;text-align: center;"> 영 화 리 뷰 </h2>
+	<caption> <h3> 무비 포스트 </h3> </caption>
       <article id="review">
       <input type="hidden" name="page" value="1">
        <div class="pers">

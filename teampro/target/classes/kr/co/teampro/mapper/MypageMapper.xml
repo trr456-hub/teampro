@@ -25,15 +25,19 @@
  	</select>
 	
 	<select id="getChong" resultType="Integer">
-		select ceil(count(*)/10) from review
+		select ceil(count(*)/10) from review where userid=#{param1}
 	</select>
  	
     <select id="myjumun" resultType="kr.co.teampro.vo.GumaeVO">
 	  	select g.* , p.pimg,p.title from gumae as g, product as p 
 	    where userid=#{param1} and g.pcode=p.pcode 
-	    order by jumuncode desc
+	    order by jumuncode desc limit #{param2},10
     </select>
    	
+   	<select id="jumunChong" resultType="Integer">
+		select ceil(count(*)/10) from gumae where userid=#{param1}
+	</select>
+	
     <select id="myreserve" resultType="kr.co.teampro.vo.YemeVO">
 	  	select * from yeme where userid=#{param1}
     </select>

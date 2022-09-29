@@ -53,18 +53,28 @@
      text-decoration: none;
      display: inline-block;
      border-radius:5px;
-}
- #wr:hover, #wr:active {
+	}
+ 	#wr:hover, #wr:active {
      background-color:white;
      color:#5A78AF;
      border:1px solid #5A78AF;
-}
+	}
+ 	section h3 {
+     text-align:center;
+     font-weight:bold;
+     font-size:30px;
+     padding-bottom:25px;  
+   }
+   section table caption {
+    font-size:50px;
+	line-height:30px;
+   }
 </style>
 </head>
  <section>
   <div id="section">
 		 <table width="500" align="center">
-		 	<caption> <h2> 공 지 사 항 </h2></caption>
+		 	<caption> <h3> 공 지 사 항 </h3></caption>
 		 	<tr id="aa">
 		 	  <td> 제 목 </td>
 		 	  <td> 작성자 </td>

@@ -90,7 +90,7 @@ public class MypageServiceImpl implements MypageService{
 		pstart=pstart*10+1;
 		pend=pstart+9;
 		
-		chong=mapper.getChong();
+		chong=mapper.getChong(userid);
 		
 		if(pend > chong)
 			pend=chong;
@@ -105,10 +105,38 @@ public class MypageServiceImpl implements MypageService{
 	}
 
 	@Override
-	public String myjumun(HttpSession session, Model model) {
+	public String myjumun(HttpSession session, Model model,HttpServletRequest request) {
 		String userid=session.getAttribute("userid").toString();
-		ArrayList<GumaeVO> list=mapper.myjumun(userid);
+		
+		int page; 
+		if(request.getParameter("page")==null) {
+			page=1;
+		}
+		else {	
+			page=Integer.parseInt(request.getParameter("page"));		
+		}
+		
+		int index=(page-1)*10;
+		
+		int pstart,pend,chong;
+		
+		pstart=page/10;
+		if(page%10 == 0)
+			pstart=pstart-1;
+		
+		pstart=pstart*10+1;
+		pend=pstart+9;
+		
+		chong=mapper.jumunChong(userid);
+		if(pend > chong)
+			pend=chong;
+		
+		ArrayList<GumaeVO> list=mapper.myjumun(userid,index);
 		model.addAttribute("list",list);
+		model.addAttribute("pstart",pstart);
+		model.addAttribute("pend",pend);
+		model.addAttribute("chong",chong);
+		model.addAttribute("page",page);
 		
 		return "/mypage/myjumun";
 	}

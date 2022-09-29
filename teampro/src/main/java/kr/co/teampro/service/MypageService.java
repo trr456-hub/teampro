@@ -13,6 +13,6 @@ public interface MypageService {
 	public String myinfo_edit_ok(MemberVO mvo,HttpSession session);
 	public String change_pwd(HttpSession session,HttpServletRequest request);
 	public String myreview(HttpSession session,Model model,HttpServletRequest request);
-	public String myjumun(HttpSession session,Model model);
+	public String myjumun(HttpSession session,Model model,HttpServletRequest request);
 	public String myreserve(HttpSession session,Model model);
 }

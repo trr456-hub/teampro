@@ -28,7 +28,7 @@
 		    padding-top: 30px;
 		}
 		section #tle{
-			padding: 16px 17px 50px 26px;
+			padding: 16px 17px 50px 40px;
 			margin:auto;
 			width:700px;
 		    border-radius: 12px;

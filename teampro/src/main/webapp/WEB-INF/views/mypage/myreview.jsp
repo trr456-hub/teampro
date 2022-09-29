@@ -10,7 +10,6 @@
 	section {
 		width:100%;
 		background:white;
-		padding-top:100px;
 		padding-bottom:100px;
 	}
 	section table {
@@ -31,13 +30,44 @@
 	section table tr:last-child td {
 		border-bottom:2px solid #cccccc;
 	}
+	  section h3 {
+     text-align:left;
+     font-weight:bold;
+     padding-top:50px;
+     padding-bottom:15px;
+     padding-left:9px;
+   }
+   section table caption {
+    font-size:20px;
+	line-height:30px;
+   }
+   .link span{
+   	  display:block;
+      padding-top:20px;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+   }
+   .link a {
+   		 width: 28px;
+   		 height: 28px;
+   		 line-height: 28px;
+   		 padding:7px;
+   }
+   .link a:hover {
+     width: 28px;
+     height: 28px;
+     font-weight: bold;
+     color: #4b7fd8;
+     border: 1px solid #f0f0f0;
+   }
 </style>
 </head>
 <body>
 	<section>
 	 <input type="hidden" name="page" value="1">
 		<table width="900" align="center">
-			<caption> <h3> 리 뷰  </h3></caption>
+			<caption> <h3> MY 리뷰  </h3></caption>
 			<tr height="60">
 			 <th> 영화이름 </th>
 			 <th> 제 목 </th>
@@ -76,7 +106,11 @@
 
         <c:forEach begin="${pstart}" end="${pend}" var="i">
          <c:if test="${page == i}">
-           <a href="myreview?page=${i}" style="cursor:pointer;"> ${i} </a>
+           <a href="myreview?page=${i}" style="width: 28px;
+										      height: 28px;
+										      font-weight: bold;
+										      color: #4b7fd8;
+										      border: 1px solid #f0f0f0;cursor:pointer;"> ${i} </a>
          </c:if>
          <c:if test="${page != i}">  
            <a href="myreview?page=${i}"> ${i} </a>

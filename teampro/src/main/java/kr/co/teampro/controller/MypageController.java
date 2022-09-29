@@ -44,8 +44,8 @@ public class MypageController {
 	}
 	
 	@RequestMapping("/mypage/myjumun")
-	public String myjumun(HttpSession session,Model model) {
-		return service.myjumun(session,model);
+	public String myjumun(HttpSession session,Model model,HttpServletRequest request) {
+		return service.myjumun(session,model,request);
 	}
 	
 	@RequestMapping("/mypage/myreserve")
