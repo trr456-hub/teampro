@@ -128,10 +128,18 @@ input[type=button] {
 					${cvo.title} 영화리뷰</h2>
 				<div id="rev_wr">
 					<span style="color: #01738b">${cvo.title} </span> 재미있게 보셧나요?
-					<div
+						<c:if test="${userid != null }">
+						<div
 						style="display: table-cell; width: 150px; vertical-align: middle; text-align: center; white-space: nowrap;"
 						onclick="location='../review/review?mcode=${cvo.mcode}&id=${cvo.id}'">
 						관람평 쓰기</div>
+						</c:if>
+						<c:if test="${userid == null }">
+						<div
+						style="display: table-cell; width: 150px; vertical-align: middle; text-align: center; white-space: nowrap;"
+						onclick="location='../login/login'">
+						관람평 쓰기</div>
+						</c:if>
 				</div>
 				
 				<div class="pers">

@@ -14,7 +14,7 @@
 		padding-bottom:100px;
 	}
 	section table {
-		width:1000px;
+		width:800px;
 		height:70%;
 		margin:auto;
 	}
@@ -28,6 +28,9 @@
 	}
 	#ty {
 	 	text-decoration:none;
+	}
+	tr {
+		height:40px;
 	}
 	#aa {
 		background-color:#c9c9c9;
@@ -80,8 +83,8 @@
 			<c:if test="${gvo.gubun == '1' }">
 			<tr>
 		 	  <td id="yy">
-		 	  <a href="readnum?id=${gvo.id}" style="color:red" id="ty"> [중요] ${gvo.title} 
-		 	  <!-- [중요] 글자 자리에 이미지파일 등 넣으면될듯함(협의 후) --></a></td>
+		 	  <a href="readnum?id=${gvo.id}" style="color:#4b7fd8" id="ty"> [중요] ${gvo.title} 
+		 	  <!-- [중요] 글자 자리에 이미지파일 등 넣으면될듯함 --></a></td>
 		 	  <td> 관리자 </td>
 		 	  <td> ${gvo.writeday} </td>
 		 	  <td> ${gvo.readnum } </td>
@@ -89,13 +92,13 @@
 			</c:if>
 			</c:forEach>
 			<!-- 로그인연동, session으로 userid 받아오면 주석풀기 -->
-			<%-- <c:if test="${userid == 'admin' }"> --%> 
+			 <c:if test="${userid == 'admin' }">
 			<tr>
 				<td colspan="4" align="right">
 				  <a href="write" id="wr"> 글쓰기 </a>
 				</td>
 			</tr>
-			<%-- </c:if> --%>
+			 </c:if>
 		 </table>
 	</div>
 	</section>

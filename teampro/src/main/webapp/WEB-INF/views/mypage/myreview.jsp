@@ -35,6 +35,7 @@
 </head>
 <body>
 	<section>
+	 <input type="hidden" name="page" value="1">
 		<table width="900" align="center">
 			<caption> <h3> 리 뷰  </h3></caption>
 			<tr height="60">
@@ -59,6 +60,42 @@
 			</tr>
 			</c:forEach>
 		</table>
+		 <div class="link">
+    	 <span align="center">
+         <c:if test="${pstart != 1}">
+          <a href="myreview?page=${pstart-1}"> << </a>
+         </c:if>
+         <c:if test="${pstart == 1}">
+         </c:if>
+
+         <c:if test="${page != 1}">
+          <a href="myreview?page=${page-1}"> < </a>
+         </c:if>
+         <c:if test="${page == 1}">
+         </c:if>
+
+        <c:forEach begin="${pstart}" end="${pend}" var="i">
+         <c:if test="${page == i}">
+           <a href="myreview?page=${i}" style="cursor:pointer;"> ${i} </a>
+         </c:if>
+         <c:if test="${page != i}">  
+           <a href="myreview?page=${i}"> ${i} </a>
+         </c:if>
+        </c:forEach>
+
+         <c:if test="${page != chong}">
+          <a href="myreview?page=${page+1}"> > </a>
+         </c:if>
+         <c:if test="${page == chong}">
+         </c:if>
+
+         <c:if test="${pend != chong}">
+          <a href="myreview?page=${pend+1}"> >> </a>
+         </c:if>
+         <c:if test="${pend == chong}">
+         </c:if>
+      </span>
+    </div> 
 	</section>
 </body>
 </html>

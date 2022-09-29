@@ -21,8 +21,12 @@
 	
 	<select id="myreview" resultType="kr.co.teampro.vo.ReviewVO">
  		select r.*,c.title as ctitle from review as r, cmovie as c
-  		where userid=#{param1} and r.mcode=c.mcode order by writeday desc limit 12
+  		where userid=#{param1} and r.mcode=c.mcode order by writeday desc limit #{param2},10
  	</select>
+	
+	<select id="getChong" resultType="Integer">
+		select ceil(count(*)/10) from review
+	</select>
  	
     <select id="myjumun" resultType="kr.co.teampro.vo.GumaeVO">
 	  	select g.* , p.pimg,p.title from gumae as g, product as p 
