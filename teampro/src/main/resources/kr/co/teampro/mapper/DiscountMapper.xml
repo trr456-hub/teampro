@@ -13,4 +13,9 @@
 	<select id="discount_list" resultType="kr.co.teampro.vo.DiscountVO">
 		select * from discount
 	</select>
+	
+	<select id="discount_content" resultType="kr.co.teampro.vo.DiscountVO">
+		select * from discount where dcode=#{param1}
+	</select>
+
 </mapper>

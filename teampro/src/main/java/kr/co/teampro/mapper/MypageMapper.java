@@ -12,7 +12,9 @@ public interface MypageMapper {
 	public void myinfo_edit_ok(MemberVO mvo);
 	public String getPwd(String userid);
 	public void change_pwd(String pwd,String userid);
-	public ArrayList<ReviewVO> myreview(String userid);
-	public ArrayList<GumaeVO> myjumun(String id);
+	public ArrayList<ReviewVO> myreview(String userid,int index);
+	public ArrayList<GumaeVO> myjumun(String userid,int index);
 	public ArrayList<YemeVO> myreserve(String id);
+	public int getChong(String userid);
+	public int jumunChong(String userid);
 }

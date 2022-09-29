@@ -187,17 +187,17 @@
 								</dt>
 								<dd>
 									<h3>
-										<a href="#">영화관람권</a>
+										<a href="../product/pro_ticket">영화관람권</a>
 									</h3>
 								</dd>
 								<dd>
 									<h3>
-										<a href="#">콤보</a>
+										<a href="../product/pro_com">콤보</a>
 									</h3>
 								</dd>
 								<dd>
 									<h3>
-										<a href="#">팝콘</a>
+										<a href="../product/pro_pop">팝콘</a>
 									</h3>
 								</dd>
 							</dl>
@@ -236,7 +236,7 @@
 								</dt>
 								<dd>
 									<h3>
-										<a href="#">할인정보</a>
+										<a href="../discount/discount_list">할인정보</a>
 									</h3>
 								</dd>
 							</dl>

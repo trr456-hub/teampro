@@ -23,7 +23,7 @@
  	#review {
  	  width:1300px;
  	  margin:auto;
-      width:500px;
+      width:600px;
  	}
  	div img {
  		border-radius: 10px;
@@ -51,26 +51,41 @@
 	    border-radius: 10px;
  	}
    .link span{
-     padding-top:20px;
+   	  display:block;
+      padding-top:20px;
+      margin: auto;
+      width: 100%;
+      text-align: center;
    }
    .link a {
-     text-decoration:none;
-     color:black;
-     margin:auto;
-     display:inline-block;
-     width:25px;
-     height:17px;
-     border:1px solid #cccccc;
+   		 width: 28px;
+   		 height: 28px;
+   		 line-height: 28px;
+   		 padding:7px;
    }
    .link a:hover {
-     background:#cccccc;
-     color:white;
+     width: 28px;
+     height: 28px;
+     font-weight: bold;
+     color: #4b7fd8;
+     border: 1px solid #f0f0f0;
+   }
+     section h3 {
+     text-align:center;
+     font-weight:bold;
+     font-size:30px;
+     padding-top:60px;
+     padding-bottom:25px;  
+   }
+   section table caption {
+    font-size:50px;
+	line-height:30px;
    }
  </style>
 </head>
 <body>
 	<section>
-	<h2 style="margin-top:30px;margin-bottom:40px;text-align: center;"> 영 화 리 뷰 </h2>
+	<caption> <h3> 무비 포스트 </h3> </caption>
       <article id="review">
       <input type="hidden" name="page" value="1">
        <div class="pers">
@@ -117,49 +132,44 @@
              <p>
          </c:forEach>    
        </div>
-       <div class="link">
+    <div class="link">
       <span align="center">
-      <!-- 페이지 이동, 현재페이지 링크의 색을 다르게 -->
-       <!-- 10페이지 단위 이전 이동 시작-->
          <c:if test="${pstart != 1}">
           <a href="review_list?page=${pstart-1}"> << </a>
          </c:if>
          <c:if test="${pstart == 1}">
          </c:if>
-       <!-- 10페이지 단위 이전 이동 끝 -->
-      
-       <!-- 1페이지 단위 이전 이동 시작-->
+
          <c:if test="${page != 1}">
           <a href="review_list?page=${page-1}"> < </a>
          </c:if>
          <c:if test="${page == 1}">
          </c:if>
-       <!-- 1페이지 단위 이전 이동 끝 -->
-      
+
         <c:forEach begin="${pstart}" end="${pend}" var="i">
          <c:if test="${page == i}">
-           <a href="review_list?page=${i}" style="border:3px solid #cccccc"> ${i} </a>
+           <a href="review_list?page=${i}"   style="width: 28px;
+										     height: 28px;
+										     font-weight: bold;
+										     color: #4b7fd8;
+										     border: 1px solid #f0f0f0;cursor:pointer;"> ${i} </a>
          </c:if>
          <c:if test="${page != i}">  
            <a href="review_list?page=${i}"> ${i} </a>
          </c:if>
         </c:forEach>
-        
-       <!-- 1페이지 단위 다음 이동 시작-->
+
          <c:if test="${page != chong}">
           <a href="review_list?page=${page+1}"> > </a>
          </c:if>
          <c:if test="${page == chong}">
          </c:if>
-       <!-- 1페이지 단위 다음 이동 끝 --> 
-        
-       <!-- 10페이지 단위 다음 이동 시작-->
+
          <c:if test="${pend != chong}">
           <a href="review_list?page=${pend+1}"> >> </a>
          </c:if>
          <c:if test="${pend == chong}">
          </c:if>
-       <!-- 10페이지 단위 다음 이동 끝 -->
       </span>
     </div>  
        
