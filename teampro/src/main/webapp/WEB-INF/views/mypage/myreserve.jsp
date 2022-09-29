@@ -54,6 +54,52 @@ section {
     float: left;
    	border-radius: 10%;
 }
+.taptap .content-in {
+	width:100%;
+	margin:10px;
+}
+.taptap .toptop {
+	color: #5E17EB;
+    font-family: fantasy;
+    font-size: 15px;
+    text-align: right;
+}
+.taptap .content-in > .ytext{
+	font-size:10px;
+	color:#6666668c;
+	text-align: center;
+    margin-bottom: 12px;
+}
+.content-in .ytext > .yemecode {
+	color:#333333;
+	font-size:16px;
+}
+.content-in .ytext > .ytitle {
+	color: #333333;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.content-in .ytext > .yname {
+	color:#333333;
+	font-size:16px;
+}
+.content-in .ytext > .seatpass {
+	color:#333333;
+	font-size:16px;
+}
+.content-in .ytext > .monthday {
+	color:#333333;
+	font-size:16px;
+}
+.content-in .ytext > .writeday {
+	color:#333333;
+	font-size:16px;
+}
 </style>
 </head>
 <body>
@@ -68,13 +114,32 @@ section {
 						<div class="contents">
 							<c:forEach items="${ylist}" var="yvo">
 								<div class="taptap">
-									<div>${yvo.code}-${yvo.jcode}${yvo.mcode}-${yvo.yemecode}</div>
-									<div>${yvo.ytitle}</div>
-									<div>${name}</div>
-									<div>${yvo.seatpass}</div>
-									<div>${yvo.chong}</div>
-									<div>${fn:substring(yvo.monthday,0,4)}-${fn:substring(yvo.monthday,4,6)}-${fn:substring(yvo.monthday,6,8)}</div>
-									<div>${yvo.writeday}</div>
+									<div class="content-in">
+										<div class="toptop">CCA</div>
+										<div class="ytext">
+											<div class="ytitle">${yvo.ytitle}</div>
+										</div>
+										<div class="ytext">
+											예매번호
+											<div class="yemecode">${yvo.code}-${yvo.jcode}${yvo.mcode}-${yvo.yemecode}</div>
+										</div>
+										<div class="ytext">
+											예매자명 
+											<div class="yname">${name}</div>
+										</div>
+										<div class="ytext">
+											좌석
+											<div class="seatpass">${yvo.seatpass}</div>
+										</div>
+										<div class="ytext">
+											예매날짜
+											<div class="monthday">${fn:substring(yvo.monthday,0,4)}-${fn:substring(yvo.monthday,4,6)}-${fn:substring(yvo.monthday,6,8)}</div>
+										</div>
+										<div class="ytext">
+											결제날짜
+											<div class="writeday">${yvo.writeday}</div>
+										</div>
+									</div>
 								</div>
 							</c:forEach>
 						</div>
@@ -82,19 +147,6 @@ section {
 				</div>
 			</div>
 		</div>
-	<%-- <c:forEach items="${ylist}" var="yvo">
-		<tr align="center" height="50">
-			<td>${yvo.code}-${yvo.jcode}${yvo.mcode}-${yvo.yemecode}</td>
-			<td>${yvo.ytitle}</td>
-			<td>${name}</td>
-			<td>${yvo.seatpass}</td>
-			<td>${yvo.chong}</td>
-			<td>
-				${fn:substring(yvo.monthday,0,4)}-${fn:substring(yvo.monthday,4,6)}-${fn:substring(yvo.monthday,6,8)}
-			</td>
-			<td>${yvo.writeday}</td>
-		</tr>
-	</c:forEach> --%>
 	</section>
 </body>
 </html>
