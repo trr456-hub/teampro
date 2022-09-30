@@ -53,7 +53,7 @@
    	width:250px;
    }
    section #gaebong {
-   	font-size:13px;
+   	font-size:14px;
    	width:250px;
    }
    section #rank {
