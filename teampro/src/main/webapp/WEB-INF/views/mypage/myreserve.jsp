@@ -121,7 +121,7 @@ section {
 										</div>
 										<div class="ytext">
 											예매번호
-											<div class="yemecode">${yvo.code}-${yvo.jcode}${yvo.mcode}-${yvo.yemecode}</div>
+											<div class="yemecode">${yvo.yemecode}</div>
 										</div>
 										<div class="ytext">
 											예매자명 
