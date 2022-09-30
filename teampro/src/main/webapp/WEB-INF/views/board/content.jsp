@@ -9,35 +9,46 @@
 <style>
 	section {
 		width:100%;
-		height:100%;
+		height:1200;
 		margin:auto;
 		background:white;
 	}
 	#main {
 		width:1200px;
-		height:800px;
+		height:100%;
 		margin:auto;
+		background:white;
 	}
 	#content {
 		width:1000px;
-		height:700px;
+		height:100%;
 		margin:auto;
-
 		padding-top:30px;
 	}
 	#content table {
 		margin:auto;
-		width:600px;
-		height:500px;
+		width:1000px;
+		height:100%;
 		border:1px solid #cccccc;
+	}
+	#content td {
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+	#content table tr {
+		border-bottom:1px solid #cccccc;
 	}
 	#content table tr, td {
 		text-align:center;
-		border-bottom:1px solid #cccccc;
 		font-size:15px;
 	}
 	#content_reply {
 		padding-top:10px;
+		padding-bottom:30px;
+	}
+	#content_reply td {
+		padding-top:15px;
+		padding-bottom:15px;
 	}
 	#content_reply_c {
 		padding-top:10px;
@@ -119,20 +130,27 @@
 			<input type="hidden" name="board_id" value="${bvo.id}">
 			
 			<div align="center">
-				<textarea cols="40" rows="3" name="content" placeholder="댓글을 입력해주세요"></textarea>
-				<input type="submit" value="댓글저장">
+				<textarea cols="110" rows="2" name="content" placeholder="댓글을 입력해주세요" style="margin:20px;"></textarea>
+				<input type="submit" value="댓글저장" style="padding-top:40px;">
 			</div>
 		</form>
 	</div>
 	
 		<div id="content_reply">
+			<table width="700" align="center" border="1">
+			<tr>
+				<td> 아이디 </td>
+				<td> 내용  </td>
+				<td> 날짜 </td>
+			</tr>
 			<c:forEach items="${rlist}" var="rvo">
-				<div id="content_reply_c">
-					<span>${rvo.user_id}</span>
-					<span>${rvo.content}</span>
-					<span>${rvo.writeday}</span>
-				</div>
+				<tr>
+					<td>${rvo.user_id}</td>
+					<td style="text-align:left">${rvo.content}</td>
+					<td>${rvo.writeday}</td>
+				</tr>				
 			</c:forEach>
+			</table>
 		</div>
 
 	</div>
