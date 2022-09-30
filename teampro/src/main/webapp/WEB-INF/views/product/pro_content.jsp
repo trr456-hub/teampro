@@ -19,12 +19,12 @@
 	#contetnt {
 		margin:auto;
 		width:1500px;
-		height:2200px;
+		height:900px;
 	}
 	#category_pro {
 		margin:auto;
 		width:1000px;
-		height:1800px;
+		height:800px;
 	}
 	#category_content {
 		margin:auto;
