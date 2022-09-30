@@ -34,7 +34,7 @@
    }
    section h2{
    	 width:900px;
-   	 padding:10px;
+   	 padding:11px;
    	 padding-left:5px;
    	 border-bottom:3px solid black;
    }
