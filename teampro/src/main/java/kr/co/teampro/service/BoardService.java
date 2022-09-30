@@ -20,7 +20,6 @@ public interface BoardService {
 	public String update_ok(BoardVO bvo);
 	/*댓글*/
 	public String reply_write_ok(ReplyVO rvo,HttpSession session);
-	public String reply_list(Model model);
 	
 	
 }

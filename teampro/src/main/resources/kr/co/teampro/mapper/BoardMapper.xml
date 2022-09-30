@@ -42,7 +42,7 @@
 		select ceil(count(*)/10) from board
 	</select>
 	
-	<insert id="reply_write_ok">
+	<insert id="reply_write_ok" parameterType="kr.co.teampro.vo.ReplyVO">
 		insert into reply(board_id, user_id, content, writeday)
 		values(#{board_id}, #{user_id}, #{content}, now())
 	</insert>

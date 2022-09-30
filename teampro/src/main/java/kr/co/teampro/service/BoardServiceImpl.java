@@ -26,7 +26,7 @@ public class BoardServiceImpl implements BoardService {
 	public String write_ok(BoardVO bvo) {
 		
 		mapper.write_ok(bvo);
-		return "redirect:/list";
+		return "redirect:/board/list";
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public class BoardServiceImpl implements BoardService {
 	public String readnum(HttpServletRequest request) {
 		String id=request.getParameter("id");
 		mapper.readnum(id);
-		return "redirect:/content?id="+id;
+		return "redirect:/board/content?id="+id;
 	}
 
 	@Override
@@ -77,8 +77,8 @@ public class BoardServiceImpl implements BoardService {
 		BoardVO bvo=mapper.content(id);
 		model.addAttribute("bvo",bvo);
 		
-		ArrayList<ReplyVO> list=mapper.reply_list(id);
-		model.addAttribute("list",list);
+		ArrayList<ReplyVO> rlist=mapper.reply_list(id);
+		model.addAttribute("rlist",rlist);
 		
 		return "/board/content";
 	}
@@ -88,9 +88,9 @@ public class BoardServiceImpl implements BoardService {
 		String dbpwd=mapper.getPassword(bvo.getId());
 		if(dbpwd.equals(bvo.getPwd())) {
 			mapper.delete(bvo);
-			return "redirect:/list";
+			return "redirect:/board/list";
 		} else {
-			return "redirect:/content?id="+bvo.getId();
+			return "redirect:/board/content?id="+bvo.getId();
 		}
 		
 		
@@ -107,21 +107,17 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public String update_ok(BoardVO bvo) {
 		mapper.update_ok(bvo);
-		return "redirect:/content?id="+bvo.getId();
+		return "redirect:/board/content?id="+bvo.getId();
 	}
 	/*댓글*/
 	@Override
 	public String reply_write_ok(ReplyVO rvo,HttpSession session) {
 		
 		mapper.reply_write_ok(rvo);
-		return "redirect:/content?id="+rvo.getId();
+		return "redirect:/board/content?id="+rvo.getBoard_id();
 	}
 
-	@Override
-	public String reply_list(Model model) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 
 	
