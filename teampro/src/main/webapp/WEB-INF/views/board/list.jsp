@@ -15,21 +15,21 @@
 	}
 	#main {
 		width:1200px;
-		height:800px;
+		height:100%;
 		margin:auto;
 	}
 	#content {
 		width:1000px;
-		height:700px;
+		height:100%;
 		margin:auto;
 
 		padding-top:30px;
 	}
 	#content table {
 		margin:auto;
-		width:600px;
-		height:500px;
-		border:1px solid #cccccc;
+		width:1000px;
+		height:100%;
+
 	}
 	#content table tr, td {
 		text-align:center;
@@ -43,6 +43,10 @@
 	a:hover {
 		text-decoration:underline;
 	}
+	#content td {
+		padding-top:15px;
+		padding-bottom:15px;
+	}
 </style>
 </head>
 <body>
@@ -52,16 +56,16 @@
 		<table width="800" align="center">
 			<tr>
 				<td> 제 목 </td>
-				<td> 아이디 </td>
-				<td> 조회수 </td>
-				<td> 작성일 </td>
+				<td width="110"> 아이디 </td>
+				<td width="110"> 조회수 </td>
+				<td width="110"> 작성일 </td>
 			</tr>
 		<c:forEach items="${list}" var="bvo">
 			<tr>
 				<td> <a href="readnum?id=${bvo.id}"> ${bvo.title} </a> </td>
-				<td> ${bvo.userid} </td>
-				<td> ${bvo.readnum} </td>
-				<td> ${bvo.writeday} </td>
+				<td width="110"> ${bvo.userid} </td>
+				<td width="110"> ${bvo.readnum} </td>
+				<td width="110"> ${bvo.writeday} </td>
 			</tr>
 		</c:forEach>
 			
