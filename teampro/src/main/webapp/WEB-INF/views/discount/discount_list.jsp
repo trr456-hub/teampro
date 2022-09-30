@@ -51,7 +51,7 @@
 	#sale_title a {
 		font-size:16px;
 	}
-	#sale_t {
+	#sale_t {  
 		padding-bottom:20px;
 	}
 	#sale_t_t {
