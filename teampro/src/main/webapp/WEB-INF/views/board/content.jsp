@@ -25,30 +25,33 @@
 		margin:auto;
 		padding-top:30px;
 	}
-	#content table {
-		margin:auto;
+	#table_con {
 		width:1000px;
 		height:100%;
-		border:1px solid #cccccc;
+	}
+	.con_td {
+		text-align:left;
+		padding-left:20px;
 	}
 	#content td {
 		padding-top:15px;
 		padding-bottom:15px;
 	}
-	#content table tr {
-		border-bottom:1px solid #cccccc;
-	}
 	#content table tr, td {
 		text-align:center;
 		font-size:15px;
+		border-bottom:1px solid #cccccc;
 	}
 	#content_reply {
+		width:800px;
 		padding-top:10px;
 		padding-bottom:30px;
+		margin:auto;
 	}
 	#content_reply td {
 		padding-top:15px;
 		padding-bottom:15px;
+		border-bottom:1px solid #cccccc;
 	}
 	#content_reply_c {
 		padding-top:10px;
@@ -61,12 +64,17 @@
 	}
 	#content a {
 		padding-left:10px;
+		text-align:center;
 	}
 	#reply_form {
 		padding-top:10px;
 	}
 	#del {
 		display:none;
+	}
+	.reply_td {
+		text-align:left;
+		padding-left:40px;
 	}
 </style>
 
@@ -81,26 +89,26 @@
 <section>
 <div id="main">
 	<div id="content">
-		<table width="500" align="center" border="1">
+		<table id="table_con" width="500" align="center">
 			<tr>
-				<td> 제 목 </td>
-				<td> ${bvo.title} </td>
+				<td class="con_td"> 제 목 </td>
+				<td class="con_td"> ${bvo.title} </td>
 			</tr>
 			<tr>
-				<td> 아이디 </td>
-				<td> ${bvo.userid} </td>
+				<td class="con_td"> 아이디 </td>
+				<td class="con_td"> ${bvo.userid} </td>
 			</tr>
 			<tr>
-				<td> 내 용 </td>
-				<td> ${bvo.title} </td>
+				<td class="con_td"> 내 용 </td>
+				<td class="con_td"> ${bvo.title} </td>
 			</tr>
 			<tr>
-				<td> 조회수 </td>
-				<td> ${bvo.readnum} </td>
+				<td class="con_td"> 조회수 </td>
+				<td class="con_td"> ${bvo.readnum} </td>
 			</tr>
 			<tr>
-				<td> 작성일 </td>
-				<td> ${bvo.writeday} </td>
+				<td class="con_td"> 작성일 </td>
+				<td class="con_td"> ${bvo.writeday} </td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
@@ -137,16 +145,16 @@
 	</div>
 	
 		<div id="content_reply">
-			<table width="700" align="center" border="1">
+			<table width="500" align="center">
 			<tr>
 				<td> 아이디 </td>
-				<td> 내용  </td>
+				<td class="reply_td"> 내용  </td>
 				<td> 날짜 </td>
 			</tr>
 			<c:forEach items="${rlist}" var="rvo">
 				<tr>
 					<td>${rvo.user_id}</td>
-					<td style="text-align:left">${rvo.content}</td>
+					<td class="reply_td">${rvo.content}</td>
 					<td>${rvo.writeday}</td>
 				</tr>				
 			</c:forEach>

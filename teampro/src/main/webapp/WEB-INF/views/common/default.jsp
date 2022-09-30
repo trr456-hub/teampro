@@ -214,7 +214,7 @@
 								</dt>
 								<dd>
 									<h3>
-										<a href="#">자유게시판</a>
+										<a href="../board/list">자유게시판</a>
 									</h3>
 								</dd>
 								<dd>
