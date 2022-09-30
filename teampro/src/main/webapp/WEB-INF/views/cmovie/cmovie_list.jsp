@@ -10,12 +10,13 @@
  <style>
    section {
      width:100%;
-    
      background:white;
    }
    section table {
-   	width:900px;
+   	 width:900px;
    	 margin:auto;
+   	 padding-right:150px;
+   	 padding-top: 50px;
    }
    section td {
      width:100px;
@@ -25,6 +26,11 @@
      padding-bottom:100px;	
      vertical-align:top;
      display: inline-block;
+   }
+   section tr {
+     width:100%;
+   	 margin:auto;
+   	 text-align: center;
    }
    section h2{
    	 width:900px;
@@ -44,16 +50,18 @@
    section #title {
    	font-size:17px;
    	font-weight:bold;
+   	width:250px;
    }
    section #gaebong {
-   	font-size:13px;
+   	font-size:14px;
+   	width:250px;
    }
    section #rank {
     width:126px;
   	height:19px;
   	margin:auto;
    	background:#7878E1;
-   	padding:6px 30px;;
+   	padding:6px 30px;
    	text-align:center;
    	color:white;
    }
@@ -66,15 +74,15 @@
 </head>
 <body>
 	<section>
-	<div style="width:300px;">
 	 <c:set var="i" value="0"/>
-	 <table width="700" align="center" cellspacing="15">
-	 <div style="position: relative;
+	  <div style="margin:auto;text-align:center;">
+	 <table width="1000" align="center" cellspacing="15">
+     <div style="position: relative;
 		   	 height:35px;
-		   	 padding-top: 30px;
+		   	 padding-top: 120px;
 		   	 padding-left:30px;
 		   	 border-bottom: 3px solid #241d1e;
-		   	 width:1000px;">
+		   	 width:750px;margin:auto;text-align: left">
 	 <span style="display: inline-block;
 		    position: relative;
 		    height: inherit;
@@ -84,16 +92,13 @@
 		    font-weight: 500;
 		    font-size: 24px;
 		    text-align: left;
-		    vertical-align: middle;"> 무비차트 </span></div>
+		    vertical-align: middle;"> 무비차트 </span></div> 
 	  <tr>
 	  <c:forEach items="${list}" var="cvo">	  
 	   <td onclick="content_view('${cvo.mcode}')">
 	   <div>
-	   <div id="rank"> 
-	   	NO.
-	   </div>
 	   <div id="img"> 
-	   <img src="../resources/mimg/${cvo.pimg}" width="186" height="260" style="padding-left:30px;"> </div>
+	   <img src="../resources/mimg/${cvo.pimg}" width="186" height="260" style="padding-left:30px;border-radius:7px"> </div>
 	   <div id="title">
 	   	${cvo.title}
 	   </div>
@@ -105,6 +110,7 @@
 	  </c:forEach>
 	  </tr>
 	 </table>
+	 	  </div>
 	 </div>
 	</section>
 </body>
