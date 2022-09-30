@@ -34,6 +34,30 @@ public class DiscountController {
 		return service.discount_list(model);
 	}
 	
+	@RequestMapping("/discount/discount_phone")
+	public String discount_phone(Model model) {
+		
+		return service.discount_phone(model);
+	}
+	
+	@RequestMapping("/discount/discount_card")
+	public String discount_card(Model model) {
+		
+		return service.discount_card(model);
+	}
+	
+	@RequestMapping("/discount/discount_point")
+	public String discount_point(Model model) {
+		
+		return service.discount_point(model);
+	}
+	
+	@RequestMapping("/discount/discount_theater")
+	public String discount_theater(Model model) {
+		
+		return service.discount_theater(model);
+	}
+	
 	@RequestMapping("/discount/discount_content")
 	public String discount_content(HttpServletRequest request, Model model) {
 		
