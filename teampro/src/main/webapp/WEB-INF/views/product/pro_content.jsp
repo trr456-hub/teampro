@@ -190,7 +190,7 @@
 					<span class="con_gusung_db">${pvo.gigan}</span> <br><br>
 					<span style="font-weight:bold">원산지</span>
 					<span class="con_gusung_db">&nbsp;&nbsp;&nbsp;${pvo.made}</span>
-				</div>
+				</div>  
 					<div id="su">
 						<input type="text" id="spinner" name="su" value="1" readonly>
 					</div>
