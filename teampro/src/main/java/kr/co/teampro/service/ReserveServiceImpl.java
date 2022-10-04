@@ -2,6 +2,7 @@ package kr.co.teampro.service;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,11 @@ public class ReserveServiceImpl implements ReserveService {
 	@Override
 	public String theaterBuy_ok(YemeVO yvo,HttpSession session) {
 		String userid=session.getAttribute("userid").toString();
+		
 		yvo.setUserid(userid);
+		String cod = yvo.getCode();
+		String jcod = yvo.getJcode();
+		String mcod = yvo.getMcode();
 		
 		Integer number=mapper.getyeme(userid);
 		number++;
@@ -56,13 +61,23 @@ public class ReserveServiceImpl implements ReserveService {
 		} else if(num.length()==3) {
 			num="0"+num;
 		}
-		String yemecode=userid+num;
+		String yemecode=cod+"-"+jcod+mcod+"-"+userid+num;
 		/*System.out.println(yemecode);*/
 		yvo.setYemecode(yemecode);
 		/*System.out.println(yvo.getYemecode());*/
 		mapper.theaterBuy_ok(yvo);
 		
 		return "redirect:/mypage/myreserve";
+	}
+	
+	public String getSeat(Model model,YemeVO yvo) {
 		
+		ArrayList<YemeVO> ylist = mapper.getSeat(yvo);
+		
+		model.addAttribute("ylist",ylist);
+		
+		/*System.out.println(ylist);*/
+		
+		return "/reserve/theater";
 	}
 }

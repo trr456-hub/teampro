@@ -26,4 +26,8 @@
 		select
 		ifnull(max(right(yemecode,4)),0) from yeme where userid=#{param1}
 	</select>
+	<select id="getSeat" resultType="kr.co.teampro.vo.YemeVO">
+		select seatpass from yeme where code=#{code} and jcode=#{jcode} and 
+		mcode=#{mcode} and tcode=#{tcode} and monthday=#{monthday}
+	</select>
 </mapper>

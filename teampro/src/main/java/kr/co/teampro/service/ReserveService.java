@@ -11,4 +11,6 @@ public interface ReserveService {
 	public String reservepage(Model model);
 	
 	public String theaterBuy_ok(YemeVO yvo,HttpSession session);
+	
+	public String getSeat(Model model,YemeVO yvo);
 }

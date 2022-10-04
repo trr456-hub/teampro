@@ -10,13 +10,16 @@ import kr.co.teampro.vo.YemeVO;
 
 public interface ReserveMapper {
 	public ArrayList<ReserveVO> reservepage();
-	
+
 	public ArrayList<DaeareaVO> daearea();
-	
+
 	public ArrayList<JungareaVO> jungarea();
-	
+
 	public ArrayList<SeetimeVO> seetime();
-	
+
 	public void theaterBuy_ok(YemeVO yvo);
+
 	public int getyeme(String userid);
+	
+	public ArrayList<YemeVO> getSeat(YemeVO yvo);
 }
