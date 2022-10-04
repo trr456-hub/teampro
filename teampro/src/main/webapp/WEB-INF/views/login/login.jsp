@@ -3,50 +3,56 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
  <style>
-    section {
-       width:100%;
-       height:700px;
-       margin:auto; 
-       text-align:center;
-       background:white;
-       padding-top:100px;
+ 	body {
+	 	margin:0 auto;
+	 	background-color:#333;
+	 	background:linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 1.0)), 
+      	url(../resources/img/좌석bg.jpg) no-repeat center center;
+	 	background-size:cover;
+ 	}
+    .wrap {
+		position: relative;
+	    width: 550px;
+	    margin: 0 auto;
+	    top: 230px;
+	    padding-left: 10px;
+	    height: 430px;
+	    background: #eee;
     }
-    body {
-    	width:1200px;
-     	height:900px;
-    	background-image:url("../resources/bimg/영화배경.png");
-    	background-repeat:no-repeat;
-    	background-position:center center;
-    	background-size: 1200px 900px;
-    	align:center;
-    	margin:auto;
+    .wrap .left {
+    	position:absolute;
     }
-     section #left {
-	    width:500px;
-	    height:400px;
-	    float:left;
-        text-align:center;
-	    margin-top:15px;
+    .wrap .right {
+    	position: relative;
+    	padding-top: 15px;
+    	height: 100%;
+    	margin-left: 340px;
     }
-    section div {
+    .wrap div {
     	margin-top:15px;
     }
-    section h2 {
-    	margin-top:50px;
+    .right h2 {
+    	position: absolute;
+	    margin: 0 auto;
+	    left: 100px;
+	    color:#555;
+	    top: 30px;
     }
-    section input[type=text] {
+    .right input[type=text] {
        width:200px;
        height:40px;
        border:0px solid white;
        border-bottom:2px solid black;
     }
-    section input[type=password] {
+    .right input[type=password] {
        width:200px;
        height:40px;
        border:0px solid white;
        border-bottom:2px solid black;
     }
-    section input[type=submit] {
+    .right input[type=submit] {
        width:180px;
        height:50px;
        border:1px solid #eeeeee;
@@ -54,9 +60,9 @@
        color:white;
        font-size:15px;
     }
-    section #cg {
-    	color:#FF6E6E;
-    	font-size:50px;
+    .left > img {
+    	width:300px;
+    	height:400px;
     }
  </style>
  <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -132,26 +138,48 @@
 	}
 	
 	// 아이디 저장 끝
+	
  </script>
 </head>
 <body>
-  <section>
-    <form method="post">
-    <div id="left"> <img src="../resources/bimg/양초.jpg" width="400" height="400" style="padding-left:250px;border-radius:5px;"> </div>
-    	<h2> <span id="cg"><img src="../resources/img/CCA4.png" width="90" height="40"></span> <!-- CGV 글자 대신 img src로고 크기조절해서 넣으면 됩니다 --> 
-    	로그인 </h2>
-    	<div> <input type="text" name="userid" id="logId" placeholder="아이디"></div>
-    	<div> <input type="password" name="pwd" placeholder="비밀번호"> </div>
-    	<div class="logSave">
-		    <input type="checkbox" class="save_id" name="checkId" id="saveId" >
-		    <label for="saveId">아이디 저장</label>
+	<form method="post">
+		<div class="wrap">
+			<div class="left"> 
+				 
+			</div>
+			<div class="right">
+			 	<div class="cg">
+			 		<img src="../resources/img/CCA5.png" width="90" height="40">
+			 	</div> <!-- CGV 글자 대신 img src로고 크기조절해서 넣으면 됩니다 --> 
+			 	<h2> 
+			  		로그인 
+			  	</h2>
+			  	<div> 
+			  		<input type="text" name="userid" id="logId" placeholder="아이디">
+			  	</div>
+			  	<div> 
+			  		<input type="password" name="pwd" placeholder="비밀번호"> 
+			  	</div>
+			  	<div class="logSave">
+				    <input type="checkbox" class="save_id" name="checkId" id="saveId" >
+				    <label for="saveId">아이디 저장</label>
+				</div>
+			  		<c:if test="${err ==1 }">
+						<br> <span style="color:red;font-size:12px;"> 아이디 혹은 비밀번호가 맞지 않습니다 </span>
+					</c:if>
+				<div> <input type="submit" name="로그인" value="로그인 하기 →" formaction="login_ok"> </div>
+				<div> <input type="submit" name="회원가입" value="회원가입 하기 →" formaction="../member/memberinput"> </div>
+				<div> <input type="submit" name="로그인" value="메인 홈페이지 →" formaction="../main/index"> </div>
+			</div>
 		</div>
-    		<c:if test="${err ==1 }">
-    			<br> <span style="color:red;font-size:12px;"> 아이디 혹은 비밀번호가 맞지 않습니다 </span>
-    		</c:if>
-  		<div> <input type="submit" name="로그인" value="로그인 하기 →" formaction="login_ok"> </div>
-  		<div> <input type="submit" name="회원가입" value="회원가입 하기 →" formaction="../member/memberinput"> </div>
-  		<div> <input type="submit" name="로그인" value="메인 홈페이지 →" formaction="../main/index"> </div>
-  	</form>
-  </section>
+	</form>
+<script>
+const movImg = ["매트릭스.jpg","머니볼.jpg","브루스올마이티.jpg","소셜네트워크.jpg","어벤져스1.jpg",
+	"엔드게임.jpg","인셉션.jpg","인터스텔라.jpg","인피니티워.jpg","타이타닉.jpg","해리포터마법사의돌.jpg"]
+const choseImg = movImg[Math.floor(Math.random() * movImg.length)];
+const bgImg = document.createElement("img");
+bgImg.src = '../resources/mimg/'+choseImg;
+console.log(choseImg);
+document.querySelector(".left").appendChild(bgImg);	
+</script>
 </body>    
