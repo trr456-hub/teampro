@@ -82,9 +82,9 @@
     <!-- 관리자탭  -->
     <c:if test="${userid == 'admin' }">
     <textarea cols="40" rows="6" name="content" placeholder="답변적기">${content}</textarea>
-    </c:if>
      <c:if test="${empty content}"> <!-- 답변이 없을경우에만 -->
      <div> <input type="submit" value="답변쓰기"> </div>
+    </c:if>
     </c:if>
     </div>
     
