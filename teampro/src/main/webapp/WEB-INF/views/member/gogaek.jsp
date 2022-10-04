@@ -7,25 +7,58 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
-		section {
-			width:1000px;
-			height:500px;
-			margin:auto;
-			background:white;
-		}
-	</style>
+	section {
+		width:100%;
+		height:500px;
+		margin:auto;
+		background:white;
+	}
+	#main {
+		width:1000px;
+		height:100%;
+		margin:auto;
+		background:white;
+	}
+	#content {
+		width:800px;
+		height:100%;
+		margin:auto;
+		padding-top:60px;
+		
+	}
+	#left {
+		margin-left:60px;
+		float:left;
+	}
+	#right {
+		float:right;
+		margin-right:50px;
+	}
+		
+</style>
 </head>
 <body>
 <section>
-   <c:if test="${userid != 'admin' }">
-	<a href="../member/clist"> 내 문의 내역 </a>
-	<a href="../member/cwrite"> 문의하기 </a>
+<div id="main">
+	<div id="content">
+	<c:if test="${userid != 'admin' }">
+		<div id="left">
+			<a href="../member/clist"> 
+				<img src="../resources/img/문의내역.PNG" width="250" height="250">
+			</a>
+		</div>
+		<div id="right">
+			<a href="../member/cwrite">
+				<img src="../resources/img/문의하기.PNG" width="250" height="250">
+			</a>
+		</div>
 	</c:if>
+	</div>
 	
-	 <c:if test="${userid == 'admin' }">
-	<a href="../member/member_coun"> 관리자용 문의목록 </a>
+	<c:if test="${userid == 'admin' }">
+		<a href="../member/member_coun"> 관리자용 문의목록 </a>
 	</c:if>
-	
+</div>
 </section>
 </body>
 </html>
