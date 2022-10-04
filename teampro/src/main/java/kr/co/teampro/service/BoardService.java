@@ -17,7 +17,7 @@ public interface BoardService {
 	public String content(HttpServletRequest request,Model model);
 	public String delete(BoardVO bvo);
 	public String update(HttpServletRequest request,Model model);
-	public String update_ok(BoardVO bvo);
+	public String update_ok(BoardVO bvo, HttpSession session);
 	/*댓글*/
 	public String reply_write_ok(ReplyVO rvo,HttpSession session);
 	

@@ -48,7 +48,7 @@
 	</insert>
 	
 	<select id="reply_list" resultType="kr.co.teampro.vo.ReplyVO">
-		select * from reply where board_id=#{param1}
+		select * from reply where board_id=#{param1} order by id desc
 	</select>
 	
 	

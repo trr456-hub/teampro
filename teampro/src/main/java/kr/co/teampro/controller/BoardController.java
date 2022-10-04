@@ -63,9 +63,9 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/board/update_ok")
-	public String update_ok(BoardVO bvo) {
+	public String update_ok(BoardVO bvo, HttpSession session) {
 		
-		return service.update_ok(bvo);
+		return service.update_ok(bvo, session);
 	}
 	/*댓글*/
 	@RequestMapping("/board/reply_write_ok")
