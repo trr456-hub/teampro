@@ -15,21 +15,32 @@
 	}
 	#main {
 		width:1200px;
-		height:800px;
+		height:100%;
 		margin:auto;
+		background:white;
 	}
 	#content {
 		width:1000px;
-		height:700px;
+		height:100%;
 		margin:auto;
-		text-align:center;
 		padding-top:30px;
 	}
-	#content table {
-		margin:auto;
-		width:600px;
-		height:500px;
-		border:1px solid #cccccc;
+	#table_con {
+		width:1000px;
+		height:100%;
+	}
+	.con_td {
+		text-align:center;
+		padding-left:20px;
+	}
+	#content td {
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+	#content table tr, td {
+		text-align:center;
+		font-size:15px;
+		
 	}
 </style>
 
@@ -42,18 +53,14 @@
 	<div id="content">
 		<form method="post" action="update_ok">
 		<input type="hidden" name="id" value="${bvo.id}">
-			<table width="600" align="center">
+			<table id="table_con" width="500" align="center">
 				<tr>
-					<td> 제 목 </td>
-					<td> <input type="text" name="title" value="${bvo.title}" size="50"> </td>
+					<td class="con_td"> 제 목 </td>
+					<td class="con_td"> <input type="text" name="title" value="${bvo.title}" size="90"> </td>
 				</tr>
 				<tr>
-					<td> 아이디 </td>
-					<td> <input type="text" name="userid" value="${bvo.userid}" size="50"> </td>
-				</tr>
-				<tr>
-					<td> 내 용 </td>
-					<td> <textarea cols="60" rows="8" name="content">${bvo.content}</textarea> </td>
+					<td class="con_td"> 내 용 </td>
+					<td class="con_td"> <textarea cols="90" rows="8" name="content">${bvo.content}</textarea> </td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center">

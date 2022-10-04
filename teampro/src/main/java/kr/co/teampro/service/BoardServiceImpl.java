@@ -23,14 +23,15 @@ public class BoardServiceImpl implements BoardService {
 	private BoardMapper mapper;
 
 	@Override
-	public String write_ok(BoardVO bvo) {
-		
+	public String write_ok(HttpSession session, BoardVO bvo) {
+		String userid=session.getAttribute("userid").toString();
+		bvo.setUserid(userid);
 		mapper.write_ok(bvo);
 		return "redirect:/board/list";
 	}
 
 	@Override
-	public String list(Model model,HttpServletRequest request) {
+	public String list(Model model,HttpServletRequest request, HttpSession session) {
 		int page,start;
 		
 		if(request.getParameter("page")==null) {
@@ -54,7 +55,6 @@ public class BoardServiceImpl implements BoardService {
 		if(chong < pend) {
 			pend=chong;
 		}
-		
 		ArrayList<BoardVO> list=mapper.list(start);
 		model.addAttribute("list",list);
 		model.addAttribute("page",page);
