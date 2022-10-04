@@ -48,9 +48,16 @@
 			</a>
 		</div>
 		<div id="right">
+		<c:if test="${userid != null }">
 			<a href="../member/cwrite">
 				<img src="../resources/img/문의하기.PNG" width="250" height="250">
 			</a>
+			</c:if>
+			<c:if test="${userid == null }">
+			<a href="../login/login">
+				<img src="../resources/img/문의하기.PNG" width="250" height="250">
+			</a>
+			</c:if>
 		</div>
 	</c:if>
 	</div>
