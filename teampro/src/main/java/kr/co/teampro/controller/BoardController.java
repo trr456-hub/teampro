@@ -27,15 +27,15 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/board/write_ok")
-	public String write_ok(BoardVO bvo) {
+	public String write_ok(HttpSession session, BoardVO bvo) {
 		
-		return service.write_ok(bvo);
+		return service.write_ok(session, bvo);
 	}
 	
 	@RequestMapping("/board/list")
-	public String list(Model model, HttpServletRequest request) {
+	public String list(Model model, HttpServletRequest request, HttpSession session) {
 		
-		return service.list(model,request);
+		return service.list(model,request,session);
 	}
 	
 	@RequestMapping("/board/readnum")

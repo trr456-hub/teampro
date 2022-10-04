@@ -29,8 +29,8 @@
  		border-radius: 10px;
  	}
  	#review .pers {
- 		margin-left:-300px;
-	 	width:1200px;
+ 		margin-left:-260px;
+	 	width:1120px;
 	    min-height: 500px;
 	    display:flex;
 	    flex-wrap:wrap;

@@ -379,8 +379,7 @@ section {
 												</c:if>
 												<span class="screen">${fn:substring(tcode,1,2)}관</span>
 												<span class="seatNum">
-													남은좌석
-													<b class="restNum">56</b>
+													<b class="restNum">좌석수</b>
 													/
 													<b>90</b>
 												</span>
