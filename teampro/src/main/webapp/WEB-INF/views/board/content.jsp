@@ -85,11 +85,6 @@
 	}
 </style>
 
-<script>
-	function del_view() {
-		document.getElementById("del").style.display="table-row";
-	}
-</script>
 </head>
 <body>
 
@@ -124,19 +119,8 @@
 				
 					<a href="update?id=${bvo.id}"> 수정 </a>
 	
-	
-					<a href="javascript:del_view()"> 삭제 </a>
-	
-	
-				</td>
-			</tr>
-			<tr id="del">
-				<td colspan="2" align="center">
-					<form method="post" action="delete">
-						<input type="hidden" name="id" value="${bvo.id}">
-						<input type="password" name="pwd">
-						<input type="submit" value="삭제">
-					</form>
+					<a href="delete?id=${bvo.id}"> 삭제 </a>
+					
 				</td>
 			</tr>
 	</table>

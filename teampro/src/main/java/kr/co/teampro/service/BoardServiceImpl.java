@@ -84,9 +84,10 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public String delete(BoardVO bvo) {
-		String dbpwd=mapper.getPassword(bvo.getId());
-		if(dbpwd.equals(bvo.getPwd())) {
+	public String delete(BoardVO bvo, HttpSession session) {
+		String userid = session.getAttribute("userid").toString();
+		String dbuid=mapper.getUserid(bvo.getId());
+		if(dbuid.equals(userid)) {
 			mapper.delete(bvo);
 			return "redirect:/board/list";
 		} else {

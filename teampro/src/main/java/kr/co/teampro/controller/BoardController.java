@@ -51,9 +51,9 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/board/delete")
-	public String delete(BoardVO bvo) {
+	public String delete(BoardVO bvo, HttpSession session) {
 		
-		return service.delete(bvo);
+		return service.delete(bvo, session);
 	}
 	
 	@RequestMapping("/board/update")
