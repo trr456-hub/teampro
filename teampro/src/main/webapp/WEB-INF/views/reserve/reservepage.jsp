@@ -806,7 +806,7 @@ li .depth1 > a {
 																				<strong>${svo.title}</strong>
 																			</dd>
 																			<dd class="seat">
-																				<strong>56/${svo.people}</strong>
+																				<strong>좌석${svo.people}</strong>
 																			</dd>
 																			<dd class="hall">
 																				1관
