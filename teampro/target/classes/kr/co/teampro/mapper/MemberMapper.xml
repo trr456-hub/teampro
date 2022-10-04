@@ -9,6 +9,36 @@
 	</insert>
 	
 	<select id="check_userid" resultType="Integer">
-    select count(*) from member where userid=#{param1}
+    	select count(*) from member where userid=#{param1}
  	</select>
+ 	
+ 	<insert id="cwrite_ok" parameterType="kr.co.teampro.vo.CounselVO">
+   		insert into counsel(userid,title,content,writeday) values(#{userid},#{title},#{content},now())
+    </insert>
+    
+    <select id="clist" resultType="kr.co.teampro.vo.CounselVO">
+	   	select *,(select count(*) from answer where cid=counsel.id) as cnt from counsel where userid=#{param1} 
+    	order by id desc
+    </select>
+    
+    <select id="ccontent" resultType="kr.co.teampro.vo.CounselVO">
+    select * from counsel where id=#{param1}
+  </select>
+  
+  <delete id="cdelete">
+    delete from counsel where id=#{param1}
+  </delete>
+  
+  <select id="getContent" resultType="String">
+    select content from answer where cid=#{param1}
+  </select>
+  
+  <select id="member_coun" resultType="kr.co.teampro.vo.CounselVO">
+    select *, (select count(*) from answer where cid=counsel.id) as cnt from counsel order by id desc
+  </select>
+  
+  <insert id="coun_answer" parameterType="kr.co.teampro.vo.AnswerVO">
+    insert into answer(content,cid,writeday)
+    values(#{content},#{cid},now())
+  </insert>
 </mapper>

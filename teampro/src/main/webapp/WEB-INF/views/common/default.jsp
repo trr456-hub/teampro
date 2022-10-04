@@ -99,7 +99,7 @@
 								src="../resources/img/loginMember.png"> <span>MY CCA</span>
 						</a></li>
 						</c:if>
-						<li><a href="#"> <img alt=""
+						<li><a href="../member/gogaek"> <img alt=""
 								src="../resources/img/loginCustomer.png"> <span>고객센터</span>
 						</a></li>
 					</ul>

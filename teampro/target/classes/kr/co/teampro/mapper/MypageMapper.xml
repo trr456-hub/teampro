@@ -41,4 +41,8 @@
     <select id="myreserve" resultType="kr.co.teampro.vo.YemeVO">
 	  	select * from yeme where userid=#{param1}
     </select>
+    
+    <delete id="review_del">
+  		delete from review where id=#{param1}
+    </delete>
   </mapper>

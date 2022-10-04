@@ -150,4 +150,13 @@ public class MypageServiceImpl implements MypageService{
 
 		return "/mypage/myreserve";
 	}
+	
+	@Override
+	public String review_del(HttpServletRequest request) {
+		String id=request.getParameter("id");
+		
+		mapper.review_del(id);
+
+		return "redirect:/mypage/myreview";
+	}
 }
