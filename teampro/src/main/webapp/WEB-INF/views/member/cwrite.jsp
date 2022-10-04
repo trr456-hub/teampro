@@ -24,19 +24,31 @@
      margin-top:20px;
    }
    section input[type=submit] {
-     width:408px;
+     width:308px;
      height:34px; 
      margin-top:20px;
      background:#5E17EB;
      border:1px solid #5E17EB;
      color:white;
+     border-radius:3px;
+   }
+    section h3 {
+     text-align:center;
+     font-weight:bold;
+     padding-top:50px;
+     padding-bottom:15px;
+     padding-left:9px;
+   }
+   section table caption {
+    font-size:20px;
+	line-height:30px;
    }
  </style> 
 </head>
 <body>
   <section>
   <form method="post" action="cwrite_ok">
-	<h2 align="center">	1:1 상담 </h2>
+	<caption><h3> 상담문의 </h3> </caption>
 		<div> <input type="text" name="title" placeholder="제 목 "> </div>
 		<div> <textarea cols="40" rows="6" name="content" placeholder="상담내용"> </textarea></div>
 		<div> <input type="submit" value="저장하기"></div>

@@ -71,9 +71,9 @@
   <section>
   <form method="post" action="coun_answer">
   <input type="hidden" name="cid" value="${cvo.id}">
-    <div> ${cvo.title} </div>
+    <div style="text-align:left;display:block;"> ${cvo.title} </div>
     <div> ${cvo.content} </div>
-    
+    ㄴ
     <div id="forth"> 
     <!-- 일반유저 문의 -->
     <c:if test="${userid != 'admin' }">
