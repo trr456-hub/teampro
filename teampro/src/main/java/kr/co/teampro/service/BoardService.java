@@ -11,8 +11,8 @@ import kr.co.teampro.vo.ReplyVO;
 
 
 public interface BoardService {
-	public String write_ok(BoardVO bvo);
-	public String list(Model model,HttpServletRequest request);
+	public String write_ok(HttpSession session, BoardVO bvo);
+	public String list(Model model,HttpServletRequest request, HttpSession session);
 	public String readnum(HttpServletRequest request);
 	public String content(HttpServletRequest request,Model model);
 	public String delete(BoardVO bvo);

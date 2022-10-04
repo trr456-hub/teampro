@@ -6,8 +6,8 @@
 <mapper namespace="kr.co.teampro.mapper.BoardMapper">
 
 	<insert id="write_ok" parameterType="kr.co.teampro.vo.BoardVO">
-		insert into board(title,userid,content,pwd,writeday)
-		values(#{title},#{userid},#{content},#{pwd},now())
+		insert into board(title,userid,content,writeday)
+		values(#{title},#{userid},#{content},now())
 	</insert>
 	
 	<select id="list" resultType="kr.co.teampro.vo.BoardVO">

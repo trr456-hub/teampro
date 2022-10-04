@@ -96,6 +96,9 @@
 	function pro_submit() {
 		document.pro.submit();
 	}
+	function pro_login() {
+			alert("로그인을 해주세요.");
+	}
 	
 	$(function() {
 		$("#spinner").spinner({
@@ -119,7 +122,7 @@
 <body>
 
 <section>
-
+<c:if test="${userid != null}">
 <form name="pro" method="post" action="pro_gumae">
 <input type="hidden" name="pcode" value="${pvo.pcode}">
 <div id="content">
@@ -153,7 +156,7 @@
 						<span id="tot"> <fmt:formatNumber value="${pvo.price}" pattern="#,###"/>원 </span>
 					</div>
 					<div id="btn_gumae">
-						<button class="btn" onclick="pro_submit()"> 구매하기 </button>
+							<button class="btn" onclick="pro_submit()"> 구매하기 </button>
 					</div>
 			</div>
 		</div>
@@ -161,6 +164,50 @@
 </div>
 
 </form>
+</c:if>
+<c:if test="${userid == null}">
+<form name="pro" method="post" action="../login/login">
+<input type="hidden" name="pcode" value="${pvo.pcode}">
+<div id="content">
+	<div id="category_pro">
+		<div class="category_t_t">
+			${pvo.title}
+		</div>
+		<div id="category_content">
+			<div id="pro_img">
+				<ul>
+					<img src="../resources/store/${pvo.pimg}" width="420" height="420">
+				</ul>
+			</div>
+			<div id="pro_con">
+				<p class="con_price">
+					<span> <fmt:formatNumber value="${pvo.price}" pattern="#,###"/>원 </span>
+				</p>
+				<div class="con_gusung">
+					<span style="font-weight:bold">상품구성</span>
+					<span class="con_gusung_db">${pvo.gusung}</span> <br><br>
+					<span style="font-weight:bold">유효기간</span>
+					<span class="con_gusung_db">${pvo.gigan}</span> <br><br>
+					<span style="font-weight:bold">원산지</span>
+					<span class="con_gusung_db">&nbsp;&nbsp;&nbsp;${pvo.made}</span>
+				</div>
+					<div id="su">
+						<input type="text" id="spinner" name="su" value="1" readonly>
+					</div>
+					<div id="gumae_price">
+						<span>구매금액</span>
+						<span id="tot"> <fmt:formatNumber value="${pvo.price}" pattern="#,###"/>원 </span>
+					</div>
+					<div id="btn_gumae">
+							<button class="btn" onclick="pro_login()"> 구매하기 </button>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</form>
+</c:if>
 
 </section>
 

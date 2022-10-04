@@ -114,12 +114,13 @@
 					</c:if>
 				</td>
 			</tr>
-			
+		<c:if test="${userid != null }">
 			<tr>
 				<td colspan="4" align="center">
 					<a href="write"> 글쓰기 </a>
 				</td>
 			</tr>
+		</c:if>
 		</table>
 	</div>
 </div>
