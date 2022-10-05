@@ -1,4 +1,4 @@
-#CCA_TeamProject</h1>
+# CCA_TeamProject
 
 
 ### 1. 프로젝트 정보
@@ -9,4 +9,4 @@
 | 박종국 | back-end |
 | 김규호 | back-end |
 
-날짜 2022.9.15 ~ 2019.10.ing~
+날짜 2022.9.15 ~ 2022.ing~
