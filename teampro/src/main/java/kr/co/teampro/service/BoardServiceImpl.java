@@ -118,7 +118,7 @@ public class BoardServiceImpl implements BoardService {
 			mapper.update_ok(bvo);
 			return "redirect:/board/content?id="+bvo.getId();
 		} else {
-			return "redirect:/board/content?id="+bvo.getId();
+			return "redirect:/board/update?id="+bvo.getId();
 		}
 	}
 	/*댓글*/
