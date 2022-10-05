@@ -806,7 +806,7 @@ li .depth1 > a {
 																				<strong>${svo.title}</strong>
 																			</dd>
 																			<dd class="seat">
-																				<strong>좌석${svo.people}</strong>
+																				<strong>${svo.people}석</strong>
 																			</dd>
 																			<dd class="hall">
 																				1관
@@ -1134,7 +1134,7 @@ li .depth1 > a {
 	        		document.querySelector("#useSubmit").submit();        		
 	        	}	
         	} else {
-    			if(confirm("로그인 창으로 넘어가시겟습니까?"))
+    			if(confirm("로그인 창으로 넘어가시겟습니까?"))  
     				location.href = "../login/login";
     			else
     				return false;

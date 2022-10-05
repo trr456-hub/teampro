@@ -108,7 +108,7 @@ public class BoardServiceImpl implements BoardService {
 		return "/board/update";
 	}
 
-	@Override
+	@Override  
 	public String update_ok(HttpServletRequest request,BoardVO bvo, HttpSession session) {
 		String id = request.getParameter("id");
 		String userid = session.getAttribute("userid").toString();
