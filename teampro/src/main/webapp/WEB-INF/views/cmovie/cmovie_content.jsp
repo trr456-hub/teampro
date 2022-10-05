@@ -17,7 +17,7 @@ table {
 	margin: auto;
 	align: center;
 	width: 900px;
-	border: 5px solid #eeeeee;
+	border: 1px solid #eeeeee;
 	background: white;
 }
 
@@ -55,7 +55,7 @@ table {
 }
 
 h2 {
-	text-align: center;
+	/* text-align: center; */
 }
 
 #review {
@@ -105,7 +105,7 @@ input[type=button] {
  	<section>
 	<table width="500" align="center" border="1">
 		<tr>
-			<td width="310" style="padding-top: 30px;"><img
+			<td width="310" style="padding-top:30px; position:relative; left:170px;"><img
 				src="../resources/mimg/${cvo.pimg}" width="200"><br>
 			<br>
 			<br></td>
@@ -123,9 +123,9 @@ input[type=button] {
 		</tr>
 		<tr>
 			<td colspan="2"><article id="review">
-				<h2
-					style="padding: 0 0 16px 0; font-size: 1.4666em; color: #503396; padding-top: 150px;">
-					${cvo.title} 영화리뷰</h2>
+				<h2 style="padding: 0 0 16px 0; font-size: 1.4666em; color: #503396; padding-top: 150px;">
+					${cvo.title} 영화리뷰
+				</h2>
 				<div id="rev_wr">
 					<span style="color: #01738b">${cvo.title} </span> 재미있게 보셧나요?
 						<c:if test="${userid != null }">

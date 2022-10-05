@@ -97,8 +97,13 @@
 				<td class="content_one" style="height:300px"> ${bvo.content} </td>
 			</tr>
 			<tr>
+<<<<<<< HEAD
 				<th> 아이디 :  </th>
 				<td> ${bvo.userid} </td>
+=======
+				<td class="con_td"> 내 용 </td>
+				<td class="con_td"> ${bvo.content} </td>
+>>>>>>> branch 'master' of https://github.com/gorhf9397/teampro.git
 			</tr>
 			<tr>
 				<th> 조회수 :  </th>
@@ -109,8 +114,16 @@
 				<td> ${bvo.writeday} </td>
 				<td style="float:right">
 					<a href="list"> 목록 </a>
+<<<<<<< HEAD
+=======
+				<c:if test="${userid == bvo.userid}">
+>>>>>>> branch 'master' of https://github.com/gorhf9397/teampro.git
 					<a href="update?id=${bvo.id}"> 수정 </a>
 					<a href="delete?id=${bvo.id}"> 삭제 </a>
+<<<<<<< HEAD
+=======
+				</c:if>
+>>>>>>> branch 'master' of https://github.com/gorhf9397/teampro.git
 				</td>
 			</tr>
 	</table>
