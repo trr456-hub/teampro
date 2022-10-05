@@ -39,6 +39,15 @@ public class ReserveController {
 		model.addAttribute("tcode",tcode);
 		model.addAttribute("title",title);
 		
+		YemeVO yvo = new YemeVO();
+		yvo.setCode(code);
+		yvo.setJcode(jcode);
+		yvo.setMcode(mcode);
+		yvo.setTcode(tcode);
+		yvo.setMonthday(monthday);
+		
+		service.getSeat(model, yvo);
+		
 		return "/reserve/theater";
 	}
 	@RequestMapping("/reserve/theaterBuy")
@@ -70,4 +79,9 @@ public class ReserveController {
 	public String theaterBuy_ok(YemeVO yvo,HttpSession session) {
 		return service.theaterBuy_ok(yvo, session);
 	}
+	
+//	@RequestMapping("/reserve/getSeat")
+//	public String getSeat(Model model,YemeVO yvo) {
+//		return service.getSeat(model, yvo);
+//	}
 }

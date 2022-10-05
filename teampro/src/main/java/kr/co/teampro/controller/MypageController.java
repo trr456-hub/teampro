@@ -52,4 +52,9 @@ public class MypageController {
 	public String myreserve(HttpSession session,Model model) {
 		return service.myreserve(session,model);
 	}
+	
+	@RequestMapping("/mypage/review_del")
+	public String review_del(HttpServletRequest request) {
+		return service.review_del(request);
+	}
 }

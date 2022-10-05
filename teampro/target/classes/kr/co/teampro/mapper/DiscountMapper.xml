@@ -21,5 +21,17 @@
 	<select id="discount_content" resultType="kr.co.teampro.vo.DiscountVO">
 		select * from discount where dcode=#{param1}
 	</select>
+	
+	<select id="discount_card" resultType="kr.co.teampro.vo.DiscountVO">
+		select * from discount
+	</select>
+	
+	<select id="discount_point" resultType="kr.co.teampro.vo.DiscountVO">
+		select * from discount
+	</select>
+	
+	<select id="discount_theater" resultType="kr.co.teampro.vo.DiscountVO">
+		select * from discount
+	</select>
 
 </mapper>

@@ -21,10 +21,10 @@
 	#yy {
 	    font-weight:bold;
 	    color:red;
-	    text-align:left;
+	    text-align:center;
 	}
 	#ys {
-		text-align:left;
+		text-align:center;
 	}
 	#ty {
 	 	text-decoration:none;
@@ -77,9 +77,9 @@
 		 	<caption> <h3> 공 지 사 항 </h3></caption>
 		 	<tr id="aa">
 		 	  <td> 제 목 </td>
-		 	  <td> 작성자 </td>
-		 	  <td> 작성일 </td>
-		 	  <td> 조회수 </td>
+		 	  <td style="width:100px"> 작성자 </td>
+		 	  <td style="width:100px"> 작성일 </td>
+		 	  <td style="width:100px"> 조회수 </td>
 			</tr>
 			<c:forEach items="${list}" var="gvo">
 			<c:if test="${gvo.gubun == '0' }">

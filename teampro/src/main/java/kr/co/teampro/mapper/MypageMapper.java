@@ -17,4 +17,5 @@ public interface MypageMapper {
 	public ArrayList<YemeVO> myreserve(String id);
 	public int getChong(String userid);
 	public int jumunChong(String userid);
+	public void review_del(String id);
 }

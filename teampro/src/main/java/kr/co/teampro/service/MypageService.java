@@ -15,4 +15,5 @@ public interface MypageService {
 	public String myreview(HttpSession session,Model model,HttpServletRequest request);
 	public String myjumun(HttpSession session,Model model,HttpServletRequest request);
 	public String myreserve(HttpSession session,Model model);
+	public String review_del(HttpServletRequest request);
 }

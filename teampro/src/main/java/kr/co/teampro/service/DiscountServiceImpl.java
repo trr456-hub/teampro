@@ -73,6 +73,33 @@ public class DiscountServiceImpl implements DiscountService {
 		
 		return "/discount/discount_phone";
 	}
+
+	@Override
+	public String discount_card(Model model) {
+		
+		ArrayList<DiscountVO> dlist = mapper.discount_card();
+		model.addAttribute("dlist",dlist);
+		
+		return "/discount/discount_card";
+	}
+
+	@Override
+	public String discount_point(Model model) {
+		
+		ArrayList<DiscountVO> dlist = mapper.discount_point();
+		model.addAttribute("dlist",dlist);
+		
+		return "/discount/discount_point";
+	}
+
+	@Override
+	public String discount_theater(Model model) {
+		
+		ArrayList<DiscountVO> dlist = mapper.discount_theater();
+		model.addAttribute("dlist",dlist);
+		
+		return "/discount/discount_theater";
+	}
 	
 
 }

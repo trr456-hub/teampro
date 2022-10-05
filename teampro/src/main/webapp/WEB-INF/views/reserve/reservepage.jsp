@@ -503,7 +503,7 @@ li .depth1 > a {
 .inner .stage_outer .owl-stage {
 	transform:translate3d(0px,0px,0px);
 	transition:all 0.4s ease 0s;
-	width:2200px;
+	width:3400px;
 	position:relative;
 }
 .owl-stage-outer .owl-stage .movie-date-wrapper {
@@ -806,7 +806,7 @@ li .depth1 > a {
 																				<strong>${svo.title}</strong>
 																			</dd>
 																			<dd class="seat">
-																				<strong>56/${svo.people}</strong>
+																				<strong>${svo.people}석</strong>
 																			</dd>
 																			<dd class="hall">
 																				1관
@@ -846,7 +846,7 @@ li .depth1 > a {
         const year = date.getFullYear();
         const month = ('0' + (date.getMonth() + 1)).slice(-2);
         const nextMonth = date.getMonth()+2;
-        const day = ('0' + date.getDate()).slice(-2);
+        const day = date.getDate();
         
         /* 현재날짜부터 현재 월 에 for문 처리 */
         for (i = day; i <= lastDay.getDate(); i++) {
@@ -855,7 +855,9 @@ li .depth1 > a {
             const spanDay = document.createElement("span");
             const spanWeekOfDay = document.createElement("span");
             const fir = document.createElement("div");
-
+            let num = i;
+            let numOn = ('0'+num).slice(-2);
+            /* console.log(numOn); */
             //class넣기
             button.classList = "movie-date-wrapper";
             spanDay.classList = "movie-day";
@@ -863,7 +865,7 @@ li .depth1 > a {
             fir.classList = "month-top";
 
             //weekOfDay[new Date(현재날짜)]
-            const dayOfWeek = weekOfDay[new Date(year + "-" + month + "-" + i).getDay()];
+            const dayOfWeek = weekOfDay[new Date(year + "-" + month + "-" + numOn).getDay()];
             
             //요일 넣기
             if (dayOfWeek === "토") {
@@ -877,7 +879,7 @@ li .depth1 > a {
             fir.innerHTML = (month+"월");
             button.append(fir);
             //날짜 넣기
-            spanDay.innerHTML = i;
+            spanDay.innerHTML = numOn;
             button.append(spanDay);
             
             spanWeekOfDay.innerHTML = dayOfWeek;
@@ -890,7 +892,8 @@ li .depth1 > a {
             
             reserveDate.append(button);
             
-           	/* console.log(month); */
+           	/* console.log('날짜구하기',num); */
+           	
             dayClickEvent(button);
         }
         /* 이벤트 value값 전달 온클릭 추가 */
@@ -1131,7 +1134,7 @@ li .depth1 > a {
 	        		document.querySelector("#useSubmit").submit();        		
 	        	}	
         	} else {
-    			if(confirm("로그인 창으로 넘어가시겟습니까?"))
+    			if(confirm("로그인 창으로 넘어가시겟습니까?"))  
     				location.href = "../login/login";
     			else
     				return false;

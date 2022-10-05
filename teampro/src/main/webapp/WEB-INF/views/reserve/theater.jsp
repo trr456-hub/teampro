@@ -379,8 +379,7 @@ section {
 												</c:if>
 												<span class="screen">${fn:substring(tcode,1,2)}관</span>
 												<span class="seatNum">
-													남은좌석
-													<b class="restNum">56</b>
+													<b class="restNum">좌석수</b>
 													/
 													<b>90</b>
 												</span>
@@ -422,6 +421,9 @@ section {
 				</div>
 			</div>
 		</div>
+		<c:forEach items="${ylist}" var="yvo">
+			<div class="yseat">${yvo.seatpass}</div>
+		</c:forEach>
 		<input id="adult" type="hidden" name="adult" value="0">
 		<input id="child" type="hidden" name="child" value="0">
 		<input id="seat" type="hidden" name="seatPass" value="">
@@ -443,6 +445,53 @@ section {
 	
 	var num = 0;	// 선택된 좌석 갯수를 저장하는 변수
 	
+	/* onload에서 사용할 변수 선언부분 */
+	let addn = parseInt(document.getElementsByName("adult")[0].value);
+	let chhn = parseInt(document.getElementsByName("child")[0].value);
+	let yseat = document.querySelectorAll(".yseat");
+	let eseat = document.querySelectorAll(".seat");
+	
+	// 예약된 좌석을 담는 배열
+	let reservedSeat = new Array();
+	
+	let addchh = addn+chhn;
+	let disableSeat = document.querySelectorAll(".seat"); // 좌석에 대한 전역변수
+	/* console.log(disableSeat); */
+	/* onload에서 사용할 변수 선언부분  End */
+	
+	/* onload부분 */
+	window.onload = () => {
+		adult[0].style.background="#333";
+		adultA[0].style.color="white";
+		child[0].style.background="#333";
+		childA[0].style.color="white";
+		
+		/* for(i=0;i<90;i++) {
+			disableSeat[i].setAttribute('disabled',true);
+		} */
+		 
+		/* for(j=0; j<yseat.length; j++) {
+			let yseatArr = yseat[j].innerText;
+			let yseatArr_for = yseatArr.split(",");
+			//console.log(yseatArr.split(","));
+			for(w=0; w<yseatArr_for.length; w++) {
+				//console.log(yseatArr_for[w]);
+				//let yseatLen = yseatArr_for[w];
+				reservedSeat.push(yseatArr_for[w]);
+			}
+		}
+		console.log("reservedSeat:", reservedSeat); */
+	}
+	/* onload부분 종료*/
+	for(k=0; k<yseat.length; k++) {
+		var yseatArr = yseat[k].innerText;
+		var yseatArr_for = yseatArr.split(",");
+		for(w=0; w<yseatArr_for.length; w++) {
+			reservedSeat.push(yseatArr_for[w]);
+		}
+	}
+	//console.log(reservedSeat);
+	
 	for(let i=0; i<10; i++) {
 		div = document.createElement("div");
 		seatWrapper.append(div);
@@ -451,13 +500,19 @@ section {
 			input.type="button";
 			input.name="seats";    
 			input.classList="seat";
-			// 예매된 좌석 처리
-			/* if( (i == 알파벳) && (j == 숫자) ) {
-				input.readOnly = true;
-				input.style.backgourd = "red";
-			} */
+			
 			// 3중for문 XXXX
 			mapping(input, i, j);
+			//console.log("input.value: ", input.value);
+			
+			// 예약됐는지 확인하는 조건
+			for(rs=0; rs<reservedSeat.length; rs++) {
+				if(input.value == reservedSeat[rs]) {
+					input.disabled = true;
+					console.log("reservedSeat: ", reservedSeat[rs]);
+				}
+			}
+			
 			div.append(input);
 			input.addEventListener('click',function(e) {
 				/* console.log(e.target.value); */
@@ -520,6 +575,8 @@ section {
 		}
 		
 	}
+	
+	
 	/* 좌석에 알파벳 분류 if처리 종료*/
 	/* 좌석 2중for문 처리 종료*/
 	/* 좌석 인원선택 */
@@ -542,24 +599,7 @@ section {
 	let childA = document.querySelectorAll(".child > ul > li > a");
 	/* console.log(adult); */
 	
-	/* onload부분 */
-	let addn = parseInt(document.getElementsByName("adult")[0].value);
-	let chhn = parseInt(document.getElementsByName("child")[0].value);
 	
-	let addchh = addn+chhn;
-	let disableSeat = document.querySelectorAll(".seat"); // 좌석에 대한 전역변수
-	/* console.log(disableSeat); */
-	window.onload = () => {
-		adult[0].style.background="#333";
-		adultA[0].style.color="white";
-		child[0].style.background="#333";
-		childA[0].style.color="white";
-		
-		for(i=0;i<90;i++) {
-			disableSeat[i].setAttribute('disabled',true);
-		}
-	}
-	/* onload부분 종료*/
 	function childClick(nu, you) { //청소년인원
 		const childIn = document.querySelectorAll(".child > ul > li");
 		const childInA = document.querySelectorAll(".child > ul > li > a");
@@ -617,9 +657,9 @@ section {
 	/* 좌석 인원선택 종료*/
 	/* 좌석 인원에맞게 체크 */
 	function disableFal() {
-		for(i=0;i<90;i++) {
+		/* for(i=0;i<90;i++) {
 			disableSeat[i].removeAttribute('disabled');
-		}
+		} */
 	}
 	/* 좌석 인원에맞게 체크 종료*/
 	/* submit 통합체크 */

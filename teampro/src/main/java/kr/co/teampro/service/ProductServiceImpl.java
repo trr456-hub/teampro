@@ -65,7 +65,6 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public String pro_content(HttpServletRequest request, Model model) {
-		
 		String pcode = request.getParameter("pcode");
 		ProductVO pvo = mapper.pro_content(pcode);
 		model.addAttribute("pvo",pvo);

@@ -18,26 +18,24 @@
 	#main {
 		margin:auto;
 		width:1500px;
-		height:1380px;
-		overflow:hidden;
+		height:800px;
 	}
 	#sale {
 		margin:auto;
 		width:1000px;
-		height:1300px;
+		height:700px;
 	}
 	.sale_content {
 		width:1000px;
-		height:1100px;
+		height:700px;
 		display:flex;
 		flex-wrap:wrap;
 	}
 	.sale_content li {
-		margin:auto;
 		width:285px;
 		height:350px;
 		padding-left:5px;
-		margin-left:10px;
+		margin-left:27px;
 		padding-top:5px;
 		margin-top:20px;
 		border:1px solid #cccccc;
