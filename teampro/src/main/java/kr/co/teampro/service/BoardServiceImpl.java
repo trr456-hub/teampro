@@ -75,6 +75,7 @@ public class BoardServiceImpl implements BoardService {
 	public String content(HttpServletRequest request, Model model) {
 		String id=request.getParameter("id");
 		BoardVO bvo=mapper.content(id);
+		bvo.setContent(bvo.getContent().replace("\r\n", "<br>"));
 		model.addAttribute("bvo",bvo);
 		
 		ArrayList<ReplyVO> rlist=mapper.reply_list(id);
@@ -98,19 +99,27 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public String update(HttpServletRequest request, Model model) {
+	public String update(HttpSession session,HttpServletRequest request, Model model) {
 		String id = request.getParameter("id");
+		String userid = session.getAttribute("userid").toString();
 		BoardVO bvo = mapper.update(id);
+		model.addAttribute("userid");
 		model.addAttribute("bvo",bvo);
 		return "/board/update";
 	}
 
 	@Override
-	public String update_ok(BoardVO bvo, HttpSession session) {
+	public String update_ok(HttpServletRequest request,BoardVO bvo, HttpSession session) {
+		String id = request.getParameter("id");
 		String userid = session.getAttribute("userid").toString();
+		String dbuid=mapper.getUserid(bvo.getId());
 		bvo.setUserid(userid);
-		mapper.update_ok(bvo);
-		return "redirect:/board/content?id="+bvo.getId();
+		if(dbuid.equals(userid)) {
+			mapper.update_ok(bvo);
+			return "redirect:/board/content?id="+bvo.getId();
+		} else {
+			return "redirect:/board/content?id="+bvo.getId();
+		}
 	}
 	/*댓글*/
 	@Override

@@ -102,7 +102,7 @@
 			</tr>
 			<tr>
 				<td class="con_td"> 내 용 </td>
-				<td class="con_td"> ${bvo.title} </td>
+				<td class="con_td"> ${bvo.content} </td>
 			</tr>
 			<tr>
 				<td class="con_td"> 조회수 </td>
@@ -116,11 +116,11 @@
 				<td colspan="2" align="center">
 				
 					<a href="list"> 목록 </a>
-				
+				<c:if test="${userid == bvo.userid}">
 					<a href="update?id=${bvo.id}"> 수정 </a>
 	
 					<a href="delete?id=${bvo.id}"> 삭제 </a>
-					
+				</c:if>
 				</td>
 			</tr>
 	</table>
