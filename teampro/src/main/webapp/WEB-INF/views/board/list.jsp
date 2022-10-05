@@ -88,7 +88,7 @@
 			</c:if>
 			<!-- 글쓰기 tap 종료 -->	
 			<tr>
-				<td colspan="4" align="center" style="padding: 0px;border: none;">
+				<td colspan="4" align="center" style="padding: 0px;border: none;padding-bottom: 30px;">
 				<!-- 10페이지 단위로 이전 이동 -->
 					<c:if test="${pstart != 1}">	<!-- 첫번째 그룹X -->
 						<a href="list?page=${pstart-1}"> ◀ </a>

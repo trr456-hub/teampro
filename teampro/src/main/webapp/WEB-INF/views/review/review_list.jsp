@@ -34,7 +34,7 @@
 	    min-height: 500px;
 	    display:flex;
 	    flex-wrap:wrap;
-	    padding-bottom: 50px;
+	    padding-bottom: 10px;
  	}
  	.pers div {
  		width:700px;
@@ -53,6 +53,7 @@
    .link span{
    	  display:block;
       padding-top:20px;
+      padding-bottom: 30px;
       margin: auto;
       width: 100%;
       text-align: center;
