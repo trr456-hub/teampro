@@ -47,6 +47,16 @@
 		padding-top:15px;
 		padding-bottom:15px;
 	}
+	.write_icon {
+	    border: none;
+	}
+	.write_icon > a {
+		position: relative;
+	    left: 450px;
+	    border: 1px solid #ccc;
+	    padding: 7px;
+	    background: #ccc;
+	}
 </style>
 </head>
 <body>
@@ -68,9 +78,17 @@
 				<td width="110"> ${bvo.writeday} </td>
 			</tr>
 		</c:forEach>
-			
+			<!-- 글쓰기 tap -->
+			<c:if test="${userid != null }">
+				<tr>
+					<td class="write_icon" colspan="4" style="padding: 10px 0 0;">
+						<a href="write"> 글쓰기 </a>
+					</td>
+				</tr>
+			</c:if>
+			<!-- 글쓰기 tap 종료 -->	
 			<tr>
-				<td colspan="4" align="center">
+				<td colspan="4" align="center" style="padding: 0px;border: none;">
 				<!-- 10페이지 단위로 이전 이동 -->
 					<c:if test="${pstart != 1}">	<!-- 첫번째 그룹X -->
 						<a href="list?page=${pstart-1}"> ◀ </a>
@@ -114,13 +132,6 @@
 					</c:if>
 				</td>
 			</tr>
-		<c:if test="${userid != null }">
-			<tr>
-				<td colspan="4" align="center">
-					<a href="write"> 글쓰기 </a>
-				</td>
-			</tr>
-		</c:if>
 		</table>
 	</div>
 </div>
