@@ -26,8 +26,8 @@
 		delete from board where id=#{id}
 	</delete>
 	
-	<select id="getPassword" resultType="String">
-		select pwd from board where id=#{param1}
+	<select id="getUserid" resultType="String">
+		select userid from board where id=#{param1}
 	</select>
 	
 	<select id="update" resultType="kr.co.teampro.vo.BoardVO">
@@ -48,7 +48,7 @@
 	</insert>
 	
 	<select id="reply_list" resultType="kr.co.teampro.vo.ReplyVO">
-		select * from reply where board_id=#{param1}
+		select * from reply where board_id=#{param1} order by id desc
 	</select>
 	
 	

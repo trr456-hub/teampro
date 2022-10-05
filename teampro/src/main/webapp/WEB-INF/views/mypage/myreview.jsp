@@ -40,7 +40,16 @@
    section table caption {
     font-size:20px;
 	line-height:30px;
-   }
+   }  
+   section input[type=button] {
+	      width:65px;
+	      height:33px;
+	      border:1px solid #eeeeee;
+	      background:#7878E1;
+	      color:white;
+	      font-size:12px;
+	      border-radius: 5px;
+    }
    .link span{
    	  display:block;
       padding-top:20px;
@@ -73,6 +82,7 @@
 			 <th> 제 목 </th>
 			 <th> 리뷰내용 </th>
 			 <th> 작성일 </th>
+			 <th> 관리 </th>
 			</tr>
 			<c:forEach items="${rlist}" var="rvo">
 			<tr align="center" height="50">
@@ -84,12 +94,14 @@
 				${rvo.content} 
 			</td>
 			 <td> ${rvo.writeday } </td>	
-			  <%-- <td>
+			  <td>
 			 	<input type="button" value="삭제하기" onclick="location='review_del?id=${rvo.id}'">
-			 </td> --%>
+			 </td>
 			</tr>
 			</c:forEach>
 		</table>
+		
+		<!-- 페이지 -->
 		 <div class="link">
     	 <span align="center">
          <c:if test="${pstart != 1}">

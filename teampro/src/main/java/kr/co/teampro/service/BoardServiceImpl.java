@@ -84,9 +84,10 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public String delete(BoardVO bvo) {
-		String dbpwd=mapper.getPassword(bvo.getId());
-		if(dbpwd.equals(bvo.getPwd())) {
+	public String delete(BoardVO bvo, HttpSession session) {
+		String userid = session.getAttribute("userid").toString();
+		String dbuid=mapper.getUserid(bvo.getId());
+		if(dbuid.equals(userid)) {
 			mapper.delete(bvo);
 			return "redirect:/board/list";
 		} else {
@@ -105,14 +106,17 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public String update_ok(BoardVO bvo) {
+	public String update_ok(BoardVO bvo, HttpSession session) {
+		String userid = session.getAttribute("userid").toString();
+		bvo.setUserid(userid);
 		mapper.update_ok(bvo);
 		return "redirect:/board/content?id="+bvo.getId();
 	}
 	/*댓글*/
 	@Override
 	public String reply_write_ok(ReplyVO rvo,HttpSession session) {
-		
+		String user_id = session.getAttribute("userid").toString();
+		rvo.setUser_id(user_id);
 		mapper.reply_write_ok(rvo);
 		return "redirect:/board/content?id="+rvo.getBoard_id();
 	}

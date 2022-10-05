@@ -76,13 +76,15 @@
 		text-align:left;
 		padding-left:40px;
 	}
+	#reply_start {
+		width:100%;
+		height:50px;
+		text-align:center;
+		padding-top:40px;
+		font-size:23px;
+	}
 </style>
 
-<script>
-	function del_view() {
-		document.getElementById("del").style.display="table-row";
-	}
-</script>
 </head>
 <body>
 
@@ -117,33 +119,31 @@
 				
 					<a href="update?id=${bvo.id}"> 수정 </a>
 	
-	
-					<a href="javascript:del_view()"> 삭제 </a>
-	
-	
-				</td>
-			</tr>
-			<tr id="del">
-				<td colspan="2" align="center">
-					<form method="post" action="delete">
-						<input type="hidden" name="id" value="${bvo.id}">
-						<input type="password" name="pwd">
-						<input type="submit" value="삭제">
-					</form>
+					<a href="delete?id=${bvo.id}"> 삭제 </a>
+					
 				</td>
 			</tr>
 	</table>
+	<div id="reply_start">
+		<span> 댓글 </span>
+	</div>
 	<div id="reply_form">
 		<form method="post" action="reply_write_ok">
 			<input type="hidden" name="board_id" value="${bvo.id}">
 			
+		<c:if test="${userid != null}">	
 			<div align="center">
-				<textarea cols="110" rows="2" name="content" placeholder="댓글을 입력해주세요" style="margin:20px;"></textarea>
+				<textarea cols="110" rows="2" name="content" placeholder="댓글을 입력해주세요" style="margin:20px;"></textarea>	
 				<input type="submit" value="댓글저장" style="padding-top:40px;">
 			</div>
+		</c:if>
+		<c:if test="${userid == null}">
+			<div align="center">
+				<textarea cols="110" rows="2" name="content" placeholder="로그인을 해주세요" readonly style="margin:20px;"></textarea>	
+			</div>
+		</c:if>
 		</form>
 	</div>
-	
 		<div id="content_reply">
 			<table width="500" align="center">
 			<tr>
