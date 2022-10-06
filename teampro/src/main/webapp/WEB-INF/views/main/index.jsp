@@ -212,7 +212,7 @@
 					<li>
 						<dl class='giftcon_list'>
 							<dt>
-								콤보
+								콤보  
 							</dt>
 							<dd>
 								<a href=''>
