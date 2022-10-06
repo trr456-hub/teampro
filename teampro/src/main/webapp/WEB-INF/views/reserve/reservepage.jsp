@@ -650,7 +650,7 @@ li .depth1 > a {
 </head>
 <body>
 	<section>
-	<form id="useSubmit" method="get" action="theater" name="reserve1">
+	<form id="useSubmit" method="post" action="theater" name="reserve1">
 		<input id="code" type="hidden" name="code" value="">
 		<input id="jcode" type="hidden" name="jcode" value="">
 		<input id="mcode" type="hidden" name="mcode" value="">
@@ -999,7 +999,6 @@ li .depth1 > a {
        				e.classList.remove("depth1-active");
        			});
        			item.classList.add("depth1-active");
-       			/* alert("야발련아") */
        		});
        	});
        	/* console.log(depth.includes("depth1-active")); */

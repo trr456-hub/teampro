@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 
 </head>
@@ -30,96 +31,20 @@
 					</div>
 				</div>
 				<div id="in-element">
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="1위" src="../resources/backimg/5.jpg">
-							<div class="movie_rank">1</div>
+					<c:set var="rank" value="1"/>
+					<c:forEach items="${clist}" var="cvo">
+						<div class="movieChart">
+							<div class="movieImg">
+								<img alt="${rank}" src="../resources/mimg/${cvo.pimg}"style="cursor: pointer;" 
+								onclick="location='../cmovie/cmovie_content?mcode=${cvo.mcode}'">
+								<div class="movie_rank">${rank}</div>
+							</div>
+							<div class="movieFont">
+								<strong class="movieName">${ctitle}</strong>
+							</div>
 						</div>
-						<div class="movieFont">
-							<strong class="movieName">조커</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="2위" src="../resources/backimg/4.jpg">
-							<div class="movie_rank">2</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">어스</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="3위" src="../resources/backimg/3.jpg">
-							<div class="movie_rank">3</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">문 나이트</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="4위" src="../resources/backimg/9.jpg">
-							<div class="movie_rank">4</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">어벤저스-엔드게임</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="5위" src="../resources/backimg/8.jpg">
-							<div class="movie_rank">5</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">라부움!</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="6위" src="../resources/backimg/7.jpg">
-							<div class="movie_rank">6</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">기생충</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="7위" src="../resources/backimg/6.jpg">
-							<div class="movie_rank">7</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">2012</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="8위" src="../resources/backimg/2.jpg">
-							<div class="movie_rank">8</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">닥터스트레인지-대혼돈의 멀티버스 </strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="9위" src="../resources/backimg/1.jpg">
-							<div class="movie_rank">9</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">스파이더맨-파프롬홈</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="10위" src="../resources/backimg/10.jpg">
-							<div class="movie_rank">10</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">어벤저스-인피니티 워</strong>
-						</div>
-					</div>
+					<c:set var="rank" value="${rank=rank+1}"/>
+					</c:forEach>
 				</div>
 				<div class="button-next">
 					<img alt="다음슬라이드" src="../resources/img/arrowR.png">

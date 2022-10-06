@@ -143,7 +143,7 @@
 								</dt>
 								<dd>
 									<h3>
-										<a href="#">CCA극장</a>
+										<a href="../main/cca_self">CCA극장</a>
 									</h3>
 								</dd>
 								<dd>

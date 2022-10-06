@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.teampro.service.ReserveService;
+import kr.co.teampro.vo.CmovieVO;
 import kr.co.teampro.vo.YemeVO;
 
 @Controller
@@ -18,7 +19,11 @@ public class ReserveController {
 	@Autowired
 	@Qualifier("rs")
 	private ReserveService service;
-
+	
+	@RequestMapping("/main/index")
+	public String index(CmovieVO cvo,Model model) {
+		return service.index(cvo, model);
+	}
 	@RequestMapping("/reserve/reservepage")
 	public String reservepage(Model model) {
 		return service.reservepage(model);

@@ -74,7 +74,7 @@
 	</style>
 </head>
 <body>
-<form name="theater" method="get" action="theaterBuy_ok">
+<form name="theater" method="post" action="theaterBuy_ok">
 	<section>
 		<div class="ccaWrap">
 			<div class="ccaInner">

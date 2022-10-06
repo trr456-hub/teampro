@@ -11,8 +11,8 @@ public class HomeController {
 	public String home() {
 		return "redirect:/main/index";
 	}
-	@RequestMapping("/main/index")
-	public String index() {
-		return "/main/index";
+	@RequestMapping("/main/cca_self")
+	public String cca_self() {
+		return "/main/cca_self";
 	}
 }

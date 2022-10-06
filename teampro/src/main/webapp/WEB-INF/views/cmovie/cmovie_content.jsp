@@ -114,7 +114,8 @@ input[type=button] {
 				감독 : ${cvo.gamdok} <br> 배우 : ${cvo.baeoo } <br>
 			<br> 개봉일 : ${cvo.gaebong} <br>
 			<br>
-			<br> <input type="button" name="예매" value="예매하기">
+			<br> <input type="button" name="예매" value="예매하기"
+					onclick="location='../reserve/reservepage'">
 			</td>
 		</tr>
 		<tr>
