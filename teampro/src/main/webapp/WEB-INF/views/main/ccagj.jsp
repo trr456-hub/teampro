@@ -67,9 +67,9 @@
 					    color: #666;">"진화된 3S(Screen, Sound, Seat) 기술로 컨텐츠 몰입도를 극대화하여 영화 관람에 최적화된 환경을 제공합니다. </span>
 				 </div>
 					<div>
- 					<img src="../resources/ccaimg/영하1.PNG" style="margin:auto;padding-left:20%;"></div>
+ 					<img src="../resources/ccaimg/영하1.PNG" style="margin:auto;padding-left:18%;"></div>
  					<div>
- 					<img src="../resources/ccaimg/영하2.PNG" style="margin:auto;padding-left:20%;padding-bottom:100px;"></div>
+ 					<img src="../resources/ccaimg/영하2.PNG" style="margin:auto;padding-left:18%;padding-bottom:100px;"></div>
  </section>
 </body>
 </html>
