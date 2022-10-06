@@ -54,7 +54,7 @@
     <c:set var="chong" value="0"/>
     <c:forEach items="${list}" var="pvo">     
       <tr> 
-       <td> <img src="../resources/img/${pvo.pimg}" width="80"> </td>
+       <td> <img src="../resources/store/${pvo.pimg}" width="80"> </td>
        <td> ${pvo.title} </td>
        <td> ${pvo.su}개 </td>
        <td> <fmt:formatNumber value="${pvo.price}" pattern="#,###"/> (개당) </td>
