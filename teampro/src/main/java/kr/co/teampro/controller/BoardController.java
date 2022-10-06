@@ -51,21 +51,21 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/board/delete")
-	public String delete(BoardVO bvo) {
+	public String delete(BoardVO bvo, HttpSession session) {
 		
-		return service.delete(bvo);
+		return service.delete(bvo, session);
 	}
 	
 	@RequestMapping("/board/update")
-	public String update(HttpServletRequest request,Model model) {
+	public String update(HttpSession session,HttpServletRequest request,Model model) {
 		
-		return service.update(request,model);
+		return service.update(session,request,model);
 	}
 	
 	@RequestMapping("/board/update_ok")
-	public String update_ok(BoardVO bvo, HttpSession session) {
+	public String update_ok(HttpServletRequest request,BoardVO bvo, HttpSession session) {
 		
-		return service.update_ok(bvo, session);
+		return service.update_ok(request,bvo, session);
 	}
 	/*댓글*/
 	@RequestMapping("/board/reply_write_ok")

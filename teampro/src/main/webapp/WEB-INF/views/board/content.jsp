@@ -11,137 +11,113 @@
 		width:100%;
 		height:100%;
 		margin:auto;
+	}
+	.main {
+		padding-top:70px;
+		padding-bottom:70px;
 		background:white;
+		width:100%;
 	}
-	#main {
-		width:1200px;
-		height:100%;
-		margin:auto;
-		background:white;
-	}
-	#content {
+	.main .content {
+		position:relative;
+		overflow:hidden;
+		padding:30px;
 		width:1000px;
-		height:100%;
-		margin:auto;
-		padding-top:30px;
+		margin:0 auto;
+		background:#fff
 	}
-	#table_con {
-		width:1000px;
-		height:100%;
+	.main .content .table_con {
+		margin: 0 auto;
+	    position: relative;
+	    padding: 30px;
+	    border: 1px solid #ccc;
 	}
-	.con_td {
-		text-align:left;
-		padding-left:20px;
+	.content .table_con tr {
+		border-bottom:1px solid #ccc;
+		display: block;
 	}
-	#content td {
-		padding-top:15px;
-		padding-bottom:15px;
+	.content .table_con tr > th {
+		width: 100px;
+    	padding: 12px;
+    	color: #333;
 	}
-	#content table tr, td {
-		text-align:center;
-		font-size:15px;
-		border-bottom:1px solid #cccccc;
-	}
-	#content_reply {
-		width:800px;
-		padding-top:10px;
-		padding-bottom:30px;
-		margin:auto;
-	}
-	#content_reply td {
-		padding-top:15px;
-		padding-bottom:15px;
-		border-bottom:1px solid #cccccc;
-	}
-	#content_reply_c {
-		padding-top:10px;
-		font-size:15px;
-		text-align:center;
-	}
-	#content_reply span {
-		margin-left:25px;
-		border-bottom:1px solid #cccccc;
-	}
-	#content a {
-		padding-left:10px;
-		text-align:center;
-	}
-	#reply_form {
-		padding-top:10px;
-	}
-	#del {
-		display:none;
-	}
-	.reply_td {
-		text-align:left;
-		padding-left:40px;
+	.main .content tr > .content_one {
+		text-align: center;
+	    width: 87%;
+	    font-size: initial;
 	}
 	#reply_start {
-		width:100%;
-		height:50px;
-		text-align:center;
-		padding-top:40px;
-		font-size:23px;
+		position: relative;
+		margin: 20px 10px 0px;
+		text-align: center;
+	}
+	#reply_start > h3 {
+		font-size: 22px;
+    	font-weight: bold;
+	}
+	.content_reply {
+	    margin: 5px;
+	    width: 1000px;
+	    /* border: 1px solid #ccc; */
+	}
+	.content_reply .reply_table {
+		padding: 20px 50px;
+	}
+	.content_reply .reply_table tr {
+		border-bottom:1px solid #ccc;
+		display: block;
+	}
+	.con_reply {
+		width:727px;
+	}
+	.content_reply .reply_table tr > td {
+		padding: 10px 10px;
+	    font-size: inherit;
+	    border-right: 1px solid #ccc;
+	}
+	.reply_userid {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width:55px;
 	}
 </style>
-
-<script>
-	function del_view() {
-		document.getElementById("del").style.display="table-row";
-	}
-</script>
 </head>
 <body>
 
 <section>
-<div id="main">
-	<div id="content">
-		<table id="table_con" width="500" align="center">
+<div class="main">
+	<div class="content">
+		<table class="table_con">
 			<tr>
-				<td class="con_td"> 제 목 </td>
-				<td class="con_td"> ${bvo.title} </td>
+				<th> 제 목 :  </th>
+				<td class="content_one"> ${bvo.title} </td>
 			</tr>
 			<tr>
-				<td class="con_td"> 아이디 </td>
-				<td class="con_td"> ${bvo.userid} </td>
+				<th> 내 용 :  </th>
+				<td class="content_one" style="height:300px"> ${bvo.content} </td>
 			</tr>
 			<tr>
-				<td class="con_td"> 내 용 </td>
-				<td class="con_td"> ${bvo.title} </td>
+				<th> 아이디 :  </th>
+				<td> ${bvo.userid} </td>
 			</tr>
 			<tr>
-				<td class="con_td"> 조회수 </td>
-				<td class="con_td"> ${bvo.readnum} </td>
+				<th> 조회수 :  </th>
+				<td> ${bvo.readnum} </td>
 			</tr>
 			<tr>
-				<td class="con_td"> 작성일 </td>
-				<td class="con_td"> ${bvo.writeday} </td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center">
-				
+				<th> 작성일 :  </th>
+				<td> ${bvo.writeday} </td>
+				<td style="float:right">
 					<a href="list"> 목록 </a>
-				
+				<c:if test="${userid == bvo.userid}">
 					<a href="update?id=${bvo.id}"> 수정 </a>
-	
-	
-					<a href="javascript:del_view()"> 삭제 </a>
-	
-	
-				</td>
-			</tr>
-			<tr id="del">
-				<td colspan="2" align="center">
-					<form method="post" action="delete">
-						<input type="hidden" name="id" value="${bvo.id}">
-						<input type="password" name="pwd">
-						<input type="submit" value="삭제">
-					</form>
+					<a href="delete?id=${bvo.id}"> 삭제 </a>
+				</c:if>
 				</td>
 			</tr>
 	</table>
 	<div id="reply_start">
-		<span> 댓글 </span>
+		<h3>댓글작성</h3>
 	</div>
 	<div id="reply_form">
 		<form method="post" action="reply_write_ok">
@@ -160,23 +136,22 @@
 		</c:if>
 		</form>
 	</div>
-		<div id="content_reply">
-			<table width="500" align="center">
+		<div class="content_reply">
+			<table class="reply_table">
 			<tr>
-				<td> 아이디 </td>
-				<td class="reply_td"> 내용  </td>
-				<td> 날짜 </td>
+				<td style="font-weight:bold;padding-right: 26px;"> 아이디 </td>
+				<td style="font-weight:bold;padding-right: 10px;" class="con_reply"> 내용  </td>
+				<td style="border:none; font-weight:bold; padding-left: 25px;"> 날짜 </td>
 			</tr>
 			<c:forEach items="${rlist}" var="rvo">
-				<tr>
-					<td>${rvo.user_id}</td>
-					<td class="reply_td">${rvo.content}</td>
-					<td>${rvo.writeday}</td>
+				<tr align="center">
+					<td class="reply_userid">${rvo.user_id}</td>
+					<td class="con_reply" style="text-align: left;">${rvo.content}</td>
+					<td style="border:none;">${rvo.writeday}</td>
 				</tr>				
 			</c:forEach>
 			</table>
 		</div>
-
 	</div>
 </div>
 </section>

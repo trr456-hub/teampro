@@ -165,7 +165,9 @@
 				    <label for="saveId">아이디 저장</label>
 				</div>
 			  		<c:if test="${err ==1 }">
-						<br> <span style="color:red;font-size:12px;"> 아이디 혹은 비밀번호가 맞지 않습니다 </span>
+			  			<script>
+							alert("아이디 혹은 비밀번호가 맞지 않습니다");
+						</script>
 					</c:if>
 				<div> <input type="submit" name="로그인" value="로그인 하기 →" formaction="login_ok"> </div>
 				<div> <input type="submit" name="회원가입" value="회원가입 하기 →" formaction="../member/memberinput"> </div>

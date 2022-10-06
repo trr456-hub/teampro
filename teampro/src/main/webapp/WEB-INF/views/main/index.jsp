@@ -140,9 +140,9 @@
 								영화관람권
 							</dt>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_ticket">
 									<div class='img_wrap'>
-										<img src='../resources/giftcon/영화관람권.jpg' alt='CGV 영화관람권'>
+										<img src="../resources/store/movie14.jpg" alt='CGV 영화관람권'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>CCA 영화관람권</span> <strong>6,000원</strong>
@@ -150,9 +150,9 @@
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_ticket">
 									<div class='img_wrap'>
-										<img src='' alt='CGV 골드클래스'>
+										<img src="../resources/store/movie21.jpg" alt='CGV 골드클래스'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>CCA 골드클래스</span> <strong>20,000원</strong>
@@ -160,9 +160,9 @@
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_ticket">
 									<div class='img_wrap'>
-										<img src='' alt='4DX관람권'>
+										<img src="../resources/store/movie41.jpg" alt='4DX관람권'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>4DX관람권</span> <strong>9,000원</strong>
@@ -177,32 +177,32 @@
 								팝콘
 							</dt>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_pop">
 								<div class='img_wrap'>
-										<img src='' alt='PACONNIE A형'>
+										<img src="../resources/store/popcorn11.jpg" alt='PACONNIE A형'>
 									</div>
 									<div class='giftcon_info_wrap'>
-										<span>S팝콘</span> <strong>2,000원</strong>
+										<span>고소팝콘L</span> <strong>5,000원</strong>
 									</div>
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_pop">
 									<div class='img_wrap'>
-										<img src='' alt='PACONNIE B형'>
+										<img src="../resources/store/popcorn21.jpg" alt='PACONNIE B형'>
 									</div>
 									<div class='giftcon_info_wrap'>
-										<span>L팝콘</span> <strong>3,000원</strong>
+										<span>달콤팝콘L</span> <strong>6,000원</strong>
 									</div>
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_pop">
 									<div class='img_wrap'>
-										<img src='' alt='PACONNIE C형'>
+										<img src="../resources/store/popcorn61.jpg" alt='PACONNIE C형'>
 									</div>
 									<div class='giftcon_info_wrap'>
-										<span>반반팝콘L</span> <strong>3,500원</strong>
+										<span>더블치즈팝콘M</span> <strong>5,500원</strong>
 									</div>
 								</a>
 							</dd>
@@ -212,35 +212,35 @@
 					<li>
 						<dl class='giftcon_list'>
 							<dt>
-								콤보
+								콤보  
 							</dt>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_com">
 									<div class='img_wrap'>
-										<img src='' alt='CGV콤보'>
+										<img src="../resources/store/combo11.jpg" alt='CGV콤보'>
 									</div>
 									<div class='giftcon_info_wrap'>
-										<span>CCA콤보</span> <strong>3,000원</strong>
+										<span>CCA콤보</span> <strong>9,000원</strong>
 									</div>
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_com">
 									<div class='img_wrap'>
-										<img src='' alt='더블콤보'>
+										<img src="../resources/store/combo21.jpg" alt='더블콤보'>
 									</div>
 									<div class='giftcon_info_wrap'>
-										<span>더블콤보</span> <strong>6,000원</strong>
+										<span>더블콤보</span> <strong>12,000원</strong>
 									</div>
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_com">
 									<div class='img_wrap'>
-										<img src='' alt='스몰세트'>
+										<img src="../resources/store/combo31.jpg" alt='스몰세트'>
 									</div>
 									<div class='giftcon_info_wrap'>
-										<span>스몰세트</span> <strong>3,500원</strong>
+										<span>스몰세트</span> <strong>6,500원</strong>
 									</div>
 								</a>
 							</dd>

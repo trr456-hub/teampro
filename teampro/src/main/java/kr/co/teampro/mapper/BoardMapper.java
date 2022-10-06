@@ -13,7 +13,7 @@ public interface BoardMapper {
 	public void readnum(String id);
 	public BoardVO content(String id);
 	public void delete(BoardVO bvo);
-	public String getPassword(int id);
+	public String getUserid(int id);
 	public BoardVO update(String id);
 	public void update_ok(BoardVO bvo);
 	public int getChong();
