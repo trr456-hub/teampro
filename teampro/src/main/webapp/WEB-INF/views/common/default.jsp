@@ -148,7 +148,7 @@
 								</dd>
 								<dd>
 									<h3>
-										<a href="#">특별관</a>
+										<a href="../main/ccagj">특별관</a>
 									</h3>
 								</dd>
 							</dl>

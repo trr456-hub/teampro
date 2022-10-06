@@ -36,4 +36,9 @@ public class CmovieController {
 	public String cmovie_content(HttpServletRequest request,Model model) {
 		return service.cmovie_content(request,model);
 	}
+	
+	@RequestMapping("/main/ccagj")
+	public String ccagj() {
+		return "/main/ccagj";
+	}
 }
