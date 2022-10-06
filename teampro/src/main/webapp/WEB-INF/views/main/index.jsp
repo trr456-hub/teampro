@@ -140,7 +140,7 @@
 								영화관람권
 							</dt>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_ticket">
 									<div class='img_wrap'>
 										<img src="../resources/store/movie14.jpg" alt='CGV 영화관람권'>
 									</div>
@@ -150,7 +150,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_ticket">
 									<div class='img_wrap'>
 										<img src="../resources/store/movie21.jpg" alt='CGV 골드클래스'>
 									</div>
@@ -160,7 +160,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_ticket">
 									<div class='img_wrap'>
 										<img src="../resources/store/movie41.jpg" alt='4DX관람권'>
 									</div>
@@ -177,7 +177,7 @@
 								팝콘
 							</dt>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_pop">
 								<div class='img_wrap'>
 										<img src="../resources/store/popcorn11.jpg" alt='PACONNIE A형'>
 									</div>
@@ -187,7 +187,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_pop">
 									<div class='img_wrap'>
 										<img src="../resources/store/popcorn21.jpg" alt='PACONNIE B형'>
 									</div>
@@ -197,7 +197,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_pop">
 									<div class='img_wrap'>
 										<img src="../resources/store/popcorn61.jpg" alt='PACONNIE C형'>
 									</div>
@@ -215,7 +215,7 @@
 								콤보  
 							</dt>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_com">
 									<div class='img_wrap'>
 										<img src="../resources/store/combo11.jpg" alt='CGV콤보'>
 									</div>
@@ -225,7 +225,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_com">
 									<div class='img_wrap'>
 										<img src="../resources/store/combo21.jpg" alt='더블콤보'>
 									</div>
@@ -235,7 +235,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href=''>
+								<a href="../product/pro_com">
 									<div class='img_wrap'>
 										<img src="../resources/store/combo31.jpg" alt='스몰세트'>
 									</div>
