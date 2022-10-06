@@ -45,7 +45,7 @@
 </head>
 <body>
   <section>
-   <!-- 상품정보 --> 
+   <!-- 상품정보 -->  
    <table width="900" align="center">
    <caption> <h3 style="padding-top:100px;font-size:40px;color:#7878E1;text-align:center;letter-spacing :7px;">
    		구매완료
@@ -54,7 +54,7 @@
     <c:set var="chong" value="0"/>
     <c:forEach items="${list}" var="pvo">     
       <tr> 
-       <td> <img src="../resources/img/${pvo.pimg}" width="80"> </td>
+       <td> <img src="../resources/store/${pvo.pimg}" width="80"> </td>
        <td> ${pvo.title} </td>
        <td> ${pvo.su}개 </td>
        <td> <fmt:formatNumber value="${pvo.price}" pattern="#,###"/> (개당) </td>
