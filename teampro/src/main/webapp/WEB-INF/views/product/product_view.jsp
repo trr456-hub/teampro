@@ -45,7 +45,7 @@
 </head>
 <body>
   <section>
-   <!-- 상품정보 --> 
+   <!-- 상품정보 -->  
    <table width="900" align="center">
    <caption> <h3 style="padding-top:100px;font-size:40px;color:#7878E1;text-align:center;letter-spacing :7px;">
    		구매완료
