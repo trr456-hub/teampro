@@ -168,11 +168,6 @@
 										<a href="../reserve/reservepage">빠른예매</a>
 									</h3>
 								</dd>
-								<dd>
-									<h3>
-										<a href="#">상영스케줄</a>
-									</h3>
-								</dd>
 							</dl>
 						</li>
 						<li>
