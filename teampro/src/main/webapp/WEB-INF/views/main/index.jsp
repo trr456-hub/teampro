@@ -61,7 +61,7 @@
 				<ul class="giftcon_list_wrap">
 					<li>
 						<dl class='giftcon_list'>
-							<dt>
+							<dt onclick="location='../product/pro_ticket'">
 								영화관람권
 							</dt>
 							<dd>
@@ -98,7 +98,7 @@
 					</li>
 					<li>
 						<dl class='giftcon_list'>
-							<dt>
+							<dt onclick="location='../product/pro_pop'">
 								팝콘
 							</dt>
 							<dd>
@@ -136,7 +136,7 @@
 					</li>
 					<li>
 						<dl class='giftcon_list'>
-							<dt>
+							<dt onclick="location='../product/pro_com'">
 								콤보  
 							</dt>
 							<dd>
