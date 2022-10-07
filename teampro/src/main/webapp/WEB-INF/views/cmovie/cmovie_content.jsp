@@ -107,14 +107,15 @@ input[type=button] {
 		<tr>
 			<td width="310" style="padding-top:30px; position:relative; left:170px;"><img
 				src="../resources/mimg/${cvo.pimg}" width="200"><br>
-			<br>
+			<br> 
 			<br></td>
 			<td id="title" style="line-height: 200%"><span id="tt"
 				style="border-bottom: 2px solid #cccccc">${cvo.title}</span> <br>
 				감독 : ${cvo.gamdok} <br> 배우 : ${cvo.baeoo } <br>
 			<br> 개봉일 : ${cvo.gaebong} <br>
 			<br>
-			<br> <input type="button" name="예매" value="예매하기">
+			<br> <input type="button" name="예매" value="예매하기"
+					onclick="location='../reserve/reservepage'">
 			</td>
 		</tr>
 		<tr>

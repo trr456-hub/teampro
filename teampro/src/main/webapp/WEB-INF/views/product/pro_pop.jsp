@@ -123,7 +123,7 @@
 		<ul class="menu_list">
 	<c:forEach items="${plist}" var="pvo">
 		<c:if test="${pvo.gubun == 2 }">
-			<li onclick="content_view('${pvo.pcode}')">
+			<li onclick="content_view('${pvo.pcode}')" style="cursor:pointer">
 				<span>
 					<img src="../resources/store/${pvo.pimg}" width="270" height="270">
 				</span> <br>

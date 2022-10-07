@@ -30,4 +30,7 @@
 		select seatpass from yeme where code=#{code} and jcode=#{jcode} and 
 		mcode=#{mcode} and tcode=#{tcode} and monthday=#{monthday}
 	</select>
+	<select id="index" resultType="kr.co.teampro.vo.CmovieVO">
+		select * from cmovie order by field (mcode,'06','09') desc;
+	</select>
 </mapper>

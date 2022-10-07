@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 
 </head>
@@ -30,96 +31,20 @@
 					</div>
 				</div>
 				<div id="in-element">
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="1위" src="../resources/backimg/5.jpg">
-							<div class="movie_rank">1</div>
+					<c:set var="rank" value="1"/>
+					<c:forEach items="${clist}" var="cvo">
+						<div class="movieChart">
+							<div class="movieImg">
+								<img alt="${rank}" src="../resources/mimg/${cvo.pimg}"style="cursor: pointer;" 
+								onclick="location='../cmovie/cmovie_content?mcode=${cvo.mcode}'">
+								<div class="movie_rank">${rank}</div>
+							</div>
+							<div class="movieFont">
+								<strong class="movieName">${ctitle}</strong>
+							</div>
 						</div>
-						<div class="movieFont">
-							<strong class="movieName">조커</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="2위" src="../resources/backimg/4.jpg">
-							<div class="movie_rank">2</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">어스</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="3위" src="../resources/backimg/3.jpg">
-							<div class="movie_rank">3</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">문 나이트</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="4위" src="../resources/backimg/9.jpg">
-							<div class="movie_rank">4</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">어벤저스-엔드게임</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="5위" src="../resources/backimg/8.jpg">
-							<div class="movie_rank">5</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">라부움!</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="6위" src="../resources/backimg/7.jpg">
-							<div class="movie_rank">6</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">기생충</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="7위" src="../resources/backimg/6.jpg">
-							<div class="movie_rank">7</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">2012</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="8위" src="../resources/backimg/2.jpg">
-							<div class="movie_rank">8</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">닥터스트레인지-대혼돈의 멀티버스 </strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="9위" src="../resources/backimg/1.jpg">
-							<div class="movie_rank">9</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">스파이더맨-파프롬홈</strong>
-						</div>
-					</div>
-					<div class="movieChart">
-						<div class="movieImg">
-							<img alt="10위" src="../resources/backimg/10.jpg">
-							<div class="movie_rank">10</div>
-						</div>
-						<div class="movieFont">
-							<strong class="movieName">어벤저스-인피니티 워</strong>
-						</div>
-					</div>
+					<c:set var="rank" value="${rank=rank+1}"/>
+					</c:forEach>
 				</div>
 				<div class="button-next">
 					<img alt="다음슬라이드" src="../resources/img/arrowR.png">
@@ -136,13 +61,13 @@
 				<ul class="giftcon_list_wrap">
 					<li>
 						<dl class='giftcon_list'>
-							<dt>
+							<dt onclick="location='../product/pro_ticket'">
 								영화관람권
 							</dt>
 							<dd>
-								<a href="../product/pro_ticket">
+								<a href="../product/pro_content?pcode=0101">
 									<div class='img_wrap'>
-										<img src="../resources/store/movie14.jpg" alt='CGV 영화관람권'>
+										<img src="../resources/store/CCV 영화관람권 img.jpg" alt='CGV 영화관람권'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>CCA 영화관람권</span> <strong>6,000원</strong>
@@ -150,9 +75,9 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_ticket">
+								<a href="../product/pro_content?pcode=0102">
 									<div class='img_wrap'>
-										<img src="../resources/store/movie21.jpg" alt='CGV 골드클래스'>
+										<img src="../resources/store/CCV 골드클래스 img.jpg" alt='CGV 골드클래스'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>CCA 골드클래스</span> <strong>20,000원</strong>
@@ -160,9 +85,9 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_ticket">
+								<a href="../product/pro_content?pcode=0104">
 									<div class='img_wrap'>
-										<img src="../resources/store/movie41.jpg" alt='4DX관람권'>
+										<img src="../resources/store/4DX 관람권 img.jpg" alt='4DX관람권'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>4DX관람권</span> <strong>9,000원</strong>
@@ -173,13 +98,13 @@
 					</li>
 					<li>
 						<dl class='giftcon_list'>
-							<dt>
+							<dt onclick="location='../product/pro_pop'">
 								팝콘
 							</dt>
 							<dd>
-								<a href="../product/pro_pop">
+								<a href="../product/pro_content?pcode=0201">
 								<div class='img_wrap'>
-										<img src="../resources/store/popcorn11.jpg" alt='PACONNIE A형'>
+										<img src="../resources/store/고소팝콘(L) img.jpg" alt='PACONNIE A형'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>고소팝콘L</span> <strong>5,000원</strong>
@@ -187,9 +112,9 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_pop">
+								<a href="../product/pro_content?pcode=0202">
 									<div class='img_wrap'>
-										<img src="../resources/store/popcorn21.jpg" alt='PACONNIE B형'>
+										<img src="../resources/store/달콤팝콘(L) img.jpg" alt='PACONNIE B형'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>달콤팝콘L</span> <strong>6,000원</strong>
@@ -197,9 +122,9 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_pop">
+								<a href="../product/pro_content?pcode=0203">
 									<div class='img_wrap'>
-										<img src="../resources/store/popcorn61.jpg" alt='PACONNIE C형'>
+										<img src="../resources/store/더블치즈팝콘(M) img.jpg" alt='PACONNIE C형'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>더블치즈팝콘M</span> <strong>5,500원</strong>
@@ -211,13 +136,13 @@
 					</li>
 					<li>
 						<dl class='giftcon_list'>
-							<dt>
+							<dt onclick="location='../product/pro_com'">
 								콤보  
 							</dt>
 							<dd>
-								<a href="../product/pro_com">
+								<a href="../product/pro_content?pcode=0301">
 									<div class='img_wrap'>
-										<img src="../resources/store/combo11.jpg" alt='CGV콤보'>
+										<img src="../resources/store/CCV콤보 img.jpg" alt='CGV콤보'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>CCA콤보</span> <strong>9,000원</strong>
@@ -225,9 +150,9 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_com">
+								<a href="../product/pro_content?pcode=0302">
 									<div class='img_wrap'>
-										<img src="../resources/store/combo21.jpg" alt='더블콤보'>
+										<img src="../resources/store/더블콤보 img.jpg" alt='더블콤보'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>더블콤보</span> <strong>12,000원</strong>
@@ -235,9 +160,9 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_com">
+								<a href="../product/pro_content?pcode=0303">
 									<div class='img_wrap'>
-										<img src="../resources/store/combo31.jpg" alt='스몰세트'>
+										<img src="../resources/store/스몰세트 img.jpg" alt='스몰세트'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>스몰세트</span> <strong>6,500원</strong>
