@@ -67,7 +67,7 @@
 							<dd>
 								<a href="../product/pro_ticket">
 									<div class='img_wrap'>
-										<img src="../resources/store/movie14.jpg" alt='CGV 영화관람권'>
+										<img src="../resources/store/CCV 영화관람권 img.jpg" alt='CGV 영화관람권'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>CCA 영화관람권</span> <strong>6,000원</strong>
@@ -77,7 +77,7 @@
 							<dd>
 								<a href="../product/pro_ticket">
 									<div class='img_wrap'>
-										<img src="../resources/store/movie21.jpg" alt='CGV 골드클래스'>
+										<img src="../resources/store/CCV 골드클래스 img.jpg" alt='CGV 골드클래스'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>CCA 골드클래스</span> <strong>20,000원</strong>
@@ -87,7 +87,7 @@
 							<dd>
 								<a href="../product/pro_ticket">
 									<div class='img_wrap'>
-										<img src="../resources/store/movie41.jpg" alt='4DX관람권'>
+										<img src="../resources/store/4DX 관람권 img.jpg" alt='4DX관람권'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>4DX관람권</span> <strong>9,000원</strong>
@@ -104,7 +104,7 @@
 							<dd>
 								<a href="../product/pro_pop">
 								<div class='img_wrap'>
-										<img src="../resources/store/popcorn11.jpg" alt='PACONNIE A형'>
+										<img src="../resources/store/고소팝콘(L) img.jpg" alt='PACONNIE A형'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>고소팝콘L</span> <strong>5,000원</strong>
@@ -114,7 +114,7 @@
 							<dd>
 								<a href="../product/pro_pop">
 									<div class='img_wrap'>
-										<img src="../resources/store/popcorn21.jpg" alt='PACONNIE B형'>
+										<img src="../resources/store/달콤팝콘(L) img.jpg" alt='PACONNIE B형'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>달콤팝콘L</span> <strong>6,000원</strong>
@@ -124,7 +124,7 @@
 							<dd>
 								<a href="../product/pro_pop">
 									<div class='img_wrap'>
-										<img src="../resources/store/popcorn61.jpg" alt='PACONNIE C형'>
+										<img src="../resources/store/더블치즈팝콘(M) img.jpg" alt='PACONNIE C형'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>더블치즈팝콘M</span> <strong>5,500원</strong>
@@ -142,7 +142,7 @@
 							<dd>
 								<a href="../product/pro_com">
 									<div class='img_wrap'>
-										<img src="../resources/store/combo11.jpg" alt='CGV콤보'>
+										<img src="../resources/store/CCV콤보 img.jpg" alt='CGV콤보'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>CCA콤보</span> <strong>9,000원</strong>
@@ -152,7 +152,7 @@
 							<dd>
 								<a href="../product/pro_com">
 									<div class='img_wrap'>
-										<img src="../resources/store/combo21.jpg" alt='더블콤보'>
+										<img src="../resources/store/더블콤보 img.jpg" alt='더블콤보'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>더블콤보</span> <strong>12,000원</strong>
@@ -162,7 +162,7 @@
 							<dd>
 								<a href="../product/pro_com">
 									<div class='img_wrap'>
-										<img src="../resources/store/combo31.jpg" alt='스몰세트'>
+										<img src="../resources/store/스몰세트 img.jpg" alt='스몰세트'>
 									</div>
 									<div class='giftcon_info_wrap'>
 										<span>스몰세트</span> <strong>6,500원</strong>
