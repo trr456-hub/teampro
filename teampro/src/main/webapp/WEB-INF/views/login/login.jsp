@@ -64,6 +64,11 @@
     	width:300px;
     	height:400px;
     }
+    .right .logSave a {
+		text-decoration:none;
+		color:black;
+		font-size:15px;
+    }
  </style>
  <script src="http://code.jquery.com/jquery-latest.js"></script>
  <script>
@@ -161,8 +166,7 @@
 			  		<input type="password" name="pwd" placeholder="비밀번호"> 
 			  	</div>
 			  	<div class="logSave">
-				    <input type="checkbox" class="save_id" name="checkId" id="saveId" >
-				    <label for="saveId">아이디 저장</label>
+				    <a href="../login/idsearch"> 아이디 찾기 </a> / <a href="../login/pwdsearch"> 비밀번호 찾기 </a>
 				</div>
 			  		<c:if test="${err ==1 }">
 			  			<script>

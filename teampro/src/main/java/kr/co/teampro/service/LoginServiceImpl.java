@@ -1,5 +1,7 @@
 package kr.co.teampro.service;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +37,21 @@ public class LoginServiceImpl implements LoginService {
 		session.invalidate();
 		return "redirect:/main/index";
 	}
-	
+
+	@Override
+	public void userid_search_ok(MemberVO mvo, PrintWriter out) {
+		 String userid=mapper.userid_search_ok(mvo);
+		 if(userid==null)
+			 userid="0";
+		 out.print(userid);
+	}
+
+	@Override
+	public void pwd_search_ok(MemberVO mvo, PrintWriter out) {
+		String pwd=mapper.pwd_search_ok(mvo);
+		if(pwd==null)
+			pwd="0";
+		out.print(pwd);
+		
+	}
 }

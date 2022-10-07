@@ -14,16 +14,17 @@
 		background:white;
 	}
 	#main {
-		width:1000px;
+		width:1100px;
 		height:100%;
 		margin:auto;
 		background:white;
 	}
 	#content {
-		width:800px;
+		width:900px;
 		height:100%;
 		margin:auto;
 		padding-top:60px;
+		padding-bottom:200px;
 		
 	}
 	#left {
@@ -34,7 +35,13 @@
 		float:right;
 		margin-right:50px;
 	}
-		
+	#adm {
+		position: relative;
+	    top: -500px;
+	    left: 390px;
+	    font-size:20px;
+	    font-weight: bold;
+	}
 </style>
 </head>
 <body>
@@ -44,18 +51,18 @@
 	<c:if test="${userid != 'admin' }">
 		<div id="left">
 			<a href="../member/clist"> 
-				<img src="../resources/img/문의내역.PNG" width="250" height="250">
+				<img src="../resources/img/상담1.PNG">
 			</a>
 		</div>
 		<div id="right">
 		<c:if test="${userid != null }">
 			<a href="../member/cwrite">
-				<img src="../resources/img/문의하기.PNG" width="250" height="250">
+				<img src="../resources/img/상담2.PNG"> <!--  width="250" height="250" -->
 			</a>
 			</c:if>
 			<c:if test="${userid == null }">
 			<a href="../login/login">
-				<img src="../resources/img/문의하기.PNG" width="250" height="250">
+				<img src="../resources/img/상담2.PNG">
 			</a>
 			</c:if>
 		</div>
@@ -63,7 +70,9 @@
 	</div>
 	
 	<c:if test="${userid == 'admin' }">
+		<div id="adm">
 		<a href="../member/member_coun"> 관리자용 문의목록 </a>
+		</div>
 	</c:if>
 </div>
 </section>
