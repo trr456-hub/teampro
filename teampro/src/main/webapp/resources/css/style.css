@@ -242,30 +242,6 @@
 }
 
 /* 카테고리 종료 */
-/* 시간 부분 */
-.totalSearch_wrap {
-	display: inline-flex;
-    position: absolute;
-    right: 0;
-    top: 0px;
-    border-left: 1px solid lightgray;
-    border-right: 1px solid lightgray;
-}
-
-.totalSearch_wrap label {
-	display: block
-}
-
-#clock {
-	width: 180px;
-    height: auto;
-    font-size: 24px;
-    color: #222;
-    text-align: center;
-    line-height: 1.500em;
-    border: none;
-}
-/* 시간부분 종료 */
 /* 메인광고 시작 */
 #background-img {
 	width: 1200px;

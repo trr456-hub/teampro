@@ -238,10 +238,12 @@
 						</li>
 					</ul>
 					<!-- 시간부분-->
-					<div class="totalSearch_wrap">
-						<label for="totalSearch"> 
-							<div id="clock"></div>
-						</label>
+					<div class="clock_wrap" style="display: inline-flex;position: absolute;right: 0;top: 0px;
+					border-left: 1px solid lightgray;border-right: 1px solid lightgray;">
+						<div style="display: block"> 
+							<div id="clock" style="width: 180px;height: auto;font-size: 24px;color: #222;
+							text-align: center;line-height: 1.500em;border: none;"></div>
+						</div>
 					</div>
 				</div>
 			</div>
