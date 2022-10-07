@@ -134,7 +134,7 @@
 		<ul class="sale_content">
 	<c:forEach items="${dlist}" var="dvo">
 	<c:if test="${dvo.gubun == 3 }">
-			<li onclick="content_view('${dvo.dcode}')">
+			<li onclick="content_view('${dvo.dcode}')" style="cursor:pointer">
 				<div>
 					<div>
 						<img src="../resources/discount/${dvo.dimg}" width="280" height="270">
