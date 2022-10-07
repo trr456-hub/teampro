@@ -2,6 +2,7 @@ package kr.co.teampro.mapper;
 
 import java.util.ArrayList;
 
+import kr.co.teampro.vo.CmovieVO;
 import kr.co.teampro.vo.DaeareaVO;
 import kr.co.teampro.vo.JungareaVO;
 import kr.co.teampro.vo.ReserveVO;
@@ -22,4 +23,6 @@ public interface ReserveMapper {
 	public int getyeme(String userid);
 	
 	public ArrayList<YemeVO> getSeat(YemeVO yvo);
+	
+	public ArrayList<CmovieVO> index(CmovieVO cvo);
 }

@@ -1,5 +1,7 @@
 package kr.co.teampro.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -32,5 +34,25 @@ public class LoginController {
 	@RequestMapping("/login/logout")
 	public String logout(HttpSession session) {
 		return service.logout(session);
+	}
+	
+	@RequestMapping("/login/idsearch")
+	public String idsearch() {
+		return "/login/idsearch";
+	}
+	
+	@RequestMapping("/login/userid_search_ok")
+	public void userid_search_ok(MemberVO mvo,PrintWriter out) {
+		service.userid_search_ok(mvo, out);
+	}
+	
+	@RequestMapping("/login/pwdsearch")
+	public String pwdsearch() {
+		return "/login/pwdsearch";
+	}
+	
+	@RequestMapping("/login/pwd_search_ok")
+	public void pwd_search_ok(MemberVO mvo,PrintWriter out) {
+		service.pwd_search_ok(mvo, out);
 	}
 }

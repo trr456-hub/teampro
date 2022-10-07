@@ -143,12 +143,12 @@
 								</dt>
 								<dd>
 									<h3>
-										<a href="#">CCA극장</a>
+										<a href="../main/cca_self">CCA극장</a>
 									</h3>
 								</dd>
 								<dd>
 									<h3>
-										<a href="#">특별관</a>
+										<a href="../main/ccagj">특별관</a>
 									</h3>
 								</dd>
 							</dl>
@@ -166,11 +166,6 @@
 								<dd>
 									<h3>
 										<a href="../reserve/reservepage">빠른예매</a>
-									</h3>
-								</dd>
-								<dd>
-									<h3>
-										<a href="#">상영스케줄</a>
 									</h3>
 								</dd>
 							</dl>
@@ -242,14 +237,14 @@
 							</dl>
 						</li>
 					</ul>
-					<!-- 검색부분 -->
-					<div class="totalSearch_wrap">
-						<label for="totalSearch"> <input type="text" id="keyword"
-							placeholder="SEARCH">
-						</label>
-						<button type="button" class="btn_totalSearch" id="headerSearch">검색</button>
+					<!-- 시간부분-->
+					<div class="clock_wrap" style="display: inline-flex;position: absolute;right: 0;top: 0px;
+					border-left: 1px solid lightgray;border-right: 1px solid lightgray;">
+						<div style="display: block"> 
+							<div id="clock" style="width: 180px;height: auto;font-size: 24px;color: #222;
+							text-align: center;line-height: 1.500em;border: none;"></div>
+						</div>
 					</div>
-					<!-- 검색부분 종료 -->
 				</div>
 			</div>
 		</div>
@@ -270,5 +265,20 @@
 		</div>
 		<!-- 하단 회사정보 표기 종료-->
 	</div>
+<script>
+const clock = document.querySelector("#clock");
+
+function Time() {
+    const date = new Date();
+
+    const Hour = String(date.getHours()).padStart(2,0);
+    const Minutes = String(date.getMinutes()).padStart(2,0);
+    const Second = String(date.getSeconds()).padStart(2,0);
+    
+    clock.innerText = Hour+":"+Minutes+":"+Second;
+}
+	Time();
+	setInterval(Time , 1000);
+</script>
 </body>
 </html>

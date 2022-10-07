@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import kr.co.teampro.mapper.ReserveMapper;
+import kr.co.teampro.vo.CmovieVO;
 import kr.co.teampro.vo.DaeareaVO;
 import kr.co.teampro.vo.GumaeVO;
 import kr.co.teampro.vo.JungareaVO;
@@ -23,7 +24,15 @@ import kr.co.teampro.vo.YemeVO;
 public class ReserveServiceImpl implements ReserveService {
 	@Autowired
 	private ReserveMapper mapper;
-
+	
+	@Override
+	public String index(CmovieVO cvo,Model model) {
+		ArrayList<CmovieVO> clist=mapper.index(cvo);
+		
+		model.addAttribute("clist",clist);
+		
+		return "/main/index";
+	}
 	@Override
 	public String reservepage(Model model) {
 		ArrayList<ReserveVO> rlist=mapper.reservepage();

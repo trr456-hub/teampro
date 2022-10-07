@@ -305,7 +305,7 @@ section {
 </head>
 <body>
 	<section>
-	<form id="theater" name="theater" method="get" action="theaterBuy">
+	<form id="theater" name="theater" method="post" action="theaterBuy">
 		<div class="theater">
 			<div class="theater-outline">
 				<div class="steps">
