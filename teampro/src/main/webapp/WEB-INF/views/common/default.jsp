@@ -237,14 +237,8 @@
 							</dl>
 						</li>
 					</ul>
-					<!-- 검색부분 -->
-					<div class="totalSearch_wrap">
-						<label for="totalSearch"> <input type="text" id="keyword"
-							placeholder="SEARCH">
-						</label>
-						<button type="button" class="btn_totalSearch" id="headerSearch">검색</button>
-					</div>
-					<!-- 검색부분 종료 -->
+					<!-- 시간부분 보류 -->
+					<!-- <div id="clock"></div> -->
 				</div>
 			</div>
 		</div>
@@ -265,5 +259,20 @@
 		</div>
 		<!-- 하단 회사정보 표기 종료-->
 	</div>
+<script>
+/* const clock = document.querySelector("#clock");
+
+function Time() {
+    const date = new Date();
+
+    const Hour = String(date.getHours()).padStart(2,0);
+    const Minutes = String(date.getMinutes()).padStart(2,0);
+    const Second = String(date.getSeconds()).padStart(2,0);
+    
+    clock.innerText = Hour+":"+Minutes+":"+Second;
+}
+	Time();
+	setInterval(Time , 1000); */
+</script>
 </body>
 </html>
