@@ -237,8 +237,12 @@
 							</dl>
 						</li>
 					</ul>
-					<!-- 시간부분 보류 -->
-					<!-- <div id="clock"></div> -->
+					<!-- 시간부분-->
+					<div class="totalSearch_wrap">
+						<label for="totalSearch"> 
+							<div id="clock"></div>
+						</label>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -260,7 +264,7 @@
 		<!-- 하단 회사정보 표기 종료-->
 	</div>
 <script>
-/* const clock = document.querySelector("#clock");
+const clock = document.querySelector("#clock");
 
 function Time() {
     const date = new Date();
@@ -272,7 +276,7 @@ function Time() {
     clock.innerText = Hour+":"+Minutes+":"+Second;
 }
 	Time();
-	setInterval(Time , 1000); */
+	setInterval(Time , 1000);
 </script>
 </body>
 </html>

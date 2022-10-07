@@ -65,7 +65,7 @@
 								영화관람권
 							</dt>
 							<dd>
-								<a href="../product/pro_ticket">
+								<a href="../product/pro_content?pcode=0101">
 									<div class='img_wrap'>
 										<img src="../resources/store/CCV 영화관람권 img.jpg" alt='CGV 영화관람권'>
 									</div>
@@ -75,7 +75,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_ticket">
+								<a href="../product/pro_content?pcode=0102">
 									<div class='img_wrap'>
 										<img src="../resources/store/CCV 골드클래스 img.jpg" alt='CGV 골드클래스'>
 									</div>
@@ -85,7 +85,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_ticket">
+								<a href="../product/pro_content?pcode=0104">
 									<div class='img_wrap'>
 										<img src="../resources/store/4DX 관람권 img.jpg" alt='4DX관람권'>
 									</div>
@@ -102,7 +102,7 @@
 								팝콘
 							</dt>
 							<dd>
-								<a href="../product/pro_pop">
+								<a href="../product/pro_content?pcode=0201">
 								<div class='img_wrap'>
 										<img src="../resources/store/고소팝콘(L) img.jpg" alt='PACONNIE A형'>
 									</div>
@@ -112,7 +112,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_pop">
+								<a href="../product/pro_content?pcode=0202">
 									<div class='img_wrap'>
 										<img src="../resources/store/달콤팝콘(L) img.jpg" alt='PACONNIE B형'>
 									</div>
@@ -122,7 +122,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_pop">
+								<a href="../product/pro_content?pcode=0203">
 									<div class='img_wrap'>
 										<img src="../resources/store/더블치즈팝콘(M) img.jpg" alt='PACONNIE C형'>
 									</div>
@@ -140,7 +140,7 @@
 								콤보  
 							</dt>
 							<dd>
-								<a href="../product/pro_com">
+								<a href="../product/pro_content?pcode=0301">
 									<div class='img_wrap'>
 										<img src="../resources/store/CCV콤보 img.jpg" alt='CGV콤보'>
 									</div>
@@ -150,7 +150,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_com">
+								<a href="../product/pro_content?pcode=0302">
 									<div class='img_wrap'>
 										<img src="../resources/store/더블콤보 img.jpg" alt='더블콤보'>
 									</div>
@@ -160,7 +160,7 @@
 								</a>
 							</dd>
 							<dd>
-								<a href="../product/pro_com">
+								<a href="../product/pro_content?pcode=0303">
 									<div class='img_wrap'>
 										<img src="../resources/store/스몰세트 img.jpg" alt='스몰세트'>
 									</div>

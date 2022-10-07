@@ -242,44 +242,30 @@
 }
 
 /* 카테고리 종료 */
-/* 검색 부분 */
+/* 시간 부분 */
 .totalSearch_wrap {
 	display: inline-flex;
-	position: absolute;
-	right: 0;
-	top: 7px;
-	padding: 0 36px 0 10px;
-	border-left: 1px solid lightgray;
-	border-right: 1px solid lightgray;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
 }
 
 .totalSearch_wrap label {
 	display: block
 }
 
-.totalSearch_wrap label input[type="text"] {
+#clock {
 	width: 180px;
-	height: auto;
-	padding: 0 0 0 7px;
-	font-size: 16px;
-	color: #222;
-	line-height: 1.500em;
-	border: none
+    height: auto;
+    font-size: 24px;
+    color: #222;
+    text-align: center;
+    line-height: 1.500em;
+    border: none;
 }
-
-.totalSearch_wrap .btn_totalSearch {
-	display: block;
-	position: absolute;
-	right: 10px;
-	top: -1px;;
-	width: 26px;
-	height: 26px;
-	font-size: 0;
-	line-height: 0;
-	background: transparent url('../img/search.png') center center/26px
-		scroll no-repeat
-}
-/* 검색부분 종료 */
+/* 시간부분 종료 */
 /* 메인광고 시작 */
 #background-img {
 	width: 1200px;
@@ -506,7 +492,8 @@
 	font-weight: 500;
 	font-size: 20px;
 	color: #222;
-	line-height: 23px
+	line-height: 23px;
+	cursor:pointer;
 }
 
 .giftcon_list dt+dd {
