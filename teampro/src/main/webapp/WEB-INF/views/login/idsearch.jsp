@@ -65,7 +65,7 @@ function userid_search_fn() {
       <input type="text" name="email" placeholder="이메일"> <p>
       <input type="button" value="아이디찾기" onclick="userid_search_fn()">
     </form>
-    </div>
+    <a href="../login/login"> 로그인하러가기 </a>
    </section>
 </body>
 </html>
