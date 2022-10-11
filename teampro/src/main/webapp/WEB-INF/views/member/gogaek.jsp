@@ -12,6 +12,7 @@
 		height:500px;
 		margin:auto;
 		background:white;
+		padding-bottom:70px;
 	}
 	#main {
 		width:1100px;
