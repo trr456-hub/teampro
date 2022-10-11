@@ -71,6 +71,15 @@
    	width:200px;
    	margin:0 auto;
    }
+   .kakao-font {
+   	color: blue;
+    font-size: 12px;
+    position: absolute;
+    margin-left: 135px;
+   }
+   .kakao-font > a {
+   	color:red;
+   }
 	</style>
 </head>
 <body>
@@ -146,6 +155,7 @@
 						<td align="left">
 							<input type="radio" name="sudan" value="0" onclick="change_sub(0)">신용/체크카드
 							<input type="radio" name="sudan" value="1" onclick="change_sub(1)">카카오페이
+							<div class="kakao-font">*카카오페이 4000원 즉시할인*<a href="../discount/discount_content?dcode=0103">[상세보기]</a></div>
 						</td>
 					</tr>
 				</table>
@@ -172,7 +182,7 @@
 			
 			name: 'CCA영화관람권',
 			// 결제창에서 보여질 이름
-			amount: ${(6000*adult)+(4000*child)},
+			amount: ${(6000*adult)+(4000*child)-(4000)},
 			// 가격 
 			buyer_name: '${name}',
 			buyer_tel : '${phone}',
