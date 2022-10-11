@@ -166,7 +166,9 @@
 			  		<input type="password" name="pwd" placeholder="비밀번호"> 
 			  	</div>
 			  	<div class="logSave">
-				    <a href="../login/idsearch"> 아이디 찾기 </a> / <a href="../login/pwdsearch"> 비밀번호 찾기 </a>
+			    	<a href="#none" onclick="winSearchId()"> 아이디 찾기 </a>
+				    /
+				    <a href="#none" onclick="winSearchPwd()"> 비밀번호 찾기 </a>
 				</div>
 			  		<c:if test="${err ==1 }">
 			  			<script>
@@ -185,7 +187,14 @@ const movImg = ["매트릭스.jpg","머니볼.jpg","브루스올마이티.jpg","
 const choseImg = movImg[Math.floor(Math.random() * movImg.length)];
 const bgImg = document.createElement("img");
 bgImg.src = '../resources/mimg/'+choseImg;
-console.log(choseImg);
-document.querySelector(".left").appendChild(bgImg);	
+/* console.log(choseImg); */
+document.querySelector(".left").appendChild(bgImg);
+
+function winSearchId() {
+	var idUrl = window.open('../login/idsearch','아이디찾기','top=200, left=700, width=500, height=500, status=no, menubar=no, resizable=no, toolbar=no, scrollbars=no');
+	}
+function winSearchPwd() {
+	var idUrl = window.open('../login/pwdsearch','비밀번호찾기','top=200, left=700, width=500, height=500, status=no, menubar=no, resizable=no, toolbar=no, scrollbars=no');
+}
 </script>
 </body>    

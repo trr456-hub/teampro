@@ -4,6 +4,8 @@
  <excludes>
   <pattern>/login/login</pattern>
   <pattern>/login/login?err=1</pattern>
+  <pattern>/login/idsearch</pattern>
+  <pattern>/login/pwdsearch</pattern>
  </excludes>
  <!-- 기본 패턴 -->
  <decorator name="default" page="default.jsp">
