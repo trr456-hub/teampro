@@ -797,10 +797,11 @@ li .depth1 > a {
 																<li>2D</li>
 															</ul>
 															<ul class="time-selector list_time">
+															<c:set var="tv" value="8"/>
 															<c:set var="t" value="1"/>
 															<c:forEach items="${slist }" var="svo">
 																<li>
-																	<a role="button" href="#none" onclick="colorChange(this); timePass(${t}); submitCheck()">
+																	<a role="button" href="#none" onclick="colorChange(this); timePass(${t}); submitCheck()" value="${tv}">
 																		<dl>
 																			<dd class="time">
 																				<strong>${svo.title}</strong>
@@ -814,6 +815,7 @@ li .depth1 > a {
 																		</dl>
 																	</a>
 																</li>
+																<c:set var="tv" value="${tv=tv+2}"/>
 																<c:set var="t" value="${t=t+1}"/>
 															</c:forEach>
 															</ul>
@@ -835,7 +837,11 @@ li .depth1 > a {
 	</section>
 	<script>
         const date = new Date();
-        // console.log(date.getFullYear());
+        
+        //let timeSels = document.querySelectorAll(".time-selector .list_time > li > a")origin.value;
+        //console.log("a태그에value",timeSels); 
+        
+        //console.log(document.querySelectorAll(".time-selector > a"));
         const lastDay = new Date(date.getFullYear(), date.getMonth()+1 , 0);
         const nextDay = new Date(date.getFullYear(), date.getMonth()+2 , 0);
         const reserveDate = document.querySelector(".owl-stage");
@@ -1097,10 +1103,10 @@ li .depth1 > a {
         
         /* 영화선택 종료*/
         /* 시간선택 */
+        
         function colorChange(my) {
-        	//console.log(my);
         	let movie_time_a = document.querySelectorAll(".time-selector .list_time > li > a");
-        	//console.log(movie_time_a);
+         	//console.log(movie_time_a);
         	for(var i=0; i<movie_time_a.length; i++) {
 	        	movie_time_a[i].style.borderColor = "#ddd";
         	}
