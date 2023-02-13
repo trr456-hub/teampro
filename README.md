@@ -19,3 +19,6 @@
 ### 3. 구동화면
 ##### 메인화면
 <img src="https://user-images.githubusercontent.com/108771927/218438054-af1675bd-e814-49ba-a9da-a091424650c8.gif" width="640" height="480">
+
+##### 로그인&회원가입
+<img src="https://user-images.githubusercontent.com/108771927/218438048-15b44274-9d84-47f1-a9b4-328dab45da9c.gif" width="640" height="480">
