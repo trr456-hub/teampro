@@ -17,3 +17,5 @@
 영화예매사이트
 
 ### 3. 구동화면
+메인화면
+<img src="https://user-images.githubusercontent.com/108771927/218438054-af1675bd-e814-49ba-a9da-a091424650c8.gif" width="500" height="350">
